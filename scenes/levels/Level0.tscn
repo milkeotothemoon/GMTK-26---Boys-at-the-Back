@@ -1,16 +1,35 @@
 [gd_scene format=3 uid="uid://c7sy1ldhhgfbl"]
 
+[ext_resource type="Script" uid="uid://b8apmf7n38mm1" path="res://scripts/gameplay/build_phase.gd" id="1_qcr8a"]
 [ext_resource type="PackedScene" uid="uid://dj4pr3ftuubh4" path="res://scenes/gameplay/BuildSpace.tscn" id="1_xh834"]
 [ext_resource type="PackedScene" uid="uid://cy7pfol0uoa7d" path="res://scenes/gameplay/Inventory.tscn" id="2_inventory"]
 [ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/player/Player.tscn" id="3_player"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0l7rd"]
+font_size = 101
+outline_size = 18
+
 [node name="Level0" type="Node2D" unique_id=250843063]
+script = ExtResource("1_qcr8a")
 
 [node name="Inventory" parent="." unique_id=653123002 instance=ExtResource("2_inventory")]
-position = Vector2(0, 0)
+position = Vector2(310, 550)
 
 [node name="BuildSpace" parent="." unique_id=1416657170 instance=ExtResource("1_xh834")]
-position = Vector2(400, 0)
+position = Vector2(300, 15)
 
 [node name="Player" parent="." unique_id=1845645343 instance=ExtResource("3_player")]
-position = Vector2(200, 500)
+position = Vector2(250, 450)
+
+[node name="Timer" type="Timer" parent="." unique_id=846573383]
+
+[node name="TimerLabel" type="Label" parent="." unique_id=1048577364]
+offset_left = 870.0
+offset_top = 16.0
+offset_right = 1107.0
+offset_bottom = 165.0
+size_flags_horizontal = 4
+text = "1:00"
+label_settings = SubResource("LabelSettings_0l7rd")
+horizontal_alignment = 1
+vertical_alignment = 1

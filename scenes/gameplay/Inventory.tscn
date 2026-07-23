@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cy7pfol0uoa7d"]
 
-[ext_resource type="Script" path="res://scripts/gameplay/inventory_slot.gd" id="1_slot"]
+[ext_resource type="Script" uid="uid://0nt4aj8sajqg" path="res://scripts/gameplay/inventory_slot.gd" id="1_slot"]
 [ext_resource type="PackedScene" uid="uid://dyvjtic38cebg" path="res://scenes/items/sound/Balloon.tscn" id="2_balloonslot"]
 [ext_resource type="PackedScene" uid="uid://diem7wdch32ia" path="res://scenes/items/sound/Gong.tscn" id="3_gongslot"]
 [ext_resource type="PackedScene" uid="uid://ctf2su6d3fe80" path="res://scenes/items/sound/Chicken.tscn" id="4_chickenslot"]
@@ -38,7 +38,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GongSlot" type="Area2D" parent="." unique_id=1783663871]
-position = Vector2(20, 70)
+position = Vector2(120, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("3_gongslot")
 item_label = "Gong"
@@ -56,7 +56,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ChickenSlot" type="Area2D" parent="." unique_id=746638961]
-position = Vector2(20, 120)
+position = Vector2(220, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("4_chickenslot")
 item_label = "Chicken"
@@ -74,7 +74,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EngineSlot" type="Area2D" parent="." unique_id=766071034]
-position = Vector2(20, 170)
+position = Vector2(320, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("5_engineslot")
 item_label = "Engine"
@@ -92,7 +92,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BlenderSlot" type="Area2D" parent="." unique_id=1407858912]
-position = Vector2(20, 220)
+position = Vector2(420, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("6_blenderslot")
 item_label = "Blender"
@@ -110,7 +110,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MicrophoneSlot" type="Area2D" parent="." unique_id=763185001]
-position = Vector2(20, 270)
+position = Vector2(520, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("7_microphoneslot")
 item_label = "Microphone"
@@ -128,7 +128,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RepeaterSlot" type="Area2D" parent="." unique_id=1710316631]
-position = Vector2(20, 320)
+position = Vector2(20, 70)
 script = ExtResource("1_slot")
 item_scene = ExtResource("8_repeaterslot")
 item_label = "Repeater"
@@ -146,7 +146,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ConveyorBeltSlot" type="Area2D" parent="." unique_id=781582942]
-position = Vector2(20, 370)
+position = Vector2(120, 70)
 script = ExtResource("1_slot")
 item_scene = ExtResource("9_conveyorbeltslot")
 item_label = "Conveyor Belt"
@@ -164,7 +164,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WireSlot" type="Area2D" parent="." unique_id=1639591483]
-position = Vector2(20, 420)
+position = Vector2(220, 70)
 script = ExtResource("1_slot")
 item_scene = ExtResource("10_wireslot")
 item_label = "Wire"
@@ -182,7 +182,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GlueSlot" type="Area2D" parent="." unique_id=2114245709]
-position = Vector2(20, 470)
+position = Vector2(320, 70)
 script = ExtResource("1_slot")
 item_scene = ExtResource("11_glueslot")
 item_label = "Glue"
@@ -200,7 +200,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FanSlot" type="Area2D" parent="." unique_id=809936773]
-position = Vector2(20, 520)
+position = Vector2(420, 70)
 script = ExtResource("1_slot")
 item_scene = ExtResource("12_fanslot")
 item_label = "Fan"
@@ -218,7 +218,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PistonSlot" type="Area2D" parent="." unique_id=378960894]
-position = Vector2(20, 570)
+position = Vector2(520, 70)
 script = ExtResource("1_slot")
 item_scene = ExtResource("13_pistonslot")
 item_label = "Piston"
