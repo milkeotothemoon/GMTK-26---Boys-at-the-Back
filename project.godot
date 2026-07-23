@@ -15,6 +15,12 @@ run/main_scene="uid://ca42o7qroffj1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*uid://bdvykam3etg2x"
+LevelData="*uid://cclt1yjd7lgie"
+AudioManager="*uid://bxh6aokp1gwc4"
+
 [display]
 
 window/stretch/mode="canvas_items"
