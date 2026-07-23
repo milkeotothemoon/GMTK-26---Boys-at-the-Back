@@ -4,8 +4,7 @@ var _highlighted_cell: Vector2i = Vector2i(-1, -1)
 var _has_highlight: bool = false
 
 func _ready() -> void:
-	add_to_group("build_space_view")
-	queue_redraw()
+	pass
 
 func highlight_cell(cell: Vector2i) -> void:
 	_highlighted_cell = cell

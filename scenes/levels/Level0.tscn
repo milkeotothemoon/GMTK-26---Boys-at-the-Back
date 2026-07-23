@@ -6,30 +6,61 @@
 [ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/player/Player.tscn" id="3_player"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0l7rd"]
-font_size = 101
+font_size = 20
 outline_size = 18
+outline_color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75xeh"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_75xeh"]
+font_size = 123
 
 [node name="Level0" type="Node2D" unique_id=250843063]
 script = ExtResource("1_qcr8a")
 
 [node name="Inventory" parent="." unique_id=653123002 instance=ExtResource("2_inventory")]
-position = Vector2(310, 550)
+position = Vector2(336, 550)
 
 [node name="BuildSpace" parent="." unique_id=1416657170 instance=ExtResource("1_xh834")]
-position = Vector2(300, 15)
+position = Vector2(369, 47)
 
 [node name="Player" parent="." unique_id=1845645343 instance=ExtResource("3_player")]
-position = Vector2(250, 450)
+position = Vector2(290, 473)
 
 [node name="Timer" type="Timer" parent="." unique_id=846573383]
 
 [node name="TimerLabel" type="Label" parent="." unique_id=1048577364]
-offset_left = 870.0
-offset_top = 16.0
-offset_right = 1107.0
-offset_bottom = 165.0
+offset_left = 570.0
+offset_top = -3.0
+offset_right = 653.0
+offset_bottom = 42.0
 size_flags_horizontal = 4
 text = "1:00"
 label_settings = SubResource("LabelSettings_0l7rd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=2058796264]
+offset_left = 933.0
+offset_top = -185.0
+offset_right = 1333.0
+offset_bottom = 215.0
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_75xeh")
+
+[node name="LevelLabel" type="Label" parent="Panel" unique_id=1346164908]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 185.0
+offset_right = 212.0
+offset_bottom = 354.0
+text = "##"
+label_settings = SubResource("LabelSettings_75xeh")
 horizontal_alignment = 1
 vertical_alignment = 1

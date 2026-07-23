@@ -4,8 +4,10 @@ signal build_locked
 
 @onready var timer: Timer = $Timer
 @onready var timer_label: Label = $TimerLabel
+@onready var level_label: Label = $Panel/LevelLabel
 
 func _ready() -> void:
+	level_label.text = "%02d" % GameState.current_level_index
 	start_build_phase()
 
 func start_build_phase() -> void:

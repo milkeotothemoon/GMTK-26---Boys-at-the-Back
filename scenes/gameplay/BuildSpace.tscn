@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://dj4pr3ftuubh4"]
 
 [ext_resource type="Script" uid="uid://dh7h8s2b3mly5" path="res://scripts/gameplay/build_space_view.gd" id="1_4f4mk"]
+[ext_resource type="Texture2D" uid="uid://cef26xd1577m8" path="res://icon.svg" id="2_2bb0f"]
+[ext_resource type="Script" uid="uid://dxhj6lpsr2ttj" path="res://scripts/gameplay/grid_visual.gd" id="2_ky76c"]
 
 [node name="BuildSpace" type="Node2D" unique_id=1416657170]
 script = ExtResource("1_4f4mk")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1273156104]
+offset_right = 480.0
+offset_bottom = 480.0
+texture = ExtResource("2_2bb0f")
+
 [node name="GridContainer" type="GridContainer" parent="." unique_id=817833220]
 offset_right = 500.0
 offset_bottom = 500.0
+script = ExtResource("2_ky76c")
 
 [node name="PlacedItems" type="Node2D" parent="." unique_id=228289201 groups=["placed_items_container"]]
 

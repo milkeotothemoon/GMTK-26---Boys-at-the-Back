@@ -19,28 +19,27 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if not _dragging:
 		return
-	var mouse_pos := get_global_mouse_position()
-	var cell := BuildSpace.world_to_grid(mouse_pos)
+	var parent := get_parent() as Node2D
+	var local_mouse := parent.to_local(get_global_mouse_position())
+	var cell := BuildSpace.world_to_grid(local_mouse)
 	var view := get_tree().get_first_node_in_group("build_space_view")
 	if BuildSpace.is_valid_cell(cell):
-		global_position = BuildSpace.grid_to_world(cell) + Vector2(BuildSpace.CELL_SIZE, BuildSpace.CELL_SIZE) / 2.0
+		position = BuildSpace.grid_to_world(cell) + Vector2(BuildSpace.CELL_SIZE, BuildSpace.CELL_SIZE) / 2.0
 		if view:
 			view.highlight_cell(cell)
 	else:
-		global_position = mouse_pos
+		position = local_mouse
 		if view:
 			view.clear_highlight()
 
 func _try_drop() -> void:
-	var cell := BuildSpace.world_to_grid(global_position)
+	var cell := BuildSpace.world_to_grid(position)
 	if BuildSpace.is_valid_cell(cell):
 		place(cell)
 		_dragging = false
 		var view := get_tree().get_first_node_in_group("build_space_view")
 		if view:
 			view.clear_highlight()
-	# if not over the grid, nothing happens — stays attached to the mouse.
-	# this is what makes it "drop only on the BuildSpace"
 
 func place(cell: Vector2i) -> void:
 	grid_position = cell
