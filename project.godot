@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameState="*uid://bdvykam3etg2x"
 LevelData="*uid://cclt1yjd7lgie"
 AudioManager="*uid://bxh6aokp1gwc4"
+BuildSpace="*uid://c7mkfqnwqwwnf"
 
 [display]
 

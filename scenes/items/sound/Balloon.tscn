@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://dyvjtic38cebg"]
 
-[node name="Balloon" type="Node2D" unique_id=1593880152]
+[ext_resource type="Script" uid="uid://bb3qntjimb2if" path="res://scripts/items/sound_item.gd" id="1_wki06"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75xeh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75xeh"]
+
+[node name="Balloon" type="Area2D" unique_id=1016711131]
+script = ExtResource("1_wki06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=411121538]
+sprite_frames = SubResource("SpriteFrames_75xeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=600011808]
+shape = SubResource("CircleShape2D_75xeh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=48072953]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

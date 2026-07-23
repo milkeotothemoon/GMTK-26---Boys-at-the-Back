@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://c7sy1ldhhgfbl"]
 
+[ext_resource type="PackedScene" uid="uid://dj4pr3ftuubh4" path="res://scenes/gameplay/BuildSpace.tscn" id="1_xh834"]
+[ext_resource type="PackedScene" uid="uid://cy7pfol0uoa7d" path="res://scenes/gameplay/Inventory.tscn" id="2_inventory"]
+[ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/player/Player.tscn" id="3_player"]
+
 [node name="Level0" type="Node2D" unique_id=250843063]
+
+[node name="Inventory" parent="." unique_id=653123002 instance=ExtResource("2_inventory")]
+position = Vector2(0, 0)
+
+[node name="BuildSpace" parent="." unique_id=1416657170 instance=ExtResource("1_xh834")]
+position = Vector2(400, 0)
+
+[node name="Player" parent="." unique_id=1845645343 instance=ExtResource("3_player")]
+position = Vector2(200, 500)

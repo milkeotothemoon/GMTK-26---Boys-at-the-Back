@@ -1,11 +1,12 @@
-extends Node
+extends BaseItem
+class_name UtilItem
 
+@export var effect_strength: float = 1.0
+signal effect_applied
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func activate() -> void:
+	_apply_effect()
+	effect_applied.emit()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _apply_effect() -> void:
 	pass

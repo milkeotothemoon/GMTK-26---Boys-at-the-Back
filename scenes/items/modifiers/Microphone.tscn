@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://dg0wm4bp3e7vi"]
 
-[node name="Microphone" type="Node2D" unique_id=1448066468]
+[ext_resource type="Script" uid="uid://cem7nc7xpq4ek" path="res://scripts/items/modifier_item.gd" id="1_79de21"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3whau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5elyy"]
+
+[node name="Microphone" type="Area2D" unique_id=1345959028]
+script = ExtResource("1_79de21")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1825861006]
+sprite_frames = SubResource("SpriteFrames_3whau")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708265700]
+shape = SubResource("RectangleShape2D_5elyy")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

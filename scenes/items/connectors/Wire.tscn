@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://ds8crexmdulmx"]
 
-[node name="Wire" type="Node2D" unique_id=154471582]
+[ext_resource type="Script" uid="uid://dmbk2tjn1wgwq" path="res://scripts/items/connector_item.gd" id="1_og8a9a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbx9j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_azzig"]
+
+[node name="Wire" type="Area2D" unique_id=1788645963]
+script = ExtResource("1_og8a9a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=498568881]
+sprite_frames = SubResource("SpriteFrames_wbx9j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=414037461]
+shape = SubResource("RectangleShape2D_azzig")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://dj4pr3ftuubh4"]
 
+[ext_resource type="Script" uid="uid://c7mkfqnwqwwnf" path="res://scripts/autoload/BuildSpace.gd" id="1_4f4mk"]
+
 [node name="BuildSpace" type="Node2D" unique_id=1416657170]
+script = ExtResource("1_4f4mk")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=817833220]
+offset_right = 533.0
+offset_bottom = 466.0
+
+[node name="PlacedItems" type="Node2D" parent="." unique_id=228289201 groups=["placed_items_container"]]
+
+[node name="Timer" type="Timer" parent="." unique_id=462524342]

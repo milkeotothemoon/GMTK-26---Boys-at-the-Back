@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://c5dnhcimwuo1b"]
 
-[node name="Piston" type="Node2D" unique_id=1773110718]
+[ext_resource type="Script" uid="uid://bwmog8fuktmhk" path="res://scripts/items/util_item.gd" id="1_quvp8z"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qg7ii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whsy6"]
+
+[node name="Piston" type="Area2D" unique_id=1709561333]
+script = ExtResource("1_quvp8z")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=800187157]
+sprite_frames = SubResource("SpriteFrames_qg7ii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=409223932]
+shape = SubResource("RectangleShape2D_whsy6")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

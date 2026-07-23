@@ -1,3 +1,249 @@
 [gd_scene format=3 uid="uid://cy7pfol0uoa7d"]
 
-[node name="Inventory" type="Node2D" unique_id=653123002]
+[ext_resource type="Script" path="res://scripts/gameplay/inventory_slot.gd" id="1_slot"]
+[ext_resource type="PackedScene" uid="uid://dyvjtic38cebg" path="res://scenes/items/sound/Balloon.tscn" id="2_balloonslot"]
+[ext_resource type="PackedScene" uid="uid://diem7wdch32ia" path="res://scenes/items/sound/Gong.tscn" id="3_gongslot"]
+[ext_resource type="PackedScene" uid="uid://ctf2su6d3fe80" path="res://scenes/items/sound/Chicken.tscn" id="4_chickenslot"]
+[ext_resource type="PackedScene" uid="uid://dxtu3i6gck2ey" path="res://scenes/items/sound/Engine.tscn" id="5_engineslot"]
+[ext_resource type="PackedScene" uid="uid://d3ymiqhqfgq3b" path="res://scenes/items/sound/Blender.tscn" id="6_blenderslot"]
+[ext_resource type="PackedScene" uid="uid://dg0wm4bp3e7vi" path="res://scenes/items/modifiers/Microphone.tscn" id="7_microphoneslot"]
+[ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/Repeater.tscn" id="8_repeaterslot"]
+[ext_resource type="PackedScene" uid="uid://d2cjxhyokckbo" path="res://scenes/items/connectors/ConveyorBelt.tscn" id="9_conveyorbeltslot"]
+[ext_resource type="PackedScene" uid="uid://ds8crexmdulmx" path="res://scenes/items/connectors/Wire.tscn" id="10_wireslot"]
+[ext_resource type="PackedScene" uid="uid://c1y2g24pyyca0" path="res://scenes/items/connectors/Glue.tscn" id="11_glueslot"]
+[ext_resource type="PackedScene" uid="uid://b3huixd4fh3xy" path="res://scenes/items/util/Fan.tscn" id="12_fanslot"]
+[ext_resource type="PackedScene" uid="uid://c5dnhcimwuo1b" path="res://scenes/items/util/Piston.tscn" id="13_pistonslot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slot"]
+size = Vector2(90, 40)
+
+[node name="Inventory" type="Node2D" unique_id=1826844207]
+
+[node name="BalloonSlot" type="Area2D" parent="." unique_id=266157595]
+position = Vector2(20, 20)
+script = ExtResource("1_slot")
+item_scene = ExtResource("2_balloonslot")
+item_label = "Balloon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BalloonSlot" unique_id=1972760510]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="BalloonSlot" unique_id=387237968]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Balloon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GongSlot" type="Area2D" parent="." unique_id=1783663871]
+position = Vector2(20, 70)
+script = ExtResource("1_slot")
+item_scene = ExtResource("3_gongslot")
+item_label = "Gong"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GongSlot" unique_id=1789047034]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="GongSlot" unique_id=927071552]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Gong"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChickenSlot" type="Area2D" parent="." unique_id=746638961]
+position = Vector2(20, 120)
+script = ExtResource("1_slot")
+item_scene = ExtResource("4_chickenslot")
+item_label = "Chicken"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChickenSlot" unique_id=657302846]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="ChickenSlot" unique_id=1894407266]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Chicken"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EngineSlot" type="Area2D" parent="." unique_id=766071034]
+position = Vector2(20, 170)
+script = ExtResource("1_slot")
+item_scene = ExtResource("5_engineslot")
+item_label = "Engine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EngineSlot" unique_id=2001076642]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="EngineSlot" unique_id=1213523202]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Engine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlenderSlot" type="Area2D" parent="." unique_id=1407858912]
+position = Vector2(20, 220)
+script = ExtResource("1_slot")
+item_scene = ExtResource("6_blenderslot")
+item_label = "Blender"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlenderSlot" unique_id=564115886]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="BlenderSlot" unique_id=162533661]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Blender"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MicrophoneSlot" type="Area2D" parent="." unique_id=763185001]
+position = Vector2(20, 270)
+script = ExtResource("1_slot")
+item_scene = ExtResource("7_microphoneslot")
+item_label = "Microphone"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MicrophoneSlot" unique_id=1188838994]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="MicrophoneSlot" unique_id=771731535]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Microphone"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RepeaterSlot" type="Area2D" parent="." unique_id=1710316631]
+position = Vector2(20, 320)
+script = ExtResource("1_slot")
+item_scene = ExtResource("8_repeaterslot")
+item_label = "Repeater"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RepeaterSlot" unique_id=1621974004]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="RepeaterSlot" unique_id=808997456]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Repeater"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConveyorBeltSlot" type="Area2D" parent="." unique_id=781582942]
+position = Vector2(20, 370)
+script = ExtResource("1_slot")
+item_scene = ExtResource("9_conveyorbeltslot")
+item_label = "Conveyor Belt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBeltSlot" unique_id=1256041094]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="ConveyorBeltSlot" unique_id=1989336242]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Conveyor Belt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WireSlot" type="Area2D" parent="." unique_id=1639591483]
+position = Vector2(20, 420)
+script = ExtResource("1_slot")
+item_scene = ExtResource("10_wireslot")
+item_label = "Wire"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WireSlot" unique_id=400732786]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="WireSlot" unique_id=370590173]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Wire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GlueSlot" type="Area2D" parent="." unique_id=2114245709]
+position = Vector2(20, 470)
+script = ExtResource("1_slot")
+item_scene = ExtResource("11_glueslot")
+item_label = "Glue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlueSlot" unique_id=614868504]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="GlueSlot" unique_id=1676112923]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Glue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FanSlot" type="Area2D" parent="." unique_id=809936773]
+position = Vector2(20, 520)
+script = ExtResource("1_slot")
+item_scene = ExtResource("12_fanslot")
+item_label = "Fan"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FanSlot" unique_id=1297679936]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="FanSlot" unique_id=1875431870]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Fan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PistonSlot" type="Area2D" parent="." unique_id=378960894]
+position = Vector2(20, 570)
+script = ExtResource("1_slot")
+item_scene = ExtResource("13_pistonslot")
+item_label = "Piston"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PistonSlot" unique_id=974405306]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Label" type="Label" parent="PistonSlot" unique_id=1379914339]
+offset_left = -45.0
+offset_top = -10.0
+offset_right = 45.0
+offset_bottom = 10.0
+text = "Piston"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="input_event" from="BalloonSlot" to="BalloonSlot" method="_on_input_event"]
+[connection signal="input_event" from="GongSlot" to="GongSlot" method="_on_input_event"]
+[connection signal="input_event" from="ChickenSlot" to="ChickenSlot" method="_on_input_event"]
+[connection signal="input_event" from="EngineSlot" to="EngineSlot" method="_on_input_event"]
+[connection signal="input_event" from="BlenderSlot" to="BlenderSlot" method="_on_input_event"]
+[connection signal="input_event" from="MicrophoneSlot" to="MicrophoneSlot" method="_on_input_event"]
+[connection signal="input_event" from="RepeaterSlot" to="RepeaterSlot" method="_on_input_event"]
+[connection signal="input_event" from="ConveyorBeltSlot" to="ConveyorBeltSlot" method="_on_input_event"]
+[connection signal="input_event" from="WireSlot" to="WireSlot" method="_on_input_event"]
+[connection signal="input_event" from="GlueSlot" to="GlueSlot" method="_on_input_event"]
+[connection signal="input_event" from="FanSlot" to="FanSlot" method="_on_input_event"]
+[connection signal="input_event" from="PistonSlot" to="PistonSlot" method="_on_input_event"]

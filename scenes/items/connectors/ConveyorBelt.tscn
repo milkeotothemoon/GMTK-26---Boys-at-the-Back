@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://d2cjxhyokckbo"]
 
-[node name="ConveyorBelt" type="Node2D" unique_id=1948747207]
+[ext_resource type="Script" uid="uid://dmbk2tjn1wgwq" path="res://scripts/items/connector_item.gd" id="1_25ik91"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0t6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kc610"]
+
+[node name="ConveyorBelt" type="Area2D" unique_id=660337253]
+script = ExtResource("1_25ik91")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=799896899]
+sprite_frames = SubResource("SpriteFrames_q0t6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=873420598]
+shape = SubResource("RectangleShape2D_kc610")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

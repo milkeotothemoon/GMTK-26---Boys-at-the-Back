@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://dgpp5lqbbanyq"]
 
-[node name="Repeater" type="Node2D" unique_id=802214986]
+[ext_resource type="Script" uid="uid://cem7nc7xpq4ek" path="res://scripts/items/modifier_item.gd" id="1_opau5g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1490n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a8l0"]
+
+[node name="Repeater" type="Area2D" unique_id=369589196]
+script = ExtResource("1_opau5g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1955952460]
+sprite_frames = SubResource("SpriteFrames_1490n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=654832747]
+shape = SubResource("RectangleShape2D_7a8l0")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

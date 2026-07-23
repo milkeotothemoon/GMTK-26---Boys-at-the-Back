@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://c1y2g24pyyca0"]
 
-[node name="Glue" type="Node2D" unique_id=1679052901]
+[ext_resource type="Script" uid="uid://dmbk2tjn1wgwq" path="res://scripts/items/connector_item.gd" id="1_1rc31t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_txm0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqq2g"]
+
+[node name="Glue" type="Area2D" unique_id=1220715943]
+script = ExtResource("1_1rc31t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2091491305]
+sprite_frames = SubResource("SpriteFrames_txm0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579620831]
+shape = SubResource("RectangleShape2D_iqq2g")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
