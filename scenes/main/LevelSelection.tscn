@@ -6,29 +6,53 @@
 script = ExtResource("1_080wy")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=138806955]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="Level0Button" type="Button" parent="." unique_id=731248022]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 844.0
+offset_top = 168.0
+offset_right = 1150.2949
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 100
+text = "0"
 
 [node name="Level1Button" type="Button" parent="." unique_id=47895419]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 542.0
+offset_top = 487.0
+offset_right = 700.295
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 100
+text = "1"
 
 [node name="Level2Button" type="Button" parent="." unique_id=573031662]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1198.0
+offset_top = 547.0
+offset_right = 1653.2949
+offset_bottom = 904.0
+theme_override_font_sizes/font_size = 100
+text = "2"
 
 [node name="Level3Button" type="Button" parent="." unique_id=1395010402]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 156.0
+offset_top = 773.0
+offset_right = 397.29498
+offset_bottom = 949.0
+theme_override_font_sizes/font_size = 100
+text = "3"
 
 [node name="Level4Button" type="Button" parent="." unique_id=1245289366]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 67.705
+offset_right = 264.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 100
+text = "4"
 
 [node name="Level5Button" type="Button" parent="." unique_id=116088372]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1316.0
+offset_top = 108.0
+offset_right = 1756.2949
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 100
+text = "5"

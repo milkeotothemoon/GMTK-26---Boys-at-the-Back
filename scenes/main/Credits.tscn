@@ -2,17 +2,37 @@
 
 [ext_resource type="Script" uid="uid://cx4m5gq36hn" path="res://scripts/main/credits.gd" id="1_4lkuw"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_4lkuw"]
+font_size = 133
+
 [node name="Credits" type="Node2D" unique_id=926278047]
 script = ExtResource("1_4lkuw")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=290900540]
+custom_minimum_size = Vector2(1920, 1080)
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ThankYouLabel" type="Label" parent="." unique_id=1918821319]
-offset_right = 40.0
-offset_bottom = 23.0
+custom_minimum_size = Vector2(1920, 800)
+offset_top = 22.0
+offset_right = 1920.0
+offset_bottom = 822.0
+text = "Credits:
+1 and 2
+3 and 4
+5 and 6"
+label_settings = SubResource("LabelSettings_4lkuw")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="BackButton" type="Button" parent="." unique_id=1084523543]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 146.0
+offset_top = 866.0
+offset_right = 555.0
+offset_bottom = 989.0
+theme_override_font_sizes/font_size = 61
+text = "Go Back Ahh"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

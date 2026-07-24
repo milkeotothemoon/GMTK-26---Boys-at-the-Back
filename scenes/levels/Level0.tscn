@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dj4pr3ftuubh4" path="res://scenes/gameplay/BuildSpace.tscn" id="1_xh834"]
 [ext_resource type="PackedScene" uid="uid://cy7pfol0uoa7d" path="res://scenes/gameplay/Inventory.tscn" id="2_inventory"]
 [ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/player/Player.tscn" id="3_player"]
+[ext_resource type="PackedScene" uid="uid://roujawpulhr7" path="res://scenes/gameplay/RunPhaseController.tscn" id="5_in5bs"]
+[ext_resource type="PackedScene" uid="uid://b1alhoqjw6dc2" path="res://scenes/gameplay/ScoreHUD.tscn" id="6_in5bs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75xeh"]
 bg_color = Color(0, 0, 0, 1)
@@ -14,55 +16,84 @@ corner_radius_bottom_left = 200
 corner_detail = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_75xeh"]
-font_size = 123
+font_size = 244
+
+[sub_resource type="GDScript" id="GDScript_rbe81"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_level_0_build_locked() -> void:
+	pass # Replace with function body.
+
+
+func start_run() -> void:
+	pass # Replace with function body.
+"
 
 [node name="Level0" type="Node2D" unique_id=250843063]
 script = ExtResource("1_qcr8a")
 
 [node name="Inventory" parent="." unique_id=653123002 instance=ExtResource("2_inventory")]
-position = Vector2(336, 550)
+position = Vector2(692, 952.42)
 
 [node name="BuildSpace" parent="." unique_id=1416657170 instance=ExtResource("1_xh834")]
-position = Vector2(391, 89)
+position = Vector2(635, 214)
 
 [node name="Player" parent="." unique_id=1845645343 instance=ExtResource("3_player")]
-position = Vector2(290, 473)
+position = Vector2(461, 816)
 
 [node name="Timer" type="Timer" parent="." unique_id=846573383]
 
 [node name="TimerDisplay" type="HBoxContainer" parent="." unique_id=787711431]
-offset_left = 542.0
-offset_top = 10.0
-offset_right = 666.0
-offset_bottom = 91.0
+offset_left = 869.0
+offset_top = 40.0
+offset_right = 1073.0
+offset_bottom = 205.0
 
 [node name="DigitSec1" type="TextureRect" parent="TimerDisplay" unique_id=225946883]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="DigitSec0" type="TextureRect" parent="TimerDisplay" unique_id=1190959607]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="." unique_id=2058796264]
-offset_left = 933.0
-offset_top = -185.0
-offset_right = 1333.0
-offset_bottom = 215.0
+offset_left = 1593.0
+offset_top = -94.0
+offset_right = 1993.0
+offset_bottom = 306.0
 size_flags_stretch_ratio = 0.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_75xeh")
 
 [node name="LevelLabel" type="Label" parent="Panel" unique_id=1346164908]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 185.0
-offset_right = 212.0
-offset_bottom = 354.0
+offset_left = 47.0
+offset_top = 64.0
+offset_right = 286.0
+offset_bottom = 397.0
 text = "#"
 label_settings = SubResource("LabelSettings_75xeh")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RunPhaseController" parent="." unique_id=832782929 instance=ExtResource("5_in5bs")]
+script = SubResource("GDScript_rbe81")
+
+[node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
+
+[connection signal="build_locked" from="." to="RunPhaseController" method="start_run"]

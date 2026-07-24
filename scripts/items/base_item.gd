@@ -32,6 +32,10 @@ func _process(_delta: float) -> void:
 		if view:
 			view.clear_highlight()
 
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if is_placed and event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		queue_free()
+
 func _try_drop() -> void:
 	var cell := BuildSpace.world_to_grid(position)
 	if BuildSpace.is_valid_cell(cell):

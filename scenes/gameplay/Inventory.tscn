@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c5dnhcimwuo1b" path="res://scenes/items/util/Piston.tscn" id="13_pistonslot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slot"]
-size = Vector2(90, 40)
+size = Vector2(50, 50)
 
 [node name="Inventory" type="Node2D" unique_id=1826844207]
 
@@ -36,9 +36,10 @@ offset_bottom = 10.0
 text = "Balloon"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="GongSlot" type="Area2D" parent="." unique_id=1783663871]
-position = Vector2(120, 20)
+position = Vector2(80, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("3_gongslot")
 item_label = "Gong"
@@ -54,9 +55,10 @@ offset_bottom = 10.0
 text = "Gong"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ChickenSlot" type="Area2D" parent="." unique_id=746638961]
-position = Vector2(220, 20)
+position = Vector2(140, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("4_chickenslot")
 item_label = "Chicken"
@@ -72,9 +74,10 @@ offset_bottom = 10.0
 text = "Chicken"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="EngineSlot" type="Area2D" parent="." unique_id=766071034]
-position = Vector2(320, 20)
+position = Vector2(200, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("5_engineslot")
 item_label = "Engine"
@@ -90,9 +93,10 @@ offset_bottom = 10.0
 text = "Engine"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BlenderSlot" type="Area2D" parent="." unique_id=1407858912]
-position = Vector2(420, 20)
+position = Vector2(260, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("6_blenderslot")
 item_label = "Blender"
@@ -108,9 +112,10 @@ offset_bottom = 10.0
 text = "Blender"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="MicrophoneSlot" type="Area2D" parent="." unique_id=763185001]
-position = Vector2(520, 20)
+position = Vector2(320, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("7_microphoneslot")
 item_label = "Microphone"
@@ -126,27 +131,29 @@ offset_bottom = 10.0
 text = "Microphone"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="RepeaterSlot" type="Area2D" parent="." unique_id=1710316631]
-position = Vector2(20, 70)
+[node name="CasetteTapeSlot" type="Area2D" parent="." unique_id=1710316631]
+position = Vector2(20, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("8_repeaterslot")
 item_label = "Repeater"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RepeaterSlot" unique_id=1621974004]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CasetteTapeSlot" unique_id=1621974004]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="RepeaterSlot" unique_id=808997456]
+[node name="Label" type="Label" parent="CasetteTapeSlot" unique_id=808997456]
 offset_left = -45.0
 offset_top = -10.0
 offset_right = 45.0
 offset_bottom = 10.0
-text = "Repeater"
+text = "Casette Tape"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ConveyorBeltSlot" type="Area2D" parent="." unique_id=781582942]
-position = Vector2(120, 70)
+position = Vector2(80, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("9_conveyorbeltslot")
 item_label = "Conveyor Belt"
@@ -162,9 +169,10 @@ offset_bottom = 10.0
 text = "Conveyor Belt"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="WireSlot" type="Area2D" parent="." unique_id=1639591483]
-position = Vector2(220, 70)
+position = Vector2(140, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("10_wireslot")
 item_label = "Wire"
@@ -180,9 +188,10 @@ offset_bottom = 10.0
 text = "Wire"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="GlueSlot" type="Area2D" parent="." unique_id=2114245709]
-position = Vector2(320, 70)
+position = Vector2(200, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("11_glueslot")
 item_label = "Glue"
@@ -198,9 +207,10 @@ offset_bottom = 10.0
 text = "Glue"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="FanSlot" type="Area2D" parent="." unique_id=809936773]
-position = Vector2(420, 70)
+position = Vector2(260, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("12_fanslot")
 item_label = "Fan"
@@ -216,9 +226,10 @@ offset_bottom = 10.0
 text = "Fan"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="PistonSlot" type="Area2D" parent="." unique_id=378960894]
-position = Vector2(520, 70)
+position = Vector2(320, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("13_pistonslot")
 item_label = "Piston"
@@ -234,6 +245,7 @@ offset_bottom = 10.0
 text = "Piston"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="input_event" from="BalloonSlot" to="BalloonSlot" method="_on_input_event"]
 [connection signal="input_event" from="GongSlot" to="GongSlot" method="_on_input_event"]
@@ -241,7 +253,7 @@ vertical_alignment = 1
 [connection signal="input_event" from="EngineSlot" to="EngineSlot" method="_on_input_event"]
 [connection signal="input_event" from="BlenderSlot" to="BlenderSlot" method="_on_input_event"]
 [connection signal="input_event" from="MicrophoneSlot" to="MicrophoneSlot" method="_on_input_event"]
-[connection signal="input_event" from="RepeaterSlot" to="RepeaterSlot" method="_on_input_event"]
+[connection signal="input_event" from="CasetteTapeSlot" to="CasetteTapeSlot" method="_on_input_event"]
 [connection signal="input_event" from="ConveyorBeltSlot" to="ConveyorBeltSlot" method="_on_input_event"]
 [connection signal="input_event" from="WireSlot" to="WireSlot" method="_on_input_event"]
 [connection signal="input_event" from="GlueSlot" to="GlueSlot" method="_on_input_event"]

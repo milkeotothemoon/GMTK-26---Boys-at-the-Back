@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not result_panel.visible:
-		score_label.text = "%.0f dB" % AudioManager.current_decibels
+		score_label.text = "%.0f dB" % AudioManager.decibel_total
 
 func show_result(star_count: int) -> void:
 	_star_count = star_count

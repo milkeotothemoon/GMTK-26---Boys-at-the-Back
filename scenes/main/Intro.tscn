@@ -5,4 +5,8 @@
 [node name="Intro" type="Node2D" unique_id=27169360]
 script = ExtResource("1_ehhfn")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2043938016]
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=13295926]
+offset_right = 1920.0
+offset_bottom = 1080.0
+autoplay = true
+expand = true

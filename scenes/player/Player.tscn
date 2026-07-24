@@ -15,16 +15,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o8nba"]
-radius = 46.0
-height = 98.0
+radius = 76.0
+height = 204.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1845645343]
 script = ExtResource("1_gfjak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1675163017]
-scale = Vector2(0.8125, 0.83984375)
+position = Vector2(22.5, -49.125004)
+scale = Vector2(1.1640625, 1.6074219)
 sprite_frames = SubResource("SpriteFrames_75xeh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309464553]
-position = Vector2(-1, -1)
+position = Vector2(24, -54)
 shape = SubResource("CapsuleShape2D_o8nba")
