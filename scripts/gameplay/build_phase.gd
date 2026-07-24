@@ -14,7 +14,10 @@ func _ready() -> void:
 
 func start_build_phase() -> void:
 	GameState.is_build_locked = false
-	get_tree().get_first_node_in_group("sleeper_portrait").reset_to_sleeping()
+	var portrait = get_tree().get_first_node_in_group("sleeper_portrait")
+	print("Portrait:", portrait)
+	if portrait:
+		portrait.reset_to_sleeping()
 	timer.start(60.0)
 
 func _process(_delta: float) -> void:
