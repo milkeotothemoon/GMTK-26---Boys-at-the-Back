@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var video_player: VideoStreamPlayer = $VideoPlayer
 
+var _leaving: bool = false
+
 func _ready() -> void:
 	video_player.finished.connect(_go_to_home)
 
@@ -10,4 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_go_to_home()
 
 func _go_to_home() -> void:
+	if _leaving:
+		return
+	_leaving = true
 	get_tree().change_scene_to_file.call_deferred("res://scenes/main/Home.tscn")

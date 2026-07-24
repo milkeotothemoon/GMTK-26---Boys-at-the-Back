@@ -3,6 +3,7 @@ extends GridContainer
 var _cells: Array[Panel] = []
 var _base_style: StyleBoxFlat
 var _hover_style: StyleBoxFlat
+var _blocked_style: StyleBoxFlat
 
 func _ready() -> void:
 	add_to_group("build_space_view")
@@ -20,6 +21,9 @@ func _ready() -> void:
 
 	_hover_style = _base_style.duplicate()
 	_hover_style.bg_color = Color(0.5, 0.5, 0.5, 0.5)
+	
+	_blocked_style = _base_style.duplicate()
+	_blocked_style.bg_color = Color(0.8, 0.2, 0.2, 0.5)
 
 	for i in range(GridUtils.GRID_WIDTH * GridUtils.GRID_HEIGHT):
 		var cell := Panel.new()
@@ -34,6 +38,12 @@ func highlight_cell(cell: Vector2i) -> void:
 	var index := cell.y * GridUtils.GRID_WIDTH + cell.x
 	if index >= 0 and index < _cells.size():
 		_cells[index].add_theme_stylebox_override("panel", _hover_style)
+
+func highlight_cell_blocked(cell: Vector2i) -> void:
+	clear_highlight()
+	var index := cell.y * GridUtils.GRID_WIDTH + cell.x
+	if index >= 0 and index < _cells.size():
+		_cells[index].add_theme_stylebox_override("panel", _blocked_style)
 
 func clear_highlight() -> void:
 	for cell in _cells:

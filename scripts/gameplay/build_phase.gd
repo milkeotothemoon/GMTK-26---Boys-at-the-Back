@@ -22,6 +22,8 @@ func start_build_phase() -> void:
 	timer.start(60.0)
 
 func _process(_delta: float) -> void:
+	if GameState.is_build_locked:
+		return
 	var seconds := int(ceil(timer.time_left))
 	if seconds < 0:
 		seconds = 0

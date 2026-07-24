@@ -40,6 +40,7 @@ position = Vector2(635, 214)
 position = Vector2(461, 816)
 
 [node name="Timer" type="Timer" parent="." unique_id=846573383]
+one_shot = true
 
 [node name="TimerDisplay" type="HBoxContainer" parent="." unique_id=787711431]
 offset_left = 869.0

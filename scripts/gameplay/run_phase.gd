@@ -29,14 +29,50 @@ func start_run() -> void:
 		if child is UtilItem:
 			child.activate()
 
-	for item in _active_sound_items.duplicate():
-		_trigger_sound_item(item)
+	_run_chain()
+
+func _run_chain() -> void:
+	var remaining := _active_sound_items.duplicate()
+	var connectors: Array[ConnectorItem] = []
+	for child in _placed_items.get_children():
+		if child is ConnectorItem and child.is_placed:
+			connectors.append(child)
+
+	while not remaining.is_empty():
+		var current: SoundItem = remaining.pop_front()
+		_trigger_sound_item(current)
+
+		# Follow any connector out of this item to the next sound item.
+		var hop_delay := -1.0
+		var next_item: SoundItem = null
+		for c in connectors:
+			for candidate in remaining:
+				if c.links(current, candidate):
+					next_item = candidate
+					hop_delay = c.link_delay
+					break
+			if next_item != null:
+				break
+
+		if next_item != null:
+			remaining.erase(next_item)
+			remaining.push_front(next_item)
+			if hop_delay > 0.0:
+				await get_tree().create_timer(hop_delay).timeout
+		else:
+			# No connector out of this item — brief pause before the next
+			# unconnected group so the run has an audible rhythm.
+			if not remaining.is_empty():
+				await get_tree().create_timer(0.25).timeout
 
 func _trigger_sound_item(item: SoundItem) -> void:
 	var mult := 1.0
 	for sibling in _placed_items.get_children():
 		if sibling is ModifierItem and sibling.attached_to == item:
 			mult *= 1.5
+		elif sibling is ConnectorItem and sibling.is_placed:
+			if sibling.grid_position.distance_to(item.grid_position) <= 1.5:
+				mult *= 1.25
 	AudioManager.combo_multiplier = mult
 	AudioManager.add_decibels(item.decibel_value)
 	item.trigger()
