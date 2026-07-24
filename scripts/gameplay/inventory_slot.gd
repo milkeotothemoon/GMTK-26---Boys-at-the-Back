@@ -3,14 +3,48 @@ class_name InventorySlot
 
 @export var item_scene: PackedScene
 @export var item_label: String = ""
+@export var item_id: String = ""
 @export var is_locked: bool = false
+
+var _lock_overlay: Label = null
 
 func _ready() -> void:
 	var lbl := get_node_or_null("Label")
 	if lbl:
 		lbl.text = _get_initials(item_label)
+
+	_resolve_lock_state()
+
 	if is_locked:
 		modulate = Color(0.45, 0.45, 0.45, 0.6)
+		_add_lock_overlay()
+
+func _resolve_lock_state() -> void:
+	# An explicit is_locked = true in the scene always wins.
+	if is_locked:
+		return
+	var cfg: LevelConfig = LevelData.active_config
+	if cfg == null:
+		return
+	# Empty allowed list means "everything is available this level".
+	if cfg.allowed_item_ids.is_empty():
+		return
+	var id := item_id if item_id != "" else item_label.to_lower()
+	is_locked = not (id in cfg.allowed_item_ids)
+
+func _add_lock_overlay() -> void:
+	_lock_overlay = Label.new()
+	_lock_overlay.text = "🔒"
+	_lock_overlay.add_theme_font_size_override("font_size", 28)
+	_lock_overlay.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_lock_overlay.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_lock_overlay.offset_left = -25.0
+	_lock_overlay.offset_top = -45.0
+	_lock_overlay.offset_right = 25.0
+	_lock_overlay.offset_bottom = -15.0
+	_lock_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_lock_overlay.modulate = Color(1, 1, 1, 1)
+	add_child(_lock_overlay)
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if is_locked or GameState.is_build_locked:

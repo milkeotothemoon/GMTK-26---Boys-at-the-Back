@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var _active_sound_items: Array[SoundItem] = []
 var _run_started: bool = false
@@ -25,7 +25,11 @@ func start_run() -> void:
 		_finish_run()
 		return
 
-	for item in _active_sound_items:
+	for child in _placed_items.get_children():
+		if child is UtilItem:
+			child.activate()
+
+	for item in _active_sound_items.duplicate():
 		_trigger_sound_item(item)
 
 func _trigger_sound_item(item: SoundItem) -> void:
@@ -50,7 +54,3 @@ func _finish_run() -> void:
 	var score_hud := get_tree().get_first_node_in_group("score_hud")
 	if score_hud:
 		score_hud.show_result(star_count)
-
-
-func _on_level_0_build_locked() -> void:
-	pass # Replace with function body.

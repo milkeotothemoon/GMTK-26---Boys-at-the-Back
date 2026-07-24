@@ -16,9 +16,9 @@ func clear_highlight() -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	var w := BuildSpace.GRID_WIDTH
-	var h := BuildSpace.GRID_HEIGHT
-	var cs := BuildSpace.CELL_SIZE
+	var w := GridUtils.GRID_WIDTH
+	var h := GridUtils.GRID_HEIGHT
+	var cs := GridUtils.CELL_SIZE
 	for x in range(w + 1):
 		draw_line(Vector2(x * cs, 0), Vector2(x * cs, h * cs), Color.BLACK, 2)
 	for y in range(h + 1):

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw61a3gl3e3l7"
-path="res://.godot/imported/star_empty.png-c3d90a95828e48807047139aef446409.ctex"
+path="res://.godot/imported/star_empty.png-2df93a51cf1e1afdc511a121f065330b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/star_empty.png"
-dest_files=["res://.godot/imported/star_empty.png-c3d90a95828e48807047139aef446409.ctex"]
+source_file="res://assets/sprites/ui/star_empty.png"
+dest_files=["res://.godot/imported/star_empty.png-2df93a51cf1e1afdc511a121f065330b.ctex"]
 
 [params]
 

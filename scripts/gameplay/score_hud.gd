@@ -11,8 +11,8 @@ extends Control
 @onready var primary_button: Button = $ResultPanel/PrimaryButton
 @onready var secondary_button: Button = $ResultPanel/SecondaryButton
 
-var star_filled: Texture2D = preload("res://assets/sprites/star_filled.png")
-var star_empty: Texture2D = preload("res://assets/sprites/star_empty.png")
+var star_filled: Texture2D = preload("res://assets/sprites/ui/star_filled.png")
+var star_empty: Texture2D = preload("res://assets/sprites/ui/star_empty.png")
 
 var _star_count: int = 0
 

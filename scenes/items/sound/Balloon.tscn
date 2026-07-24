@@ -8,6 +8,8 @@
 
 [node name="Balloon" type="Area2D" unique_id=1016711131]
 script = ExtResource("1_wki06")
+item_id = "balloon"
+decibel_value = 8.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=411121538]
 sprite_frames = SubResource("SpriteFrames_75xeh")

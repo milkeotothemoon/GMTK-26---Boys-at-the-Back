@@ -8,6 +8,7 @@
 
 [node name="Fan" type="Area2D" unique_id=2026996357]
 script = ExtResource("1_kncku9")
+item_id = "fan"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=555126865]
 sprite_frames = SubResource("SpriteFrames_0jaqn")

@@ -10,11 +10,15 @@ func _ready() -> void:
 	level_label.text = "%d" % GameState.current_level_index
 	for i in range(10):
 		_digit_textures.append(load("res://assets/fonts/digits/digit_%d.png" % i))
+	if LevelData.active_config == null:
+		LevelData.load_level(GameState.current_level_index)
 	start_build_phase()
 
 func start_build_phase() -> void:
 	GameState.is_build_locked = false
-	get_tree().get_first_node_in_group("sleeper_portrait").reset_to_sleeping()
+	var sleeper := get_tree().get_first_node_in_group("sleeper_portrait")
+	if sleeper:
+		sleeper.reset_to_sleeping()
 	timer.start(60.0)
 
 func _process(_delta: float) -> void:

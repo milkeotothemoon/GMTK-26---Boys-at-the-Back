@@ -8,6 +8,7 @@
 
 [node name="Wire" type="Area2D" unique_id=1788645963]
 script = ExtResource("1_og8a9a")
+item_id = "wire"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=498568881]
 sprite_frames = SubResource("SpriteFrames_wbx9j")

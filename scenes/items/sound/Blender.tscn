@@ -8,6 +8,8 @@
 
 [node name="Blender" type="Area2D" unique_id=1839182674]
 script = ExtResource("1_j7bthk")
+item_id = "blender"
+decibel_value = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062309702]
 sprite_frames = SubResource("SpriteFrames_aymtw")

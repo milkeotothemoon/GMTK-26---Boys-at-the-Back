@@ -42,17 +42,7 @@ offset_bottom = 949.0
 theme_override_font_sizes/font_size = 100
 text = "3"
 
-[node name="Level4Button" type="Button" parent="." unique_id=1245289366]
-offset_left = 67.705
-offset_right = 264.0
-offset_bottom = 334.0
-theme_override_font_sizes/font_size = 100
-text = "4"
-
-[node name="Level5Button" type="Button" parent="." unique_id=116088372]
-offset_left = 1316.0
-offset_top = 108.0
-offset_right = 1756.2949
-offset_bottom = 269.0
-theme_override_font_sizes/font_size = 100
-text = "5"
+[connection signal="pressed" from="Level0Button" to="." method="_select_level" binds= [0]]
+[connection signal="pressed" from="Level1Button" to="." method="_select_level" binds= [1]]
+[connection signal="pressed" from="Level2Button" to="." method="_select_level" binds= [2]]
+[connection signal="pressed" from="Level3Button" to="." method="_select_level" binds= [3]]

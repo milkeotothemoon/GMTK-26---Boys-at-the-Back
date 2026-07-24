@@ -8,6 +8,8 @@
 
 [node name="Gong" type="Area2D" unique_id=1167040234]
 script = ExtResource("1_09s3kc")
+item_id = "gong"
+decibel_value = 25.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1842243052]
 sprite_frames = SubResource("SpriteFrames_7xcvr")

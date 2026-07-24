@@ -93,3 +93,4 @@ position = Vector2(268, 93)
 [node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
 
 [connection signal="build_locked" from="." to="RunPhaseController" method="start_run"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -4,3 +4,7 @@
 
 [resource]
 script = ExtResource("1_ix3ej")
+item_cap = 6
+allowed_item_ids = Array[String](["balloon", "gong", "chicken", "microphone"])
+star1_threshold_db = 40.0
+star3_threshold_db = 80.0
