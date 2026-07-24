@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://bfsgb4n3srmad"]
 
+[ext_resource type="Script" uid="uid://ma38pgs56c8s" path="res://scripts/main/intro.gd" id="1_ehhfn"]
+
 [node name="Intro" type="Node2D" unique_id=27169360]
+script = ExtResource("1_ehhfn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2043938016]

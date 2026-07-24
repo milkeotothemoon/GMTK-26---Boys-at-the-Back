@@ -8,13 +8,13 @@
 script = ExtResource("1_4f4mk")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1273156104]
-offset_right = 480.0
-offset_bottom = 480.0
+offset_right = 430.0
+offset_bottom = 430.0
 texture = ExtResource("2_2bb0f")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=817833220]
-offset_right = 500.0
-offset_bottom = 500.0
+offset_right = 450.0
+offset_bottom = 450.0
 script = ExtResource("2_ky76c")
 
 [node name="PlacedItems" type="Node2D" parent="." unique_id=228289201 groups=["placed_items_container"]]

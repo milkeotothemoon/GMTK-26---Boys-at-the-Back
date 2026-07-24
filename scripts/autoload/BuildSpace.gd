@@ -1,6 +1,6 @@
 extends Node2D
 
-const CELL_SIZE := 48
+const CELL_SIZE := 43
 const GRID_WIDTH := 10
 const GRID_HEIGHT := 10
 

@@ -5,11 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cy7pfol0uoa7d" path="res://scenes/gameplay/Inventory.tscn" id="2_inventory"]
 [ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/player/Player.tscn" id="3_player"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0l7rd"]
-font_size = 20
-outline_size = 18
-outline_color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75xeh"]
 bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 200
@@ -28,23 +23,30 @@ script = ExtResource("1_qcr8a")
 position = Vector2(336, 550)
 
 [node name="BuildSpace" parent="." unique_id=1416657170 instance=ExtResource("1_xh834")]
-position = Vector2(369, 47)
+position = Vector2(391, 89)
 
 [node name="Player" parent="." unique_id=1845645343 instance=ExtResource("3_player")]
 position = Vector2(290, 473)
 
 [node name="Timer" type="Timer" parent="." unique_id=846573383]
 
-[node name="TimerLabel" type="Label" parent="." unique_id=1048577364]
-offset_left = 570.0
-offset_top = -3.0
-offset_right = 653.0
-offset_bottom = 42.0
-size_flags_horizontal = 4
-text = "1:00"
-label_settings = SubResource("LabelSettings_0l7rd")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="TimerDisplay" type="HBoxContainer" parent="." unique_id=787711431]
+offset_left = 542.0
+offset_top = 10.0
+offset_right = 666.0
+offset_bottom = 91.0
+
+[node name="DigitSec1" type="TextureRect" parent="TimerDisplay" unique_id=225946883]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DigitSec0" type="TextureRect" parent="TimerDisplay" unique_id=1190959607]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="." unique_id=2058796264]
 offset_left = 933.0
@@ -60,7 +62,7 @@ offset_left = 53.0
 offset_top = 185.0
 offset_right = 212.0
 offset_bottom = 354.0
-text = "##"
+text = "#"
 label_settings = SubResource("LabelSettings_75xeh")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -3,11 +3,13 @@ extends Node2D
 signal build_locked
 
 @onready var timer: Timer = $Timer
-@onready var timer_label: Label = $TimerLabel
 @onready var level_label: Label = $Panel/LevelLabel
+var _digit_textures: Array[Texture2D] = []
 
 func _ready() -> void:
-	level_label.text = "%02d" % GameState.current_level_index
+	level_label.text = "%d" % GameState.current_level_index
+	for i in range(10):
+		_digit_textures.append(load("res://assets/fonts/digits/digit_%d.png" % i))
 	start_build_phase()
 
 func start_build_phase() -> void:
@@ -19,9 +21,11 @@ func _process(_delta: float) -> void:
 	if seconds < 0:
 		seconds = 0
 	@warning_ignore("integer_division")
-	timer_label.text = "%02d:%02d" % [seconds / 60, seconds % 60]
+	$TimerDisplay/DigitSec1.texture = _digit_textures[(seconds / 10) % 10]
+	$TimerDisplay/DigitSec0.texture = _digit_textures[seconds % 10]
 
 func _on_timer_timeout() -> void:
 	GameState.is_build_locked = true
-	timer_label.text = "00:00"
+	$TimerDisplay/DigitSec1.texture = _digit_textures[0]
+	$TimerDisplay/DigitSec0.texture = _digit_textures[0]
 	build_locked.emit()

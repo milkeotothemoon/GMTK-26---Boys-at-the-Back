@@ -1,3 +1,48 @@
 [gd_scene format=3 uid="uid://b1alhoqjw6dc2"]
 
-[node name="ScoreHud" type="Node2D" unique_id=400277662]
+[ext_resource type="Script" uid="uid://c5k6mso02i05p" path="res://scripts/gameplay/score_hud.gd" id="1_s550n"]
+
+[node name="ScoreHUD" type="Control" unique_id=926461996]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s550n")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=945635711]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ResultPanel" type="Panel" parent="." unique_id=951937745]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResultLabel" type="Label" parent="ResultPanel" unique_id=1893057800]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultPanel" unique_id=404116662]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Star1" type="TextureRect" parent="ResultPanel/HBoxContainer" unique_id=2079227812]
+layout_mode = 2
+
+[node name="Star2" type="TextureRect" parent="ResultPanel/HBoxContainer" unique_id=744681865]
+layout_mode = 2
+
+[node name="Star3" type="TextureRect" parent="ResultPanel/HBoxContainer" unique_id=339753283]
+layout_mode = 2
+
+[node name="PrimaryButton" type="Button" parent="ResultPanel" unique_id=733201284]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 8.0
+offset_bottom = 10.0
+
+[node name="SecondaryButton" type="Button" parent="ResultPanel" unique_id=162518020]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://2wdvmc5mrbxw"]
 
+[ext_resource type="Script" uid="uid://ddw4s6x8ce4et" path="res://scripts/main/level_selection.gd" id="1_080wy"]
+
 [node name="LevelSelection" type="Node2D" unique_id=70987566]
+script = ExtResource("1_080wy")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=138806955]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level0Button" type="Button" parent="." unique_id=731248022]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Level1Button" type="Button" parent="." unique_id=47895419]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Level2Button" type="Button" parent="." unique_id=573031662]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Level3Button" type="Button" parent="." unique_id=1395010402]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Level4Button" type="Button" parent="." unique_id=1245289366]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Level5Button" type="Button" parent="." unique_id=116088372]
+offset_right = 8.0
+offset_bottom = 8.0

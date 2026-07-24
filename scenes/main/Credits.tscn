@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://2bgpovq2pqda"]
 
+[ext_resource type="Script" uid="uid://cx4m5gq36hn" path="res://scripts/main/credits.gd" id="1_4lkuw"]
+
 [node name="Credits" type="Node2D" unique_id=926278047]
+script = ExtResource("1_4lkuw")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=290900540]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ThankYouLabel" type="Label" parent="." unique_id=1918821319]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BackButton" type="Button" parent="." unique_id=1084523543]
+offset_right = 8.0
+offset_bottom = 8.0
