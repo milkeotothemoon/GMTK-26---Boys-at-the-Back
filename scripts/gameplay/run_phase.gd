@@ -44,6 +44,13 @@ func _on_sound_finished(item: SoundItem) -> void:
 
 func _finish_run() -> void:
 	var star_count := ScoringSystem.calculate_stars(AudioManager.decibel_total, LevelData.active_config)
+	var sleeper := get_tree().get_first_node_in_group("sleeper_portrait")
+	if sleeper:
+		sleeper.react_to_stars(star_count)
 	var score_hud := get_tree().get_first_node_in_group("score_hud")
 	if score_hud:
 		score_hud.show_result(star_count)
+
+
+func _on_level_0_build_locked() -> void:
+	pass # Replace with function body.

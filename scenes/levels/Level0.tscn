@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dj4pr3ftuubh4" path="res://scenes/gameplay/BuildSpace.tscn" id="1_xh834"]
 [ext_resource type="PackedScene" uid="uid://cy7pfol0uoa7d" path="res://scenes/gameplay/Inventory.tscn" id="2_inventory"]
 [ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/player/Player.tscn" id="3_player"]
+[ext_resource type="PackedScene" uid="uid://ct7pmsdcku03e" path="res://scenes/gameplay/SleeperPortrait.tscn" id="5_ax2ff"]
 [ext_resource type="PackedScene" uid="uid://roujawpulhr7" path="res://scenes/gameplay/RunPhaseController.tscn" id="5_in5bs"]
 [ext_resource type="PackedScene" uid="uid://b1alhoqjw6dc2" path="res://scenes/gameplay/ScoreHUD.tscn" id="6_in5bs"]
 
@@ -18,27 +19,13 @@ corner_detail = 20
 [sub_resource type="LabelSettings" id="LabelSettings_75xeh"]
 font_size = 244
 
-[sub_resource type="GDScript" id="GDScript_rbe81"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_level_0_build_locked() -> void:
-	pass # Replace with function body.
-
-
-func start_run() -> void:
-	pass # Replace with function body.
-"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax2ff"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 20
 
 [node name="Level0" type="Node2D" unique_id=250843063]
 script = ExtResource("1_qcr8a")
@@ -72,7 +59,7 @@ layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Panel" type="Panel" parent="." unique_id=2058796264]
+[node name="UpperRightCorner" type="Panel" parent="." unique_id=2058796264]
 offset_left = 1593.0
 offset_top = -94.0
 offset_right = 1993.0
@@ -80,7 +67,7 @@ offset_bottom = 306.0
 size_flags_stretch_ratio = 0.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_75xeh")
 
-[node name="LevelLabel" type="Label" parent="Panel" unique_id=1346164908]
+[node name="LevelLabel" type="Label" parent="UpperRightCorner" unique_id=1346164908]
 layout_mode = 0
 offset_left = 47.0
 offset_top = 64.0
@@ -91,8 +78,17 @@ label_settings = SubResource("LabelSettings_75xeh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LowerLeftCorner" type="Panel" parent="." unique_id=1518838328]
+offset_left = -119.0
+offset_top = 823.0
+offset_right = 281.0
+offset_bottom = 1223.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ax2ff")
+
+[node name="SleeperPortrait" parent="LowerLeftCorner" unique_id=424663072 instance=ExtResource("5_ax2ff")]
+position = Vector2(268, 93)
+
 [node name="RunPhaseController" parent="." unique_id=832782929 instance=ExtResource("5_in5bs")]
-script = SubResource("GDScript_rbe81")
 
 [node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
 

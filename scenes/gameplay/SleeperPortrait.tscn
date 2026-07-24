@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ct7pmsdcku03e"]
+
+[ext_resource type="Texture2D" uid="uid://cef26xd1577m8" path="res://icon.svg" id="1_ann17"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rovga"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"alert",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"annoyed",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"eyes_open",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ann17")
+}],
+"loop": 1,
+"name": &"sleeping",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rovga"]
+radius = 112.0
+height = 318.0
+
+[node name="SleeperPortrait" type="CharacterBody2D" unique_id=424663072]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=36084823]
+scale = Vector2(1.78125, 2.53125)
+sprite_frames = SubResource("SpriteFrames_rovga")
+animation = &"sleeping"
+autoplay = "sleeping"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999929270]
+shape = SubResource("CapsuleShape2D_rovga")

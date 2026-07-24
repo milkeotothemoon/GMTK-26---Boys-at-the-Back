@@ -3,7 +3,7 @@ extends Node2D
 signal build_locked
 
 @onready var timer: Timer = $Timer
-@onready var level_label: Label = $Panel/LevelLabel
+@onready var level_label: Label = $UpperRightCorner/LevelLabel
 var _digit_textures: Array[Texture2D] = []
 
 func _ready() -> void:
@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func start_build_phase() -> void:
 	GameState.is_build_locked = false
+	get_tree().get_first_node_in_group("sleeper_portrait").reset_to_sleeping()
 	timer.start(60.0)
 
 func _process(_delta: float) -> void:
