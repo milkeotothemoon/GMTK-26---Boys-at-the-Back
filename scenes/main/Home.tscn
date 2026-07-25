@@ -79,8 +79,6 @@ theme = ExtResource("2_atou1")
 theme_override_font_sizes/font_size = 80
 text = "CREDITS"
 
-<<<<<<< Updated upstream
-=======
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/CreditsButton" unique_id=1676469812]
 layout_mode = 1
 anchors_preset = 15
@@ -96,6 +94,5 @@ mouse_default_cursor_shape = 2
 texture = ExtResource("3_hrow3")
 stretch_mode = 5
 
->>>>>>> Stashed changes
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
