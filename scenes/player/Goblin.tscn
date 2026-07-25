@@ -10,7 +10,7 @@ animations = [{
 "texture": ExtResource("1_wr5hl")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -18,13 +18,16 @@ animations = [{
 radius = 76.0
 height = 204.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1845645343]
+[node name="Goblin" type="CharacterBody2D" unique_id=1845645343]
 script = ExtResource("1_gfjak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1675163017]
 position = Vector2(22.5, -49.125004)
 scale = Vector2(1.1640625, 1.6074219)
 sprite_frames = SubResource("SpriteFrames_75xeh")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6922429
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309464553]
 position = Vector2(24, -54)
