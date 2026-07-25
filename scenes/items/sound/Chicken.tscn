@@ -15,6 +15,9 @@ gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_3txgw")
+decibel_value = 5.0
+item_id = "chicken"
+display_name = "Chicken"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1881094075]
 shape = SubResource("RectangleShape2D_mlye7")
