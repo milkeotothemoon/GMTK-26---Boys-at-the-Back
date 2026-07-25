@@ -95,6 +95,7 @@ func _process(_delta: float) -> void:
 	var cell: Vector2i = GridUtils.world_to_grid(local_mouse)
 	var view := get_tree().get_first_node_in_group("build_space_view")
 	if GridUtils.is_valid_cell(cell):
+		modulate = Color.WHITE
 		global_position = parent.to_global(_origin_world(cell))
 		if view:
 			if _can_place_at(cell):
@@ -103,6 +104,7 @@ func _process(_delta: float) -> void:
 				view.highlight_cells(_cells_for(cell), true)
 	else:
 		global_position = get_global_mouse_position()
+		modulate = Color(1.0, 0.4, 0.4, 0.6)
 		if view:
 			view.clear_highlight()
 
@@ -114,13 +116,26 @@ func _origin_world(cell: Vector2i) -> Vector2:
 func _try_drop() -> void:
 	var parent := get_parent() as Node2D
 	var cell: Vector2i = GridUtils.world_to_grid(parent.to_local(global_position))
+	
+	if not GridUtils.is_valid_cell(cell):
+		_discard()
+		return
+	
 	if not _can_place_at(cell):
 		return
+	
 	place(cell)
 	_dragging = false
 	var view := get_tree().get_first_node_in_group("build_space_view")
 	if view:
 		view.clear_highlight()
+
+func _discard() -> void:
+	_dragging = false
+	var view := get_tree().get_first_node_in_group("build_space_view")
+	if view:
+		view.clear_highlight()
+	queue_free()
 
 func place(cell: Vector2i) -> void:
 	grid_position = cell

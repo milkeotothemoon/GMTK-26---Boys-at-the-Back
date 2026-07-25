@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b1alhoqjw6dc2" path="res://scenes/gameplay/ScoreHUD.tscn" id="6_in5bs"]
 [ext_resource type="Script" uid="uid://dk2shgpboe86c" path="res://scripts/gameplay/score_bar.gd" id="8_bbvxl"]
 [ext_resource type="PackedScene" uid="uid://lp2s54nhiltq" path="res://scenes/gameplay/PhaseTransition.tscn" id="9_e2o36"]
+[ext_resource type="PackedScene" uid="uid://bh30pp2dlxxy1" path="res://scenes/gameplay/TutorialPanel.tscn" id="11_oswwn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75xeh"]
 bg_color = Color(0, 0, 0, 1)
@@ -34,7 +35,7 @@ corner_detail = 20
 script = ExtResource("1_qcr8a")
 
 [node name="Inventory" parent="." unique_id=653123002 instance=ExtResource("2_inventory")]
-position = Vector2(692, 952.42)
+position = Vector2(708, 934)
 
 [node name="BuildSpace" parent="." unique_id=1416657170 instance=ExtResource("1_xh834")]
 position = Vector2(635, 214)
@@ -95,8 +96,6 @@ position = Vector2(268, 93)
 
 [node name="RunPhaseController" parent="." unique_id=832782929 instance=ExtResource("5_in5bs")]
 
-[node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
-
 [node name="ScoreBar" type="Control" parent="." unique_id=1446182729]
 layout_mode = 3
 anchors_preset = 0
@@ -106,7 +105,11 @@ offset_right = 1420.0
 offset_bottom = 884.0
 script = ExtResource("8_bbvxl")
 
+[node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
+
 [node name="PhaseTransition" parent="." unique_id=585754170 instance=ExtResource("9_e2o36")]
+
+[node name="TutorialPanel" parent="." unique_id=1529139202 instance=ExtResource("11_oswwn")]
 
 [connection signal="build_locked" from="." to="RunPhaseController" method="start_run"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

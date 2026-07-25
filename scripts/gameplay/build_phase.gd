@@ -15,7 +15,15 @@ func _ready() -> void:
 	if LevelData.active_config == null:
 		LevelData.load_level(GameState.current_level_index)
 	GameState.set_phase(GameState.Phase.BUILD)
+
 	await ScreenTransition.open()
+
+	var tut := get_node_or_null("TutorialPanel")
+	if tut and GameState.current_level_index == 0 and not GameState.has_played_tutorial:
+		tut.start()
+		await tut.tutorial_finished
+		GameState.has_played_tutorial = true
+
 	await transition.play_start_countdown()
 	start_build_phase()
 

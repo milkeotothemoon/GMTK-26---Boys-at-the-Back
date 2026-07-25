@@ -3,14 +3,24 @@
 [ext_resource type="Script" uid="uid://0nt4aj8sajqg" path="res://scripts/gameplay/inventory_slot.gd" id="1_slot"]
 [ext_resource type="PackedScene" uid="uid://dyvjtic38cebg" path="res://scenes/items/sound/Balloon.tscn" id="2_balloonslot"]
 [ext_resource type="PackedScene" uid="uid://diem7wdch32ia" path="res://scenes/items/sound/Gong.tscn" id="3_gongslot"]
+[ext_resource type="Texture2D" uid="uid://dngt2n6m60e0b" path="res://assets/sprites/items/balloon/balloon_static.png" id="3_ik7uu"]
 [ext_resource type="PackedScene" uid="uid://ctf2su6d3fe80" path="res://scenes/items/sound/Chicken.tscn" id="4_chickenslot"]
 [ext_resource type="PackedScene" uid="uid://dxtu3i6gck2ey" path="res://scenes/items/sound/Engine.tscn" id="5_engineslot"]
 [ext_resource type="PackedScene" uid="uid://d3ymiqhqfgq3b" path="res://scenes/items/sound/Blender.tscn" id="6_blenderslot"]
 [ext_resource type="PackedScene" uid="uid://dg0wm4bp3e7vi" path="res://scenes/items/modifiers/Megaphone.tscn" id="7_microphoneslot"]
+[ext_resource type="Texture2D" uid="uid://df50a6t5ggqb4" path="res://assets/sprites/items/gong/gong_static.png" id="7_otrw3"]
 [ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/CassetteTape.tscn" id="8_casettetapeslot"]
 [ext_resource type="PackedScene" uid="uid://d2cjxhyokckbo" path="res://scenes/items/util/ConveyorBelt.tscn" id="9_conveyorbeltslot"]
 [ext_resource type="PackedScene" uid="uid://b3huixd4fh3xy" path="res://scenes/items/util/Fan.tscn" id="10_fanslot"]
 [ext_resource type="PackedScene" uid="uid://c5dnhcimwuo1b" path="res://scenes/items/util/Piston.tscn" id="11_pistonslot"]
+[ext_resource type="PackedScene" uid="uid://bi25ucghyanyy" path="res://scenes/items/sound/Bell.tscn" id="12_bellslot"]
+[ext_resource type="PackedScene" uid="uid://cml4uev46xnl1" path="res://scenes/items/sound/Airhorn.tscn" id="13_airhornslot"]
+[ext_resource type="PackedScene" uid="uid://3xjgb6mdefet" path="res://scenes/items/physics/Marble.tscn" id="14_marbleslot"]
+[ext_resource type="PackedScene" uid="uid://d371nmtxybpr7" path="res://scenes/items/physics/Egg.tscn" id="15_eggslot"]
+[ext_resource type="PackedScene" uid="uid://cnfpautgarjxy" path="res://scenes/items/connectors/Plank.tscn" id="16_plankslot"]
+[ext_resource type="PackedScene" uid="uid://g85bpv0m1bn" path="res://scenes/items/connectors/Beam.tscn" id="17_beamslot"]
+[ext_resource type="PackedScene" uid="uid://drp7na3rgll4w" path="res://scenes/items/connectors/String.tscn" id="18_stringslot"]
+[ext_resource type="PackedScene" uid="uid://brk2keitvb4sr" path="res://scenes/items/util/Launcher.tscn" id="19_launcherslot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slot"]
 size = Vector2(50, 50)
@@ -27,38 +37,18 @@ item_id = "balloon"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BalloonSlot" unique_id=1972760510]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="BalloonSlot" unique_id=387237968]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Balloon"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="GongSlot" type="Area2D" parent="." unique_id=1783663871]
-position = Vector2(80, 20)
-script = ExtResource("1_slot")
-item_scene = ExtResource("3_gongslot")
-item_label = "Gong"
-item_id = "gong"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GongSlot" unique_id=1789047034]
-shape = SubResource("RectangleShape2D_slot")
-
-[node name="Label" type="Label" parent="GongSlot" unique_id=927071552]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Gong"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Icon" type="TextureRect" parent="BalloonSlot" unique_id=291224541]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ChickenSlot" type="Area2D" parent="." unique_id=746638961]
-position = Vector2(140, 20)
+position = Vector2(80, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("4_chickenslot")
 item_label = "Chicken"
@@ -67,38 +57,18 @@ item_id = "chicken"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChickenSlot" unique_id=657302846]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="ChickenSlot" unique_id=1894407266]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Chicken"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="EngineSlot" type="Area2D" parent="." unique_id=766071034]
-position = Vector2(200, 20)
-script = ExtResource("1_slot")
-item_scene = ExtResource("5_engineslot")
-item_label = "Engine"
-item_id = "engine"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EngineSlot" unique_id=2001076642]
-shape = SubResource("RectangleShape2D_slot")
-
-[node name="Label" type="Label" parent="EngineSlot" unique_id=1213523202]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Engine"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Icon" type="TextureRect" parent="ChickenSlot" unique_id=1564874569]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="BlenderSlot" type="Area2D" parent="." unique_id=1407858912]
-position = Vector2(260, 20)
+position = Vector2(140, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("6_blenderslot")
 item_label = "Blender"
@@ -107,18 +77,98 @@ item_id = "blender"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlenderSlot" unique_id=564115886]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="BlenderSlot" unique_id=162533661]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Blender"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Icon" type="TextureRect" parent="BlenderSlot" unique_id=1374289393]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GongSlot" type="Area2D" parent="." unique_id=1783663871]
+position = Vector2(200, 20)
+script = ExtResource("1_slot")
+item_scene = ExtResource("3_gongslot")
+item_label = "Gong"
+item_id = "gong"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GongSlot" unique_id=1789047034]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="GongSlot" unique_id=20415831]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("7_otrw3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EngineSlot" type="Area2D" parent="." unique_id=766071034]
+position = Vector2(260, 20)
+script = ExtResource("1_slot")
+item_scene = ExtResource("5_engineslot")
+item_label = "Engine"
+item_id = "engine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EngineSlot" unique_id=2001076642]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="EngineSlot" unique_id=498954716]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BellSlot" type="Area2D" parent="." unique_id=1402310230]
+position = Vector2(320, 20)
+script = ExtResource("1_slot")
+item_scene = ExtResource("12_bellslot")
+item_label = "Bell"
+item_id = "bell"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BellSlot" unique_id=710587329]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="BellSlot" unique_id=414531034]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AirhornSlot" type="Area2D" parent="." unique_id=305973019]
+position = Vector2(380, 20)
+script = ExtResource("1_slot")
+item_scene = ExtResource("13_airhornslot")
+item_label = "Airhorn"
+item_id = "airhorn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AirhornSlot" unique_id=1128286402]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="AirhornSlot" unique_id=859193266]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MegaphoneSlot" type="Area2D" parent="." unique_id=763185001]
-position = Vector2(320, 20)
+position = Vector2(440, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("7_microphoneslot")
 item_label = "Megaphone"
@@ -127,18 +177,18 @@ item_id = "megaphone"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MegaphoneSlot" unique_id=1188838994]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="MegaphoneSlot" unique_id=771731535]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Microphone"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Icon" type="TextureRect" parent="MegaphoneSlot" unique_id=1117257720]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CassetteTapeSlot" type="Area2D" parent="." unique_id=1710316631]
-position = Vector2(20, 80)
+position = Vector2(500, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("8_casettetapeslot")
 item_label = "Cassette Tape"
@@ -147,18 +197,118 @@ item_id = "cassette_tape"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CassetteTapeSlot" unique_id=1621974004]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="CassetteTapeSlot" unique_id=808997456]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Casette Tape"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Icon" type="TextureRect" parent="CassetteTapeSlot" unique_id=1971741203]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarbleSlot" type="Area2D" parent="." unique_id=77714530]
+position = Vector2(20, 80)
+script = ExtResource("1_slot")
+item_scene = ExtResource("14_marbleslot")
+item_label = "Marble"
+item_id = "marble"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarbleSlot" unique_id=1171129085]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="MarbleSlot" unique_id=929135070]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EggSlot" type="Area2D" parent="." unique_id=125035956]
+position = Vector2(80, 80)
+script = ExtResource("1_slot")
+item_scene = ExtResource("15_eggslot")
+item_label = "Egg"
+item_id = "egg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EggSlot" unique_id=1507296715]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="EggSlot" unique_id=1603364050]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlankSlot" type="Area2D" parent="." unique_id=271102762]
+position = Vector2(140, 80)
+script = ExtResource("1_slot")
+item_scene = ExtResource("16_plankslot")
+item_label = "Plank"
+item_id = "plank"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlankSlot" unique_id=261431413]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="PlankSlot" unique_id=874323607]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BeamSlot" type="Area2D" parent="." unique_id=1518276658]
+position = Vector2(200, 80)
+script = ExtResource("1_slot")
+item_scene = ExtResource("17_beamslot")
+item_label = "Beam"
+item_id = "beam"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamSlot" unique_id=268919815]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="BeamSlot" unique_id=1003230282]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StringSlot" type="Area2D" parent="." unique_id=1152007948]
+position = Vector2(260, 80)
+script = ExtResource("1_slot")
+item_scene = ExtResource("18_stringslot")
+item_label = "String"
+item_id = "string"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StringSlot" unique_id=2127492295]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="StringSlot" unique_id=1833814337]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ConveyorBeltSlot" type="Area2D" parent="." unique_id=781582942]
-position = Vector2(80, 80)
+position = Vector2(320, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("9_conveyorbeltslot")
 item_label = "Conveyor Belt"
@@ -167,18 +317,18 @@ item_id = "conveyor"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBeltSlot" unique_id=1256041094]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="ConveyorBeltSlot" unique_id=1989336242]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Conveyor Belt"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Icon" type="TextureRect" parent="ConveyorBeltSlot" unique_id=1844357537]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="FanSlot" type="Area2D" parent="." unique_id=809936773]
-position = Vector2(260, 80)
+position = Vector2(380, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("10_fanslot")
 item_label = "Fan"
@@ -187,18 +337,18 @@ item_id = "fan"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FanSlot" unique_id=1297679936]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="FanSlot" unique_id=1875431870]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Fan"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Icon" type="TextureRect" parent="FanSlot" unique_id=93266563]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="PistonSlot" type="Area2D" parent="." unique_id=378960894]
-position = Vector2(320, 80)
+position = Vector2(440, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("11_pistonslot")
 item_label = "Piston"
@@ -207,23 +357,51 @@ item_id = "piston"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PistonSlot" unique_id=974405306]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="PistonSlot" unique_id=1379914339]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Piston"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="Icon" type="TextureRect" parent="PistonSlot" unique_id=2426270]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LauncherSlot" type="Area2D" parent="." unique_id=169709335]
+position = Vector2(500, 80)
+script = ExtResource("1_slot")
+item_scene = ExtResource("19_launcherslot")
+item_label = "Launcher"
+item_id = "launcher"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LauncherSlot" unique_id=625478450]
+shape = SubResource("RectangleShape2D_slot")
+
+[node name="Icon" type="TextureRect" parent="LauncherSlot" unique_id=2126505697]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+texture = ExtResource("3_ik7uu")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="input_event" from="BalloonSlot" to="BalloonSlot" method="_on_input_event"]
-[connection signal="input_event" from="GongSlot" to="GongSlot" method="_on_input_event"]
 [connection signal="input_event" from="ChickenSlot" to="ChickenSlot" method="_on_input_event"]
-[connection signal="input_event" from="EngineSlot" to="EngineSlot" method="_on_input_event"]
 [connection signal="input_event" from="BlenderSlot" to="BlenderSlot" method="_on_input_event"]
+[connection signal="input_event" from="GongSlot" to="GongSlot" method="_on_input_event"]
+[connection signal="input_event" from="EngineSlot" to="EngineSlot" method="_on_input_event"]
+[connection signal="input_event" from="BellSlot" to="BellSlot" method="_on_input_event"]
+[connection signal="input_event" from="AirhornSlot" to="AirhornSlot" method="_on_input_event"]
 [connection signal="input_event" from="MegaphoneSlot" to="MegaphoneSlot" method="_on_input_event"]
 [connection signal="input_event" from="CassetteTapeSlot" to="CassetteTapeSlot" method="_on_input_event"]
+[connection signal="input_event" from="MarbleSlot" to="MarbleSlot" method="_on_input_event"]
+[connection signal="input_event" from="EggSlot" to="EggSlot" method="_on_input_event"]
+[connection signal="input_event" from="PlankSlot" to="PlankSlot" method="_on_input_event"]
+[connection signal="input_event" from="BeamSlot" to="BeamSlot" method="_on_input_event"]
+[connection signal="input_event" from="StringSlot" to="StringSlot" method="_on_input_event"]
 [connection signal="input_event" from="ConveyorBeltSlot" to="ConveyorBeltSlot" method="_on_input_event"]
 [connection signal="input_event" from="FanSlot" to="FanSlot" method="_on_input_event"]
 [connection signal="input_event" from="PistonSlot" to="PistonSlot" method="_on_input_event"]
+[connection signal="input_event" from="LauncherSlot" to="LauncherSlot" method="_on_input_event"]

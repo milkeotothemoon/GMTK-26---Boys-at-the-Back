@@ -17,7 +17,7 @@ anchors_preset = 0
 offset_right = 957.0
 offset_bottom = 1075.0
 
-[node name="Level0Button" type="Button" parent="Houses" unique_id=731248022]
+[node name="House0" type="Button" parent="Houses" unique_id=731248022]
 layout_mode = 0
 offset_left = 517.0
 offset_top = 427.0
@@ -27,7 +27,7 @@ theme = ExtResource("2_0e7p1")
 theme_override_font_sizes/font_size = 100
 text = "0"
 
-[node name="Level1Button" type="Button" parent="Houses" unique_id=47895419]
+[node name="House1" type="Button" parent="Houses" unique_id=47895419]
 layout_mode = 0
 offset_left = 189.0
 offset_top = 347.0
@@ -37,7 +37,7 @@ theme = ExtResource("2_0e7p1")
 theme_override_font_sizes/font_size = 100
 text = "1"
 
-[node name="Level2Button" type="Button" parent="Houses" unique_id=573031662]
+[node name="House2" type="Button" parent="Houses" unique_id=573031662]
 layout_mode = 0
 offset_left = 706.0
 offset_top = 121.0
@@ -47,7 +47,7 @@ theme = ExtResource("2_0e7p1")
 theme_override_font_sizes/font_size = 100
 text = "2"
 
-[node name="Level3Button" type="Button" parent="Houses" unique_id=1395010402]
+[node name="House3" type="Button" parent="Houses" unique_id=1395010402]
 layout_mode = 0
 offset_left = 632.0
 offset_top = 718.0
@@ -80,7 +80,7 @@ offset_right = 153.0
 offset_bottom = 143.0
 grow_horizontal = 2
 
-[node name="DescLabel" type="Label" parent="LevelPanel" unique_id=1466687134]
+[node name="DescriptionLabel" type="Label" parent="LevelPanel" unique_id=1466687134]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -94,7 +94,7 @@ offset_bottom = 159.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="LevelPanel" unique_id=762977545]
+[node name="CloseButton" type="Button" parent="LevelPanel" unique_id=762977545]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -136,7 +136,6 @@ theme = ExtResource("2_0e7p1")
 theme_override_font_sizes/font_size = 60
 text = "Go Back"
 
-[connection signal="pressed" from="Houses/Level0Button" to="." method="_select_level" binds= [0]]
-[connection signal="pressed" from="Houses/Level1Button" to="." method="_select_level" binds= [1]]
-[connection signal="pressed" from="Houses/Level2Button" to="." method="_select_level" binds= [2]]
-[connection signal="pressed" from="Houses/Level3Button" to="." method="_select_level" binds= [3]]
+[connection signal="pressed" from="LevelPanel/CloseButton" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="LevelPanel/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_pressed"]

@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b3x4hyn31udtn" path="res://assets/sprites/ui/star_empty.png" id="2_eg576"]
 [ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="3_eg576"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oswwn"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_080wy"]
 font_size = 125
 
@@ -21,6 +24,7 @@ offset_left = -2.0
 offset_top = 3.0
 offset_right = 1928.0
 offset_bottom = 1081.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oswwn")
 
 [node name="ResultFace" type="TextureRect" parent="ResultPanel" unique_id=1477799656]
 layout_mode = 1

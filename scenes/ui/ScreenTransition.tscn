@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://b2cuumejm15fl"]
 
 [ext_resource type="Script" uid="uid://beggjqkw4f5ip" path="res://scripts/ui/screen_transition.gd" id="1_12mja"]
+[ext_resource type="Shader" uid="uid://f40yq6msydmt" path="res://assets/shaders/iris_mask.gdshader" id="2_q08md"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0e7p1"]
+shader = ExtResource("2_q08md")
+shader_parameter/radius = 2.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/aspect = 1.7777778
 
 [node name="ScreenTransition" type="CanvasLayer" unique_id=665302674]
 layer = 100
 script = ExtResource("1_12mja")
 
 [node name="Mask" type="ColorRect" parent="." unique_id=172506399]
+material = SubResource("ShaderMaterial_0e7p1")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

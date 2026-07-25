@@ -2,6 +2,7 @@ extends Area2D
 class_name InventorySlot
 
 @export var item_scene: PackedScene
+@export var icon: Texture2D
 @export var item_label: String = ""
 @export var item_id: String = ""
 @export var is_locked: bool = false
@@ -9,9 +10,9 @@ class_name InventorySlot
 var _lock_overlay: Label = null
 
 func _ready() -> void:
-	var lbl := get_node_or_null("Label")
-	if lbl:
-		lbl.text = _get_initials(item_label)
+	var tex := get_node_or_null("Icon") as TextureRect
+	if tex and icon:
+		tex.texture = icon
 
 	_resolve_lock_state()
 
@@ -74,11 +75,3 @@ func _spawn_and_start_drag() -> void:
 	container.add_child(spawned)
 	spawned.global_position = get_global_mouse_position()
 	spawned.start_drag()
-
-func _get_initials(text: String) -> String:
-	var words := text.split(" ", false)
-	var initials := ""
-	for w in words:
-		if w.length() > 0:
-			initials += w[0].to_upper()
-	return initials
