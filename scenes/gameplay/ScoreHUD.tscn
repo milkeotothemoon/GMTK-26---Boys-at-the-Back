@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5k6mso02i05p" path="res://scripts/gameplay/score_hud.gd" id="1_s550n"]
 [ext_resource type="Texture2D" uid="uid://b3x4hyn31udtn" path="res://assets/sprites/ui/star_empty.png" id="2_eg576"]
+[ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="3_eg576"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_080wy"]
 font_size = 125
@@ -21,12 +22,29 @@ offset_top = 3.0
 offset_right = 1928.0
 offset_bottom = 1081.0
 
+[node name="ResultFace" type="TextureRect" parent="ResultPanel" unique_id=1477799656]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1030.0
+offset_top = -450.0
+offset_right = -129.99976
+offset_bottom = 450.0
+grow_horizontal = 0
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
 [node name="ScoreLabel" type="Label" parent="ResultPanel" unique_id=945635711]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 278.0
-offset_right = 597.0
-offset_bottom = 536.0
+offset_left = 200.0
+offset_top = 225.0
+offset_right = 646.0
+offset_bottom = 483.00018
+theme = ExtResource("3_eg576")
 text = "123123"
 label_settings = SubResource("LabelSettings_080wy")
 horizontal_alignment = 1
@@ -35,10 +53,11 @@ vertical_alignment = 1
 [node name="ResultLabel" type="Label" parent="ResultPanel" unique_id=1893057800]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
-offset_left = 68.0
-offset_top = 490.0
-offset_right = 687.0
-offset_bottom = 751.0
+offset_left = 125.0
+offset_top = 450.0
+offset_right = 725.0
+offset_bottom = 737.0
+theme = ExtResource("3_eg576")
 text = "yehey or womp womp"
 label_settings = SubResource("LabelSettings_dokte")
 horizontal_alignment = 1
@@ -47,10 +66,10 @@ autowrap_mode = 2
 
 [node name="StarsDisplay" type="HBoxContainer" parent="ResultPanel" unique_id=404116662]
 layout_mode = 0
-offset_left = 85.76
-offset_top = 60.245
-offset_right = 702.76
-offset_bottom = 260.24484
+offset_left = 115.0
+offset_top = 60.0
+offset_right = 732.0
+offset_bottom = 259.99985
 
 [node name="Star1" type="TextureRect" parent="ResultPanel/StarsDisplay" unique_id=2079227812]
 layout_mode = 2
@@ -69,14 +88,18 @@ expand_mode = 2
 
 [node name="PrimaryButton" type="Button" parent="ResultPanel" unique_id=733201284]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 849.0
-offset_right = 324.0
-offset_bottom = 996.0
+offset_left = 100.0
+offset_top = 800.0
+offset_right = 400.0
+offset_bottom = 1000.0
+theme = ExtResource("3_eg576")
+theme_override_font_sizes/font_size = 59
 
 [node name="SecondaryButton" type="Button" parent="ResultPanel" unique_id=162518020]
 layout_mode = 0
-offset_left = 417.0
-offset_top = 826.0
-offset_right = 731.0
-offset_bottom = 1003.0
+offset_left = 450.0
+offset_top = 800.0
+offset_right = 750.0
+offset_bottom = 1000.0
+theme = ExtResource("3_eg576")
+theme_override_font_sizes/font_size = 59

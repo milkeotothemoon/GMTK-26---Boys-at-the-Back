@@ -6,6 +6,7 @@ signal build_locked
 @onready var level_label: Label = $UpperRightCorner/LevelLabel
 @onready var transition: CanvasLayer = $PhaseTransition
 var _digit_textures: Array[Texture2D] = []
+var _build_started: bool = false
 
 func _ready() -> void:
 	level_label.text = "%d" % GameState.current_level_index
@@ -14,15 +15,20 @@ func _ready() -> void:
 	if LevelData.active_config == null:
 		LevelData.load_level(GameState.current_level_index)
 	GameState.set_phase(GameState.Phase.BUILD)
+	await ScreenTransition.open()
+	await transition.play_start_countdown()
 	start_build_phase()
 
 func start_build_phase() -> void:
 	var sleeper := get_tree().get_first_node_in_group("sleeper_portrait")
 	if sleeper:
 		sleeper.reset_to_sleeping()
+	_build_started = true
 	timer.start(60.0)
 
 func _process(_delta: float) -> void:
+	if not _build_started:
+		return
 	if GameState.current_phase != GameState.Phase.BUILD:
 		return
 	var seconds := int(ceil(timer.time_left))

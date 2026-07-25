@@ -4,6 +4,10 @@
 
 [resource]
 script = ExtResource("1_5qkjw")
+level_name = "Wake the Dead"
+description = "Everything is unlocked. The airhorn charges the longer something sits on it, and the launcher fires at 45 degrees — once. Go loud."
+item_cap = 16
+allowed_item_ids = Array[String]([])
 star1_threshold_db = 110.0
 star2_threshold_db = 170.0
 star3_threshold_db = 235.0

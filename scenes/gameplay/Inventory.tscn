@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dxtu3i6gck2ey" path="res://scenes/items/sound/Engine.tscn" id="5_engineslot"]
 [ext_resource type="PackedScene" uid="uid://d3ymiqhqfgq3b" path="res://scenes/items/sound/Blender.tscn" id="6_blenderslot"]
 [ext_resource type="PackedScene" uid="uid://dg0wm4bp3e7vi" path="res://scenes/items/modifiers/Megaphone.tscn" id="7_microphoneslot"]
-[ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/CassetteTape.tscn" id="8_repeaterslot"]
+[ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/CassetteTape.tscn" id="8_casettetapeslot"]
 [ext_resource type="PackedScene" uid="uid://d2cjxhyokckbo" path="res://scenes/items/util/ConveyorBelt.tscn" id="9_conveyorbeltslot"]
-[ext_resource type="PackedScene" uid="uid://b3huixd4fh3xy" path="res://scenes/items/util/Fan.tscn" id="12_fanslot"]
-[ext_resource type="PackedScene" uid="uid://c5dnhcimwuo1b" path="res://scenes/items/util/Piston.tscn" id="13_pistonslot"]
+[ext_resource type="PackedScene" uid="uid://b3huixd4fh3xy" path="res://scenes/items/util/Fan.tscn" id="10_fanslot"]
+[ext_resource type="PackedScene" uid="uid://c5dnhcimwuo1b" path="res://scenes/items/util/Piston.tscn" id="11_pistonslot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slot"]
 size = Vector2(50, 50)
@@ -140,7 +140,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CassetteTapeSlot" type="Area2D" parent="." unique_id=1710316631]
 position = Vector2(20, 80)
 script = ExtResource("1_slot")
-item_scene = ExtResource("8_repeaterslot")
+item_scene = ExtResource("8_casettetapeslot")
 item_label = "Cassette Tape"
 item_id = "cassette_tape"
 
@@ -180,7 +180,7 @@ metadata/_edit_use_anchors_ = true
 [node name="FanSlot" type="Area2D" parent="." unique_id=809936773]
 position = Vector2(260, 80)
 script = ExtResource("1_slot")
-item_scene = ExtResource("12_fanslot")
+item_scene = ExtResource("10_fanslot")
 item_label = "Fan"
 item_id = "fan"
 
@@ -200,7 +200,7 @@ metadata/_edit_use_anchors_ = true
 [node name="PistonSlot" type="Area2D" parent="." unique_id=378960894]
 position = Vector2(320, 80)
 script = ExtResource("1_slot")
-item_scene = ExtResource("13_pistonslot")
+item_scene = ExtResource("11_pistonslot")
 item_label = "Piston"
 item_id = "piston"
 

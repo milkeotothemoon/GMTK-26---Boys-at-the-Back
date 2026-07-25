@@ -48,6 +48,8 @@ func _everything_settled() -> bool:
 	for n in _placed_items.get_children():
 		if n is RigidBody2D:
 			var rb := n as RigidBody2D
+			if rb.global_position.y > 1400:
+				continue
 			if not rb.freeze and rb.linear_velocity.length() > SETTLE_SPEED:
 				return false
 		if n is SoundItem and (n as SoundItem).is_busy():

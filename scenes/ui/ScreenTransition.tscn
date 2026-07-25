@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b2cuumejm15fl"]
+
+[ext_resource type="Script" uid="uid://beggjqkw4f5ip" path="res://scripts/ui/screen_transition.gd" id="1_12mja"]
+
+[node name="ScreenTransition" type="CanvasLayer" unique_id=665302674]
+layer = 100
+script = ExtResource("1_12mja")
+
+[node name="Mask" type="ColorRect" parent="." unique_id=172506399]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

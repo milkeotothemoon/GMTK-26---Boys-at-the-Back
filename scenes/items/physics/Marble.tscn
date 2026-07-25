@@ -30,4 +30,4 @@ shape = SubResource("CircleShape2D_eimsr")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

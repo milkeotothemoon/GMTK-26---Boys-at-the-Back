@@ -34,4 +34,4 @@ shape = SubResource("RectangleShape2D_1367s")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

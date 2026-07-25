@@ -3,6 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://cef26xd1577m8" path="res://icon.svg" id="2_2bb0f"]
 [ext_resource type="Script" uid="uid://dxhj6lpsr2ttj" path="res://scripts/gameplay/grid_visual.gd" id="2_ky76c"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75xeh"]
+size = Vector2(670, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrvpr"]
+size = Vector2(20, 670)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky76c"]
+size = Vector2(20, 670)
+
 [node name="BuildSpace" type="Node2D" unique_id=1416657170]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1273156104]
@@ -18,3 +27,17 @@ script = ExtResource("2_ky76c")
 [node name="PlacedItems" type="Node2D" parent="." unique_id=228289201 groups=["placed_items_container"]]
 
 [node name="Timer" type="Timer" parent="." unique_id=462524342]
+
+[node name="WorldBounds" type="StaticBody2D" parent="." unique_id=1748716900]
+
+[node name="Floor" type="CollisionShape2D" parent="WorldBounds" unique_id=964576891]
+position = Vector2(335, 680)
+shape = SubResource("RectangleShape2D_75xeh")
+
+[node name="WallLeft" type="CollisionShape2D" parent="WorldBounds" unique_id=1088923488]
+position = Vector2(-10, 335)
+shape = SubResource("RectangleShape2D_xrvpr")
+
+[node name="WallRight" type="CollisionShape2D" parent="WorldBounds" unique_id=753894704]
+position = Vector2(680, 335)
+shape = SubResource("RectangleShape2D_ky76c")

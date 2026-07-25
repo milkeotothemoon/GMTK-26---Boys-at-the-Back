@@ -10,11 +10,15 @@ extends Control
 ]
 @onready var primary_button: Button = $ResultPanel/PrimaryButton
 @onready var secondary_button: Button = $ResultPanel/SecondaryButton
+@onready var result_face: TextureRect = $ResultPanel/ResultFace
 
 var star_filled: Texture2D = preload("res://assets/sprites/ui/star_filled.png")
 var star_empty: Texture2D = preload("res://assets/sprites/ui/star_empty.png")
 
 var _star_count: int = 0
+
+const FACE_HAPPY := preload("res://assets/sprites/ui/goblin_happy.png")
+const FACE_SAD := preload("res://assets/sprites/ui/goblin_sad.png")
 
 func _ready() -> void:
 	add_to_group("score_hud")
@@ -24,6 +28,8 @@ func _ready() -> void:
 
 func show_result(star_count: int) -> void:
 	_star_count = star_count
+	result_face.texture = FACE_SAD if star_count == 0 else FACE_HAPPY
+	GameState.star_results[GameState.current_level_index] = star_count
 
 	GameState.star_results[GameState.current_level_index] = max(
 		GameState.star_results.get(GameState.current_level_index, 0), star_count

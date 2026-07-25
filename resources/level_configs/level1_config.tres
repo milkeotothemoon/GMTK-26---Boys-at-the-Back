@@ -4,8 +4,10 @@
 
 [resource]
 script = ExtResource("1_ix3ej")
-item_cap = 6
-allowed_item_ids = Array[String](["balloon", "gong", "chicken", "megaphone"])
+level_name = "Chain Reaction"
+description = "One marble, more targets. The chicken lays an egg when something hits it, and the megaphone doubles everything in its 3x3 area. Make the marble work for a living."
+item_cap = 9
+allowed_item_ids = Array[String](["marble", "egg", "plank", "beam", "gong", "balloon", "bell", "chicken", "megaphone"])
 star1_threshold_db = 40.0
 star2_threshold_db = 62.0
 star3_threshold_db = 85.0

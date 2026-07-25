@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/goblin/Goblin.tscn" id="3_player"]
 [ext_resource type="PackedScene" uid="uid://ct7pmsdcku03e" path="res://scenes/gameplay/SleeperPortrait.tscn" id="5_ax2ff"]
 [ext_resource type="PackedScene" uid="uid://roujawpulhr7" path="res://scenes/gameplay/RunPhaseController.tscn" id="5_in5bs"]
+[ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="5_ue060"]
 [ext_resource type="PackedScene" uid="uid://b1alhoqjw6dc2" path="res://scenes/gameplay/ScoreHUD.tscn" id="6_in5bs"]
 [ext_resource type="Script" uid="uid://dk2shgpboe86c" path="res://scripts/gameplay/score_bar.gd" id="8_bbvxl"]
 [ext_resource type="PackedScene" uid="uid://lp2s54nhiltq" path="res://scenes/gameplay/PhaseTransition.tscn" id="9_e2o36"]
@@ -72,10 +73,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_75xeh")
 
 [node name="LevelLabel" type="Label" parent="UpperRightCorner" unique_id=1346164908]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 64.0
-offset_right = 286.0
-offset_bottom = 397.0
+offset_left = 67.0
+offset_top = 33.0
+offset_right = 306.0
+offset_bottom = 402.0
+theme = ExtResource("5_ue060")
 text = "#"
 label_settings = SubResource("LabelSettings_75xeh")
 horizontal_alignment = 1

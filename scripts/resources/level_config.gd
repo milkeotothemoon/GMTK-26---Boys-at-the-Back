@@ -1,6 +1,8 @@
 extends Resource
 class_name LevelConfig
 
+@export var level_name: String = ""
+@export_multiline var description: String = ""
 @export var item_cap: int = 12
 @export var allowed_item_ids: Array[String] = []
 @export var star1_threshold_db: float = 60.0

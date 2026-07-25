@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2bgpovq2pqda"]
 
 [ext_resource type="Script" uid="uid://cx4m5gq36hn" path="res://scripts/main/credits.gd" id="1_4lkuw"]
+[ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="3_acxcm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4lkuw"]
 font_size = 133
@@ -18,6 +19,7 @@ custom_minimum_size = Vector2(1920, 800)
 offset_top = 22.0
 offset_right = 1920.0
 offset_bottom = 822.0
+theme = ExtResource("3_acxcm")
 text = "Credits:
 1 and 2
 3 and 4
@@ -32,6 +34,7 @@ offset_left = 146.0
 offset_top = 866.0
 offset_right = 555.0
 offset_bottom = 989.0
+theme = ExtResource("3_acxcm")
 theme_override_font_sizes/font_size = 61
 text = "Go Back Ahh"
 

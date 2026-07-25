@@ -7,6 +7,13 @@ signal transition_finished
 func _ready() -> void:
 	visible = false
 
+func play_start_countdown() -> void:
+	visible = true
+	await _show("READY", 0.7)
+	await _show("SET", 0.7)
+	await _show("GO!", 0.6)
+	visible = false
+
 func play_build_to_run() -> void:
 	visible = true
 	await _show("TIME'S UP", 0.9)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cmqdp4oquobw"]
 
 [ext_resource type="Script" uid="uid://cjrjx03gbaf8" path="res://scripts/main/home.gd" id="1_cy2mo"]
+[ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="2_atou1"]
 
 [node name="Home" type="Control" unique_id=1769644235]
 layout_mode = 3
@@ -49,15 +50,16 @@ alignment = 1
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=2082602768]
 custom_minimum_size = Vector2(160, 150)
 layout_mode = 2
+theme = ExtResource("2_atou1")
 theme_override_font_sizes/font_size = 80
 text = "PLAY"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=1954136728]
 custom_minimum_size = Vector2(160, 150)
 layout_mode = 2
+theme = ExtResource("2_atou1")
 theme_override_font_sizes/font_size = 80
 text = "CREDITS"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

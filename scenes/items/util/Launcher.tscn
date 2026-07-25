@@ -31,3 +31,5 @@ shape = SubResource("RectangleShape2D_26231")
 [node name="CodeLabel" type="Label" parent="." unique_id=1903886368]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]
