@@ -33,18 +33,17 @@ func _ready() -> void:
 		add_child(cell)
 		_cells.append(cell)
 
-func highlight_cell(cell: Vector2i) -> void:
+func highlight_cells(cells: Array[Vector2i], blocked: bool) -> void:
 	clear_highlight()
-	var index := cell.y * GridUtils.GRID_WIDTH + cell.x
-	if index >= 0 and index < _cells.size():
-		_cells[index].add_theme_stylebox_override("panel", _hover_style)
-
-func highlight_cell_blocked(cell: Vector2i) -> void:
-	clear_highlight()
-	var index := cell.y * GridUtils.GRID_WIDTH + cell.x
-	if index >= 0 and index < _cells.size():
-		_cells[index].add_theme_stylebox_override("panel", _blocked_style)
+	var style := _blocked_style if blocked else _hover_style
+	for c in cells:
+		var index := c.y * GridUtils.GRID_WIDTH + c.x
+		if index >= 0 and index < _cells.size():
+			_cells[index].add_theme_stylebox_override("panel", style)
 
 func clear_highlight() -> void:
 	for cell in _cells:
 		cell.add_theme_stylebox_override("panel", _base_style)
+
+func set_grid_visible(v: bool) -> void:
+	visible = v

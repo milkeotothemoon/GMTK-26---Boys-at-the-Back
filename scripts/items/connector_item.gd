@@ -1,17 +1,27 @@
 extends BaseItem
 class_name ConnectorItem
 
-## Seconds of delay this connector introduces between the items it links.
-@export var link_delay: float = 0.3
+@export var snaps_on_hit: bool = false
+@export var snap_impulse_threshold: float = 60.0
 
-signal triggered
+var _snapped: bool = false
 
-func propagate_trigger() -> void:
-	triggered.emit()
+func _run_collision_layer() -> int:
+	return 1 << 4  # connectors
 
-func links(a: BaseItem, b: BaseItem) -> bool:
-	if a == null or b == null:
-		return false
-	var da := a.grid_position.distance_to(grid_position)
-	var db := b.grid_position.distance_to(grid_position)
-	return da <= 1.5 and db <= 1.5
+func _ready() -> void:
+	super._ready()
+	if snaps_on_hit:
+		contact_monitor = true
+		max_contacts_reported = 4
+		body_entered.connect(_on_hit)
+
+func _on_hit(body: Node) -> void:
+	if GameState.current_phase != GameState.Phase.RUN or _snapped:
+		return
+	if body is RigidBody2D and (body as RigidBody2D).linear_velocity.length() >= snap_impulse_threshold:
+		_snap()
+
+func _snap() -> void:
+	_snapped = true
+	queue_free()

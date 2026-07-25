@@ -4,6 +4,7 @@ signal build_locked
 
 @onready var timer: Timer = $Timer
 @onready var level_label: Label = $UpperRightCorner/LevelLabel
+@onready var transition: CanvasLayer = $PhaseTransition
 var _digit_textures: Array[Texture2D] = []
 
 func _ready() -> void:
@@ -12,17 +13,17 @@ func _ready() -> void:
 		_digit_textures.append(load("res://assets/fonts/digits/digit_%d.png" % i))
 	if LevelData.active_config == null:
 		LevelData.load_level(GameState.current_level_index)
+	GameState.set_phase(GameState.Phase.BUILD)
 	start_build_phase()
 
 func start_build_phase() -> void:
-	GameState.is_build_locked = false
 	var sleeper := get_tree().get_first_node_in_group("sleeper_portrait")
 	if sleeper:
 		sleeper.reset_to_sleeping()
 	timer.start(60.0)
 
 func _process(_delta: float) -> void:
-	if GameState.is_build_locked:
+	if GameState.current_phase != GameState.Phase.BUILD:
 		return
 	var seconds := int(ceil(timer.time_left))
 	if seconds < 0:
@@ -32,7 +33,9 @@ func _process(_delta: float) -> void:
 	$TimerDisplay/DigitSec0.texture = _digit_textures[seconds % 10]
 
 func _on_timer_timeout() -> void:
-	GameState.is_build_locked = true
+	GameState.set_phase(GameState.Phase.TRANSITION)
 	$TimerDisplay/DigitSec1.texture = _digit_textures[0]
 	$TimerDisplay/DigitSec0.texture = _digit_textures[0]
+	await transition.play_build_to_run()
+	$TimerDisplay.visible = false
 	build_locked.emit()
