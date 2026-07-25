@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://g85bpv0m1bn"]
+
+[ext_resource type="Script" uid="uid://dmbk2tjn1wgwq" path="res://scripts/items/connector_item.gd" id="1_jcicx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtls"]
+size = Vector2(50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcicx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu7en"]
+size = Vector2(50, 50)
+
+[node name="Beam" type="RigidBody2D" unique_id=459472603]
+script = ExtResource("1_jcicx")
+item_id = "beam"
+display_name = "Beam"
+cell_size = Vector2i(3, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=793414775]
+shape = SubResource("RectangleShape2D_uwtls")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1724587885]
+sprite_frames = SubResource("SpriteFrames_jcicx")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=308474208]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=2008708871]
+shape = SubResource("RectangleShape2D_qu7en")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=1355132275]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

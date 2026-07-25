@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3ymiqhqfgq3b"]
 
-[ext_resource type="Script" uid="uid://bb3qntjimb2if" path="res://scripts/items/sound_item.gd" id="1_j7bthk"]
+[ext_resource type="Script" uid="uid://y5rfs7h64pgo" path="res://scripts/items/behaviors/blender.gd" id="1_udofq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gr5b"]
 size = Vector2(50, 50)
@@ -14,10 +14,10 @@ size = Vector2(50, 50)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
-script = ExtResource("1_j7bthk")
+script = ExtResource("1_udofq")
 decibel_value = 20.0
 item_id = "blender"
-short_code = "BLN"
+display_name = "Blender"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629140108]
 shape = SubResource("RectangleShape2D_0gr5b")

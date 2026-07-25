@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctf2su6d3fe80"]
 
-[ext_resource type="Script" uid="uid://bb3qntjimb2if" path="res://scripts/items/sound_item.gd" id="1_l1n8pn"]
+[ext_resource type="Script" uid="uid://d6p401siba6u" path="res://scripts/items/behaviors/chicken.gd" id="1_3txgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlye7"]
 size = Vector2(50, 50)
@@ -14,10 +14,7 @@ size = Vector2(50, 50)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
-script = ExtResource("1_l1n8pn")
-decibel_value = 5.0
-item_id = "chicken"
-short_code = "CHK"
+script = ExtResource("1_3txgw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1881094075]
 shape = SubResource("RectangleShape2D_mlye7")

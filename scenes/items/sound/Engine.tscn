@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxtu3i6gck2ey"]
 
-[ext_resource type="Script" uid="uid://bb3qntjimb2if" path="res://scripts/items/sound_item.gd" id="1_ihl8s0"]
+[ext_resource type="Script" uid="uid://bjpl4kpnts0dv" path="res://scripts/items/behaviors/engine.gd" id="1_ctoc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ano03"]
 size = Vector2(50, 50)
@@ -14,10 +14,10 @@ size = Vector2(50, 50)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
-script = ExtResource("1_ihl8s0")
+script = ExtResource("1_ctoc1")
 decibel_value = 30.0
 item_id = "engine"
-short_code = "ENG"
+display_name = "Engine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1459328150]
 shape = SubResource("RectangleShape2D_ano03")

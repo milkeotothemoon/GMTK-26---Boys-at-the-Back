@@ -3,7 +3,6 @@ class_name BaseItem
 
 @export var item_id: String
 @export var display_name: String = ""
-@export var short_code: String = ""
 
 ## Does this item fall and roll during the run phase?
 @export var is_dynamic: bool = false
@@ -15,21 +14,10 @@ var grid_position: Vector2i
 var is_placed: bool = false
 var _dragging: bool = false
 
-@onready var _label: Label = get_node_or_null("CodeLabel")
-
 func _ready() -> void:
 	add_to_group("items")
 	_enter_build_mode()
-	if _label:
-		_label.text = short_code if short_code != "" else _initials(display_name)
 	GameState.phase_changed.connect(_on_phase_changed)
-
-func _initials(text: String) -> String:
-	var out := ""
-	for w in text.split(" ", false):
-		if w.length() > 0:
-			out += w[0].to_upper()
-	return out
 
 # ---------- phase handling ----------
 

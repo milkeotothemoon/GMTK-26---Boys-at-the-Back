@@ -8,9 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ymiqhqfgq3b" path="res://scenes/items/sound/Blender.tscn" id="6_blenderslot"]
 [ext_resource type="PackedScene" uid="uid://dg0wm4bp3e7vi" path="res://scenes/items/modifiers/Megaphone.tscn" id="7_microphoneslot"]
 [ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/CassetteTape.tscn" id="8_repeaterslot"]
-[ext_resource type="PackedScene" uid="uid://d2cjxhyokckbo" path="res://scenes/items/connectors/ConveyorBelt.tscn" id="9_conveyorbeltslot"]
-[ext_resource type="PackedScene" uid="uid://ds8crexmdulmx" path="res://scenes/items/connectors/Wire.tscn" id="10_wireslot"]
-[ext_resource type="PackedScene" uid="uid://c1y2g24pyyca0" path="res://scenes/items/connectors/Glue.tscn" id="11_glueslot"]
+[ext_resource type="PackedScene" uid="uid://d2cjxhyokckbo" path="res://scenes/items/util/ConveyorBelt.tscn" id="9_conveyorbeltslot"]
 [ext_resource type="PackedScene" uid="uid://b3huixd4fh3xy" path="res://scenes/items/util/Fan.tscn" id="12_fanslot"]
 [ext_resource type="PackedScene" uid="uid://c5dnhcimwuo1b" path="res://scenes/items/util/Piston.tscn" id="13_pistonslot"]
 
@@ -179,46 +177,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="WireSlot" type="Area2D" parent="." unique_id=1639591483]
-position = Vector2(140, 80)
-script = ExtResource("1_slot")
-item_scene = ExtResource("10_wireslot")
-item_label = "Wire"
-item_id = "wire"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WireSlot" unique_id=400732786]
-shape = SubResource("RectangleShape2D_slot")
-
-[node name="Label" type="Label" parent="WireSlot" unique_id=370590173]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Wire"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="GlueSlot" type="Area2D" parent="." unique_id=2114245709]
-position = Vector2(200, 80)
-script = ExtResource("1_slot")
-item_scene = ExtResource("11_glueslot")
-item_label = "Glue"
-item_id = "glue"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GlueSlot" unique_id=614868504]
-shape = SubResource("RectangleShape2D_slot")
-
-[node name="Label" type="Label" parent="GlueSlot" unique_id=1676112923]
-offset_left = -45.0
-offset_top = -10.0
-offset_right = 45.0
-offset_bottom = 10.0
-text = "Glue"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="FanSlot" type="Area2D" parent="." unique_id=809936773]
 position = Vector2(260, 80)
 script = ExtResource("1_slot")
@@ -267,7 +225,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="input_event" from="MegaphoneSlot" to="MegaphoneSlot" method="_on_input_event"]
 [connection signal="input_event" from="CassetteTapeSlot" to="CassetteTapeSlot" method="_on_input_event"]
 [connection signal="input_event" from="ConveyorBeltSlot" to="ConveyorBeltSlot" method="_on_input_event"]
-[connection signal="input_event" from="WireSlot" to="WireSlot" method="_on_input_event"]
-[connection signal="input_event" from="GlueSlot" to="GlueSlot" method="_on_input_event"]
 [connection signal="input_event" from="FanSlot" to="FanSlot" method="_on_input_event"]
 [connection signal="input_event" from="PistonSlot" to="PistonSlot" method="_on_input_event"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cnfpautgarjxy"]
+
+[ext_resource type="Script" uid="uid://daav7lgw8bw46" path="res://scripts/items/physics_item.gd" id="1_8wywm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wywm"]
+size = Vector2(50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wywm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt7bx"]
+size = Vector2(50, 50)
+
+[node name="Plank" type="RigidBody2D" unique_id=1396017137]
+script = ExtResource("1_8wywm")
+activates_on_contact = false
+item_id = "plank"
+display_name = "Plank"
+cell_size = Vector2i(3, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435950385]
+shape = SubResource("RectangleShape2D_8wywm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1830084189]
+sprite_frames = SubResource("SpriteFrames_8wywm")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=1589774958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1736622626]
+shape = SubResource("RectangleShape2D_mt7bx")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=153206217]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=161472014]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

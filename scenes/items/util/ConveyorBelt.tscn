@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2cjxhyokckbo"]
 
-[ext_resource type="Script" uid="uid://dmbk2tjn1wgwq" path="res://scripts/items/connector_item.gd" id="1_25ik91"]
+[ext_resource type="Script" uid="uid://bwmog8fuktmhk" path="res://scripts/items/util_item.gd" id="1_f4bct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kc610"]
 size = Vector2(50, 50)
@@ -14,9 +14,11 @@ size = Vector2(50, 50)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
-script = ExtResource("1_25ik91")
+script = ExtResource("1_f4bct")
+effect_kind = "lift"
+direction = Vector2(0, 1)
 item_id = "conveyor"
-short_code = "CVB"
+display_name = "Conveyor Belt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=873420598]
 shape = SubResource("RectangleShape2D_kc610")
@@ -33,4 +35,4 @@ shape = SubResource("RectangleShape2D_75xeh")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

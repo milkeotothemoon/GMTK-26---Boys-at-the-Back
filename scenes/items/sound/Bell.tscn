@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bi25ucghyanyy"]
+
+[ext_resource type="Script" uid="uid://btlat4l33427e" path="res://scripts/items/behaviors/bell.gd" id="1_41faa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8dc8"]
+size = Vector2(50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41faa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdo02"]
+size = Vector2(50, 50)
+
+[node name="Bell" type="RigidBody2D" unique_id=287794110]
+script = ExtResource("1_41faa")
+decibel_value = 25.0
+item_id = "bell"
+display_name = "Bell"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=439622637]
+shape = SubResource("RectangleShape2D_y8dc8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977039646]
+sprite_frames = SubResource("SpriteFrames_41faa")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=135541480]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=211025577]
+shape = SubResource("RectangleShape2D_kdo02")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=2091265816]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1616575480]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cml4uev46xnl1"]
+
+[ext_resource type="Script" uid="uid://c6ogbav64gbim" path="res://scripts/items/behaviors/airhorn.gd" id="1_j6oda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdo02"]
+size = Vector2(50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j6oda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unryx"]
+size = Vector2(50, 50)
+
+[node name="Airhorn" type="RigidBody2D" unique_id=380845762]
+script = ExtResource("1_j6oda")
+item_id = "airhorn"
+display_name = "Airhorn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1635431529]
+shape = SubResource("RectangleShape2D_kdo02")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=6077634]
+sprite_frames = SubResource("SpriteFrames_j6oda")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=761547991]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1976154125]
+shape = SubResource("RectangleShape2D_unryx")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=66598170]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=761178110]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

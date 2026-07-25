@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyvjtic38cebg"]
 
-[ext_resource type="Script" uid="uid://bb3qntjimb2if" path="res://scripts/items/sound_item.gd" id="1_wki06"]
+[ext_resource type="Script" uid="uid://bcu0bik8uh2ga" path="res://scripts/items/behaviors/balloon.gd" id="1_wki06"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75xeh"]
 radius = 25.0
@@ -11,12 +11,13 @@ radius = 25.0
 radius = 25.0
 
 [node name="Balloon" type="RigidBody2D" unique_id=418760466]
+visibility_layer = 4
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_wki06")
 item_id = "balloon"
-short_code = "BAL"
+display_name = "Balloon"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=600011808]
 shape = SubResource("CircleShape2D_75xeh")

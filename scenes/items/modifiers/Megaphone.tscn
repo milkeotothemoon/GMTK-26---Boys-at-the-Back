@@ -16,7 +16,7 @@ freeze = true
 freeze_mode = 1
 script = ExtResource("1_n2tg0")
 item_id = "megaphone"
-short_code = "MEG"
+display_name = "Megaphone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708265700]
 shape = SubResource("RectangleShape2D_5elyy")

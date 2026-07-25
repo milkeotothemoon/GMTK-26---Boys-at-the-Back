@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://3xjgb6mdefet"]
+
+[ext_resource type="Script" uid="uid://daav7lgw8bw46" path="res://scripts/items/physics_item.gd" id="1_gnajo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sltwn"]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnajo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eimsr"]
+radius = 25.0
+
+[node name="Marble" type="RigidBody2D" unique_id=1943857950]
+script = ExtResource("1_gnajo")
+item_id = "marble"
+display_name = "Marble"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747116439]
+shape = SubResource("CircleShape2D_sltwn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1699340344]
+sprite_frames = SubResource("SpriteFrames_gnajo")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=52900005]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1160901830]
+shape = SubResource("CircleShape2D_eimsr")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=1865817259]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

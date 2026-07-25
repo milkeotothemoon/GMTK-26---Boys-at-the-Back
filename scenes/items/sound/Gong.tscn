@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://diem7wdch32ia"]
 
-[ext_resource type="Script" uid="uid://bb3qntjimb2if" path="res://scripts/items/sound_item.gd" id="1_09s3kc"]
+[ext_resource type="Script" uid="uid://5w033usdgsws" path="res://scripts/items/behaviors/gong.gd" id="1_3j3eh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6swph"]
 size = Vector2(50, 50)
@@ -14,10 +14,10 @@ size = Vector2(50, 50)
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
-script = ExtResource("1_09s3kc")
+script = ExtResource("1_3j3eh")
 decibel_value = 25.0
 item_id = "gong"
-short_code = "GNG"
+display_name = "Gong"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1245861339]
 shape = SubResource("RectangleShape2D_6swph")

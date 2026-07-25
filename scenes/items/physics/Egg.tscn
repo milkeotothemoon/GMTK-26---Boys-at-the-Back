@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d371nmtxybpr7"]
+
+[ext_resource type="Script" uid="uid://daav7lgw8bw46" path="res://scripts/items/physics_item.gd" id="1_473gv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpssy"]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_473gv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5e525"]
+radius = 25.0
+
+[node name="Egg" type="RigidBody2D" unique_id=1085027481]
+script = ExtResource("1_473gv")
+breaks_on_impact = true
+item_id = "egg"
+display_name = "Egg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194277827]
+shape = SubResource("CircleShape2D_lpssy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1429094944]
+sprite_frames = SubResource("SpriteFrames_473gv")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=84998173]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1560682409]
+shape = SubResource("CircleShape2D_5e525")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=2062642660]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
