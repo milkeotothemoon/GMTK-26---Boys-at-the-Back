@@ -29,7 +29,6 @@ func _ready() -> void:
 func show_result(star_count: int) -> void:
 	_star_count = star_count
 	result_face.texture = FACE_SAD if star_count == 0 else FACE_HAPPY
-	GameState.star_results[GameState.current_level_index] = star_count
 
 	GameState.star_results[GameState.current_level_index] = max(
 		GameState.star_results.get(GameState.current_level_index, 0), star_count
