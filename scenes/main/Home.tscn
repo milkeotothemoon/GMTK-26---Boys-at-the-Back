@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://cmqdp4oquobw"]
 
 [ext_resource type="Script" uid="uid://cjrjx03gbaf8" path="res://scripts/main/home.gd" id="1_cy2mo"]
-<<<<<<< Updated upstream
-[ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="2_atou1"]
-=======
 [ext_resource type="Texture2D" uid="uid://cv22trp2kgm5h" path="res://assets/sprites/ui/title screen/start.png" id="2_atou1"]
 [ext_resource type="Texture2D" uid="uid://bc8nti5lrox0b" path="res://assets/sprites/ui/title screen/credits.png" id="3_hrow3"]
->>>>>>> Stashed changes
 
 [node name="Home" type="Control" unique_id=1769644235]
 layout_mode = 3
