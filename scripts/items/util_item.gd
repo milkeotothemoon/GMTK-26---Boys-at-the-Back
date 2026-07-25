@@ -15,12 +15,6 @@ var _used: bool = false
 func _run_collision_layer() -> int:
 	return 1 << 3  # utils
 
-func _ready() -> void:
-	super._ready()
-	var area := get_node_or_null("EffectArea") as Area2D
-	if area:
-		area.body_entered.connect(_on_body_in_range)
-
 func power_on() -> void:
 	_powered = true
 
@@ -32,20 +26,24 @@ func has_engine_nearby() -> bool:
 	return false
 
 func activate(_source: Node = null) -> void:
-	power_on()
+	if has_engine_nearby():
+		power_on()
 
-func _on_body_in_range(body: Node) -> void:
-	if GameState.current_phase != GameState.Phase.RUN:
-		return
-	if not _powered:
+func _physics_process(_delta: float) -> void:
+	if GameState.current_phase != GameState.Phase.RUN or not _powered:
 		return
 	if one_shot and _used:
 		return
-	if not (body is RigidBody2D):
+	var area := get_node_or_null("EffectArea") as Area2D
+	if area == null:
 		return
-	_apply_to(body as RigidBody2D)
-	_used = true
-	effect_applied.emit()
+	for body in area.get_overlapping_bodies():
+		if body is RigidBody2D and not (body as RigidBody2D).freeze:
+			_apply_to(body as RigidBody2D)
+			_used = true
+			effect_applied.emit()
+			if one_shot:
+				return
 
 func _apply_to(body: RigidBody2D) -> void:
 	match effect_kind:
