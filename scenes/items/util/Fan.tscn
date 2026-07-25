@@ -5,16 +5,33 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_0jaqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfikc"]
+size = Vector2(50, 50)
 
-[node name="Fan" type="Area2D" unique_id=2026996357]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1367s"]
+size = Vector2(50, 50)
+
+[node name="Fan" type="RigidBody2D" unique_id=299501691]
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_kncku9")
 effect_kind = "amplify"
 item_id = "fan"
+short_code = "FAN"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=555126865]
 sprite_frames = SubResource("SpriteFrames_0jaqn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1190559329]
 shape = SubResource("RectangleShape2D_pfikc")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=2089832585]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=527631884]
+shape = SubResource("RectangleShape2D_1367s")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=1923643509]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://b8b3u6igehsbs"]
+
+[ext_resource type="FontFile" uid="uid://dbqe1gfme06y5" path="res://assets/fonts/playpen/PlaypenSans-VariableFont_wght.ttf" id="1_rjbnf"]
+
+[resource]
+default_font = ExtResource("1_rjbnf")
+default_font_size = 20

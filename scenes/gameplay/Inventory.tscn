@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctf2su6d3fe80" path="res://scenes/items/sound/Chicken.tscn" id="4_chickenslot"]
 [ext_resource type="PackedScene" uid="uid://dxtu3i6gck2ey" path="res://scenes/items/sound/Engine.tscn" id="5_engineslot"]
 [ext_resource type="PackedScene" uid="uid://d3ymiqhqfgq3b" path="res://scenes/items/sound/Blender.tscn" id="6_blenderslot"]
-[ext_resource type="PackedScene" uid="uid://dg0wm4bp3e7vi" path="res://scenes/items/modifiers/Microphone.tscn" id="7_microphoneslot"]
+[ext_resource type="PackedScene" uid="uid://dg0wm4bp3e7vi" path="res://scenes/items/modifiers/Megaphone.tscn" id="7_microphoneslot"]
 [ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/CassetteTape.tscn" id="8_repeaterslot"]
 [ext_resource type="PackedScene" uid="uid://d2cjxhyokckbo" path="res://scenes/items/connectors/ConveyorBelt.tscn" id="9_conveyorbeltslot"]
 [ext_resource type="PackedScene" uid="uid://ds8crexmdulmx" path="res://scenes/items/connectors/Wire.tscn" id="10_wireslot"]
@@ -119,17 +119,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="MicrophoneSlot" type="Area2D" parent="." unique_id=763185001]
+[node name="MegaphoneSlot" type="Area2D" parent="." unique_id=763185001]
 position = Vector2(320, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("7_microphoneslot")
-item_label = "Microphone"
-item_id = "microphone"
+item_label = "Megaphone"
+item_id = "megaphone"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MicrophoneSlot" unique_id=1188838994]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MegaphoneSlot" unique_id=1188838994]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="MicrophoneSlot" unique_id=771731535]
+[node name="Label" type="Label" parent="MegaphoneSlot" unique_id=771731535]
 offset_left = -45.0
 offset_top = -10.0
 offset_right = 45.0
@@ -264,7 +264,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="input_event" from="ChickenSlot" to="ChickenSlot" method="_on_input_event"]
 [connection signal="input_event" from="EngineSlot" to="EngineSlot" method="_on_input_event"]
 [connection signal="input_event" from="BlenderSlot" to="BlenderSlot" method="_on_input_event"]
-[connection signal="input_event" from="MicrophoneSlot" to="MicrophoneSlot" method="_on_input_event"]
+[connection signal="input_event" from="MegaphoneSlot" to="MegaphoneSlot" method="_on_input_event"]
 [connection signal="input_event" from="CassetteTapeSlot" to="CassetteTapeSlot" method="_on_input_event"]
 [connection signal="input_event" from="ConveyorBeltSlot" to="ConveyorBeltSlot" method="_on_input_event"]
 [connection signal="input_event" from="WireSlot" to="WireSlot" method="_on_input_event"]

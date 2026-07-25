@@ -2,18 +2,35 @@
 
 [ext_resource type="Script" uid="uid://cem7nc7xpq4ek" path="res://scripts/items/modifier_item.gd" id="1_bn11s"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a8l0"]
+size = Vector2(50, 50)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1490n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a8l0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn11s"]
+size = Vector2(50, 50)
 
-[node name="Repeater" type="Area2D" unique_id=369589196]
+[node name="CassetteTape" type="RigidBody2D" unique_id=1999828306]
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_bn11s")
 item_id = "cassette_tape"
+short_code = "CTR"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=654832747]
+shape = SubResource("RectangleShape2D_7a8l0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1955952460]
 sprite_frames = SubResource("SpriteFrames_1490n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=654832747]
-shape = SubResource("RectangleShape2D_7a8l0")
+[node name="ClickArea" type="Area2D" parent="." unique_id=583695189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1960677827]
+shape = SubResource("RectangleShape2D_bn11s")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=986890483]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

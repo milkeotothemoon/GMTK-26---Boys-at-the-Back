@@ -2,20 +2,37 @@
 
 [ext_resource type="Script" uid="uid://bb3qntjimb2if" path="res://scripts/items/sound_item.gd" id="1_j7bthk"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gr5b"]
+size = Vector2(50, 50)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_aymtw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gr5b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udofq"]
+size = Vector2(50, 50)
 
-[node name="Blender" type="Area2D" unique_id=1839182674]
+[node name="Blender" type="RigidBody2D" unique_id=1963854027]
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_j7bthk")
+decibel_value = 20.0
 item_id = "blender"
-decibel_value = 30.0
+short_code = "BLN"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629140108]
+shape = SubResource("RectangleShape2D_0gr5b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062309702]
 sprite_frames = SubResource("SpriteFrames_aymtw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629140108]
-shape = SubResource("RectangleShape2D_0gr5b")
+[node name="ClickArea" type="Area2D" parent="." unique_id=62922107]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1712908748]
+shape = SubResource("RectangleShape2D_udofq")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=1888996706]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1839653244]
 

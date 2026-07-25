@@ -5,16 +5,33 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_qg7ii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whsy6"]
+size = Vector2(50, 50)
 
-[node name="Piston" type="Area2D" unique_id=1709561333]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1w4al"]
+size = Vector2(50, 50)
+
+[node name="Piston" type="RigidBody2D" unique_id=1974417866]
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_quvp8z")
 effect_kind = "repeat"
 item_id = "piston"
+short_code = "PST"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=800187157]
 sprite_frames = SubResource("SpriteFrames_qg7ii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=409223932]
 shape = SubResource("RectangleShape2D_whsy6")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=1108236721]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1365845411]
+shape = SubResource("RectangleShape2D_1w4al")
+
+[node name="CodeLabel" type="Label" parent="." unique_id=217824492]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
