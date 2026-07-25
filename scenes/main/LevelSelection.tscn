@@ -1,3 +1,48 @@
 [gd_scene format=3 uid="uid://2wdvmc5mrbxw"]
 
+[ext_resource type="Script" uid="uid://ddw4s6x8ce4et" path="res://scripts/main/level_selection.gd" id="1_080wy"]
+
 [node name="LevelSelection" type="Node2D" unique_id=70987566]
+script = ExtResource("1_080wy")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=138806955]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Level0Button" type="Button" parent="." unique_id=731248022]
+offset_left = 844.0
+offset_top = 168.0
+offset_right = 1150.2949
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="Level1Button" type="Button" parent="." unique_id=47895419]
+offset_left = 542.0
+offset_top = 487.0
+offset_right = 700.295
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 100
+text = "1"
+
+[node name="Level2Button" type="Button" parent="." unique_id=573031662]
+offset_left = 1198.0
+offset_top = 547.0
+offset_right = 1653.2949
+offset_bottom = 904.0
+theme_override_font_sizes/font_size = 100
+text = "2"
+
+[node name="Level3Button" type="Button" parent="." unique_id=1395010402]
+offset_left = 156.0
+offset_top = 773.0
+offset_right = 397.29498
+offset_bottom = 949.0
+theme_override_font_sizes/font_size = 100
+text = "3"
+
+[connection signal="pressed" from="Level0Button" to="." method="_select_level" binds= [0]]
+[connection signal="pressed" from="Level1Button" to="." method="_select_level" binds= [1]]
+[connection signal="pressed" from="Level2Button" to="." method="_select_level" binds= [2]]
+[connection signal="pressed" from="Level3Button" to="." method="_select_level" binds= [3]]

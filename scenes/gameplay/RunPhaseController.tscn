@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://roujawpulhr7"]
 
+[ext_resource type="Script" uid="uid://c1pfu1ha3feom" path="res://scripts/gameplay/run_phase.gd" id="1_0mg0h"]
+
 [node name="RunPhaseController" type="Node2D" unique_id=832782929]
+script = ExtResource("1_0mg0h")

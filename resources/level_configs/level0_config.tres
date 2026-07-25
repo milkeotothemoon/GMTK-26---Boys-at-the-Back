@@ -1,3 +1,11 @@
-[gd_resource type="Resource" format=3 uid="uid://duxvsouvyg06b"]
+[gd_resource type="Resource" script_class="LevelConfig" format=3 uid="uid://duxvsouvyg06b"]
+
+[ext_resource type="Script" uid="uid://dq3jclhw1sg8i" path="res://scripts/resources/level_config.gd" id="1_r4n7j"]
 
 [resource]
+script = ExtResource("1_r4n7j")
+item_cap = 4
+allowed_item_ids = Array[String](["balloon", "gong"])
+star1_threshold_db = 20.0
+star2_threshold_db = 32.0
+star3_threshold_db = 45.0

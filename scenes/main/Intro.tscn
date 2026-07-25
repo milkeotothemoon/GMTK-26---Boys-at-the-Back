@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://bfsgb4n3srmad"]
 
+[ext_resource type="Script" uid="uid://ma38pgs56c8s" path="res://scripts/main/intro.gd" id="1_ehhfn"]
+[ext_resource type="VideoStream" uid="uid://j8r3a1umvvlm" path="res://assets/video/intro.ogv" id="2_i44qe"]
+
 [node name="Intro" type="Node2D" unique_id=27169360]
+script = ExtResource("1_ehhfn")
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=13295926]
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_i44qe")
+autoplay = true
+expand = true
