@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 GameState="*uid://bdvykam3etg2x"
 LevelData="*uid://cclt1yjd7lgie"
 AudioManager="*uid://bxh6aokp1gwc4"
-BuildSpace="*uid://c7mkfqnwqwwnf"
+GridUtils="*uid://c7mkfqnwqwwnf"
 
 [display]
 
@@ -29,6 +29,14 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[layer_names]
+
+2d_render/layer_1="world"
+2d_render/layer_2="physics_objects"
+2d_render/layer_3="sound_items"
+2d_render/layer_4="utils"
+2d_render/layer_5="connectors"
 
 [physics]
 

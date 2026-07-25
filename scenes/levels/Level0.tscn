@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://b8apmf7n38mm1" path="res://scripts/gameplay/build_phase.gd" id="1_qcr8a"]
 [ext_resource type="PackedScene" uid="uid://dj4pr3ftuubh4" path="res://scenes/gameplay/BuildSpace.tscn" id="1_xh834"]
 [ext_resource type="PackedScene" uid="uid://cy7pfol0uoa7d" path="res://scenes/gameplay/Inventory.tscn" id="2_inventory"]
-[ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/player/Player.tscn" id="3_player"]
+[ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/goblin/Goblin.tscn" id="3_player"]
 [ext_resource type="PackedScene" uid="uid://ct7pmsdcku03e" path="res://scenes/gameplay/SleeperPortrait.tscn" id="5_ax2ff"]
 [ext_resource type="PackedScene" uid="uid://roujawpulhr7" path="res://scenes/gameplay/RunPhaseController.tscn" id="5_in5bs"]
 [ext_resource type="PackedScene" uid="uid://b1alhoqjw6dc2" path="res://scenes/gameplay/ScoreHUD.tscn" id="6_in5bs"]
+[ext_resource type="Script" uid="uid://dk2shgpboe86c" path="res://scripts/gameplay/score_bar.gd" id="8_bbvxl"]
+[ext_resource type="PackedScene" uid="uid://lp2s54nhiltq" path="res://scenes/gameplay/PhaseTransition.tscn" id="9_e2o36"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75xeh"]
 bg_color = Color(0, 0, 0, 1)
@@ -36,10 +38,11 @@ position = Vector2(692, 952.42)
 [node name="BuildSpace" parent="." unique_id=1416657170 instance=ExtResource("1_xh834")]
 position = Vector2(635, 214)
 
-[node name="Player" parent="." unique_id=1845645343 instance=ExtResource("3_player")]
+[node name="Goblin" parent="." unique_id=1845645343 instance=ExtResource("3_player")]
 position = Vector2(461, 816)
 
 [node name="Timer" type="Timer" parent="." unique_id=846573383]
+one_shot = true
 
 [node name="TimerDisplay" type="HBoxContainer" parent="." unique_id=787711431]
 offset_left = 869.0
@@ -92,4 +95,16 @@ position = Vector2(268, 93)
 
 [node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
 
+[node name="ScoreBar" type="Control" parent="." unique_id=1446182729]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1360.0
+offset_top = 214.0
+offset_right = 1420.0
+offset_bottom = 884.0
+script = ExtResource("8_bbvxl")
+
+[node name="PhaseTransition" parent="." unique_id=585754170 instance=ExtResource("9_e2o36")]
+
 [connection signal="build_locked" from="." to="RunPhaseController" method="start_run"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

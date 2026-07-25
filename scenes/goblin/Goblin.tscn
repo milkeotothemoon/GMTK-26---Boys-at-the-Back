@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cj7fvg2qu47rt"]
+
+[ext_resource type="Script" uid="uid://d1t0o16aojom5" path="res://scripts/goblin/goblin.gd" id="1_3al31"]
+[ext_resource type="Texture2D" uid="uid://hdalyxhieovx" path="res://assets/sprites/characters/goblin_spritesheet.png" id="2_0twt3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rvxr"]
+atlas = ExtResource("2_0twt3")
+region = Rect2(0, 0, 384, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc3io"]
+atlas = ExtResource("2_0twt3")
+region = Rect2(384, 0, 384, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75xeh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rvxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc3io")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o8nba"]
+radius = 76.0
+height = 204.0
+
+[node name="Goblin" type="CharacterBody2D" unique_id=1845645343]
+script = ExtResource("1_3al31")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1675163017]
+position = Vector2(22.5, -69.125)
+scale = Vector2(0.5338541, 0.58789057)
+sprite_frames = SubResource("SpriteFrames_75xeh")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.78333896
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309464553]
+position = Vector2(24, -54)
+shape = SubResource("CapsuleShape2D_o8nba")

@@ -8,6 +8,8 @@
 
 [node name="Glue" type="Area2D" unique_id=1220715943]
 script = ExtResource("1_1rc31t")
+link_delay = 0.0
+item_id = "glue"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2091491305]
 sprite_frames = SubResource("SpriteFrames_txm0g")

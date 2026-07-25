@@ -8,6 +8,7 @@
 
 [node name="Microphone" type="Area2D" unique_id=1345959028]
 script = ExtResource("1_79de21")
+item_id = "microphone"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1825861006]
 sprite_frames = SubResource("SpriteFrames_3whau")

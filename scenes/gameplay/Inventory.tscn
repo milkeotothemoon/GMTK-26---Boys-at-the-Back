@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxtu3i6gck2ey" path="res://scenes/items/sound/Engine.tscn" id="5_engineslot"]
 [ext_resource type="PackedScene" uid="uid://d3ymiqhqfgq3b" path="res://scenes/items/sound/Blender.tscn" id="6_blenderslot"]
 [ext_resource type="PackedScene" uid="uid://dg0wm4bp3e7vi" path="res://scenes/items/modifiers/Microphone.tscn" id="7_microphoneslot"]
-[ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/Repeater.tscn" id="8_repeaterslot"]
+[ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/CassetteTape.tscn" id="8_repeaterslot"]
 [ext_resource type="PackedScene" uid="uid://d2cjxhyokckbo" path="res://scenes/items/connectors/ConveyorBelt.tscn" id="9_conveyorbeltslot"]
 [ext_resource type="PackedScene" uid="uid://ds8crexmdulmx" path="res://scenes/items/connectors/Wire.tscn" id="10_wireslot"]
 [ext_resource type="PackedScene" uid="uid://c1y2g24pyyca0" path="res://scenes/items/connectors/Glue.tscn" id="11_glueslot"]
@@ -24,6 +24,7 @@ position = Vector2(20, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("2_balloonslot")
 item_label = "Balloon"
+item_id = "balloon"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BalloonSlot" unique_id=1972760510]
 shape = SubResource("RectangleShape2D_slot")
@@ -43,6 +44,7 @@ position = Vector2(80, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("3_gongslot")
 item_label = "Gong"
+item_id = "gong"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GongSlot" unique_id=1789047034]
 shape = SubResource("RectangleShape2D_slot")
@@ -62,6 +64,7 @@ position = Vector2(140, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("4_chickenslot")
 item_label = "Chicken"
+item_id = "chicken"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChickenSlot" unique_id=657302846]
 shape = SubResource("RectangleShape2D_slot")
@@ -81,6 +84,7 @@ position = Vector2(200, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("5_engineslot")
 item_label = "Engine"
+item_id = "engine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EngineSlot" unique_id=2001076642]
 shape = SubResource("RectangleShape2D_slot")
@@ -100,6 +104,7 @@ position = Vector2(260, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("6_blenderslot")
 item_label = "Blender"
+item_id = "blender"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlenderSlot" unique_id=564115886]
 shape = SubResource("RectangleShape2D_slot")
@@ -119,6 +124,7 @@ position = Vector2(320, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("7_microphoneslot")
 item_label = "Microphone"
+item_id = "microphone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MicrophoneSlot" unique_id=1188838994]
 shape = SubResource("RectangleShape2D_slot")
@@ -133,16 +139,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="CasetteTapeSlot" type="Area2D" parent="." unique_id=1710316631]
+[node name="CassetteTapeSlot" type="Area2D" parent="." unique_id=1710316631]
 position = Vector2(20, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("8_repeaterslot")
-item_label = "Repeater"
+item_label = "Cassette Tape"
+item_id = "cassette_tape"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CasetteTapeSlot" unique_id=1621974004]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CassetteTapeSlot" unique_id=1621974004]
 shape = SubResource("RectangleShape2D_slot")
 
-[node name="Label" type="Label" parent="CasetteTapeSlot" unique_id=808997456]
+[node name="Label" type="Label" parent="CassetteTapeSlot" unique_id=808997456]
 offset_left = -45.0
 offset_top = -10.0
 offset_right = 45.0
@@ -157,6 +164,7 @@ position = Vector2(80, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("9_conveyorbeltslot")
 item_label = "Conveyor Belt"
+item_id = "conveyor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBeltSlot" unique_id=1256041094]
 shape = SubResource("RectangleShape2D_slot")
@@ -176,6 +184,7 @@ position = Vector2(140, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("10_wireslot")
 item_label = "Wire"
+item_id = "wire"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WireSlot" unique_id=400732786]
 shape = SubResource("RectangleShape2D_slot")
@@ -195,6 +204,7 @@ position = Vector2(200, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("11_glueslot")
 item_label = "Glue"
+item_id = "glue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GlueSlot" unique_id=614868504]
 shape = SubResource("RectangleShape2D_slot")
@@ -214,6 +224,7 @@ position = Vector2(260, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("12_fanslot")
 item_label = "Fan"
+item_id = "fan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FanSlot" unique_id=1297679936]
 shape = SubResource("RectangleShape2D_slot")
@@ -233,6 +244,7 @@ position = Vector2(320, 80)
 script = ExtResource("1_slot")
 item_scene = ExtResource("13_pistonslot")
 item_label = "Piston"
+item_id = "piston"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PistonSlot" unique_id=974405306]
 shape = SubResource("RectangleShape2D_slot")
@@ -253,7 +265,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="input_event" from="EngineSlot" to="EngineSlot" method="_on_input_event"]
 [connection signal="input_event" from="BlenderSlot" to="BlenderSlot" method="_on_input_event"]
 [connection signal="input_event" from="MicrophoneSlot" to="MicrophoneSlot" method="_on_input_event"]
-[connection signal="input_event" from="CasetteTapeSlot" to="CasetteTapeSlot" method="_on_input_event"]
+[connection signal="input_event" from="CassetteTapeSlot" to="CassetteTapeSlot" method="_on_input_event"]
 [connection signal="input_event" from="ConveyorBeltSlot" to="ConveyorBeltSlot" method="_on_input_event"]
 [connection signal="input_event" from="WireSlot" to="WireSlot" method="_on_input_event"]
 [connection signal="input_event" from="GlueSlot" to="GlueSlot" method="_on_input_event"]

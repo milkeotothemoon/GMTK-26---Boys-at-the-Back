@@ -8,6 +8,8 @@
 
 [node name="Chicken" type="Area2D" unique_id=680122567]
 script = ExtResource("1_l1n8pn")
+item_id = "chicken"
+decibel_value = 14.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1944366314]
 sprite_frames = SubResource("SpriteFrames_faswq")

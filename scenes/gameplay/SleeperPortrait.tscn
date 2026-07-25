@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ct7pmsdcku03e"]
 
 [ext_resource type="Texture2D" uid="uid://cef26xd1577m8" path="res://icon.svg" id="1_ann17"]
+[ext_resource type="Script" uid="uid://5tmimws0yo2d" path="res://scripts/gameplay/sleeper_portrait.gd" id="1_vklpa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rovga"]
 animations = [{
@@ -33,6 +34,7 @@ radius = 112.0
 height = 318.0
 
 [node name="SleeperPortrait" type="CharacterBody2D" unique_id=424663072]
+script = ExtResource("1_vklpa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=36084823]
 scale = Vector2(1.78125, 2.53125)

@@ -8,6 +8,8 @@
 
 [node name="Engine" type="Area2D" unique_id=1511088174]
 script = ExtResource("1_ihl8s0")
+item_id = "engine"
+decibel_value = 45.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=588257077]
 sprite_frames = SubResource("SpriteFrames_ovcaw")
