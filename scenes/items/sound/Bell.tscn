@@ -6,6 +6,17 @@
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_41faa"]
+animations = [{
+"frames": [],
+"loop": 0,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdo02"]
 size = Vector2(50, 50)
@@ -21,6 +32,8 @@ shape = SubResource("RectangleShape2D_y8dc8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977039646]
 sprite_frames = SubResource("SpriteFrames_41faa")
+animation = &"active"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=135541480]
 

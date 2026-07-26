@@ -6,11 +6,28 @@
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j6oda"]
+animations = [{
+"frames": [],
+"loop": 0,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unryx"]
 size = Vector2(50, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6oda"]
+size = Vector2(46, 8)
+
 [node name="Airhorn" type="RigidBody2D" unique_id=380845762]
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_j6oda")
 item_id = "airhorn"
 display_name = "Airhorn"
@@ -20,11 +37,19 @@ shape = SubResource("RectangleShape2D_kdo02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=6077634]
 sprite_frames = SubResource("SpriteFrames_j6oda")
+animation = &"active"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=761547991]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1976154125]
 shape = SubResource("RectangleShape2D_unryx")
+
+[node name="TopArea" type="Area2D" parent="." unique_id=367037945]
+position = Vector2(0, -28)
+
+[node name="TopShape" type="CollisionShape2D" parent="TopArea" unique_id=588231546]
+shape = SubResource("RectangleShape2D_j6oda")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=761178110]
 

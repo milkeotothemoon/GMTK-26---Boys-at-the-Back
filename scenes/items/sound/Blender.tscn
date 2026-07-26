@@ -6,9 +6,23 @@
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aymtw"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"active",
+"speed": 4.0
+}, {
+"frames": [],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udofq"]
 size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfbh3"]
+size = Vector2(40, 30)
 
 [node name="Blender" type="RigidBody2D" unique_id=1963854027]
 gravity_scale = 0.0
@@ -24,11 +38,18 @@ shape = SubResource("RectangleShape2D_0gr5b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062309702]
 sprite_frames = SubResource("SpriteFrames_aymtw")
+animation = &"active"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=62922107]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1712908748]
 shape = SubResource("RectangleShape2D_udofq")
+
+[node name="ContentsArea" type="Area2D" parent="." unique_id=261488602]
+
+[node name="ContentsShape" type="CollisionShape2D" parent="ContentsArea" unique_id=544368940]
+shape = SubResource("RectangleShape2D_dfbh3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1839653244]
 

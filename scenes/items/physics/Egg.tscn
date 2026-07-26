@@ -6,6 +6,17 @@
 radius = 25.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_473gv"]
+animations = [{
+"frames": [],
+"loop": 0,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5e525"]
 radius = 25.0
@@ -21,6 +32,8 @@ shape = SubResource("CircleShape2D_lpssy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1429094944]
 sprite_frames = SubResource("SpriteFrames_473gv")
+animation = &"break"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=84998173]
 
