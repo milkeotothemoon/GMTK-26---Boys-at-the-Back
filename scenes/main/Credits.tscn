@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2bgpovq2pqda"]
 
 [ext_resource type="Script" uid="uid://cx4m5gq36hn" path="res://scripts/main/credits.gd" id="1_4lkuw"]
+[ext_resource type="Texture2D" uid="uid://f64pfvkqfwpl" path="res://assets/sprites/backgrounds/credits_BG.png" id="2_acxcm"]
 [ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="3_acxcm"]
 
 [node name="Credits" type="Node2D" unique_id=926278047]
@@ -10,6 +11,7 @@ script = ExtResource("1_4lkuw")
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("2_acxcm")
 
 [node name="BackButton" type="Button" parent="." unique_id=1084523543]
 offset_left = 146.0

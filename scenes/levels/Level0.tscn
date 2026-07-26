@@ -151,7 +151,6 @@ visible = false
 [node name="PhaseTransition" parent="." unique_id=585754170 instance=ExtResource("9_e2o36")]
 
 [node name="TutorialPanel" parent="." unique_id=1529139202 instance=ExtResource("11_oswwn")]
-visible = false
 
 [node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=139107663]
 

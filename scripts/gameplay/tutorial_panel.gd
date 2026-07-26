@@ -8,12 +8,12 @@ signal tutorial_finished
 var _step: int = 0
 
 const STEPS := [
-	"Someone's asleep downstairs.\nYour job is to wake them up.",
-	"Drag items from the tray onto the grid.\nYou have 60 seconds to build.",
-	"Press R to rotate an item while you're holding it,\nand F to flip it. Some items only work facing the right way.",
-	"Drop an item outside the grid to throw it away.\nRight-click a placed item to delete it.",
-	"When the timer runs out, physics takes over.\nThe marble falls — everything it hits makes noise.",
-	"Louder is better. Fill the bar on the right\nto earn stars. Good luck."
+	"Looks like this kid is still deep asleep!",
+	"Drag items from the tray onto the grid, quick!\nYou have 60 seconds to build.",
+	"Simply click an item and put it onto the alarm.",
+	"Drop an item outside the grid to throw it away.",
+	"When the timer runs out, the alarm rings and gravity takes over!\nAnything that falls makes some noise.",
+    "Louder is better. Fill the bar on the right\nto earn stars. Wakey wakey!!"
 ]
 
 func _ready() -> void:
