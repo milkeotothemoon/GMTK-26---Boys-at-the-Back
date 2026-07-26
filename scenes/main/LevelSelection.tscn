@@ -5,6 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://cfeepkyb5jra7" path="res://assets/sprites/ui/level select/level select bg.jpg" id="2_5l5gi"]
 [ext_resource type="AudioStream" uid="uid://bil02j7x6edge" path="res://assets/sound/click-sound-effects-copyright-free-4_iV058Ec4.mp3" id="4_n7y1x"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7y1x"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.99423057, 0.9524061, 0.92991716, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="LevelSelection" type="Node2D" unique_id=70987566]
 script = ExtResource("1_080wy")
 
@@ -24,42 +36,50 @@ offset_bottom = 1075.0
 
 [node name="House0" type="Button" parent="Houses" unique_id=731248022]
 layout_mode = 0
-offset_left = 517.0
+offset_left = 468.0
 offset_top = 427.0
-offset_right = 717.0
+offset_right = 668.0
 offset_bottom = 627.0
 theme = ExtResource("2_0e7p1")
+theme_override_colors/font_color = Color(0.4, 0.13725491, 0.05882353, 1)
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_n7y1x")
 text = "0"
 
 [node name="House1" type="Button" parent="Houses" unique_id=47895419]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 347.0
-offset_right = 389.0
-offset_bottom = 547.0
+offset_left = 174.0
+offset_top = 207.0
+offset_right = 374.0
+offset_bottom = 407.0
 theme = ExtResource("2_0e7p1")
+theme_override_colors/font_color = Color(0.4, 0.13725491, 0.05882353, 1)
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_n7y1x")
 text = "1"
 
 [node name="House2" type="Button" parent="Houses" unique_id=573031662]
 layout_mode = 0
-offset_left = 706.0
-offset_top = 121.0
-offset_right = 906.0
-offset_bottom = 321.0
+offset_left = 660.0
+offset_top = 179.0
+offset_right = 860.0
+offset_bottom = 379.0
 theme = ExtResource("2_0e7p1")
+theme_override_colors/font_color = Color(0.4, 0.13725491, 0.05882353, 1)
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_n7y1x")
 text = "2"
 
 [node name="House3" type="Button" parent="Houses" unique_id=1395010402]
 layout_mode = 0
-offset_left = 632.0
-offset_top = 718.0
-offset_right = 832.0
-offset_bottom = 918.0
+offset_left = 635.0
+offset_top = 715.0
+offset_right = 835.0
+offset_bottom = 915.0
 theme = ExtResource("2_0e7p1")
+theme_override_colors/font_color = Color(0.4, 0.13725491, 0.05882353, 1)
 theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_n7y1x")
 text = "3"
 
 [node name="LevelPanel" type="Panel" parent="." unique_id=1827637892]
@@ -128,7 +148,9 @@ offset_right = 348.0
 offset_bottom = 1044.0
 grow_vertical = 0
 theme = ExtResource("2_0e7p1")
+theme_override_colors/font_color = Color(0.4, 0.13725491, 0.05882353, 1)
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_n7y1x")
 text = "Go Back"
 
 [node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=569925471]
