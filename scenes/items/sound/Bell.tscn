@@ -1,18 +1,60 @@
 [gd_scene format=3 uid="uid://bi25ucghyanyy"]
 
 [ext_resource type="Script" uid="uid://btlat4l33427e" path="res://scripts/items/behaviors/bell.gd" id="1_41faa"]
+[ext_resource type="Texture2D" uid="uid://ddifuum2rkava" path="res://assets/sprites/items/bell/BELL_2.png" id="2_gfobb"]
+[ext_resource type="Texture2D" uid="uid://c4qrj7qa3qdl6" path="res://assets/sprites/items/bell/BELL_1.png" id="2_w2mlq"]
+[ext_resource type="Texture2D" uid="uid://ioxyk0vwrfh0" path="res://assets/sprites/items/bell/BELL_3.png" id="3_jti3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8dc8"]
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_41faa"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gfobb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jti3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfobb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jti3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfobb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jti3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfobb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jti3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfobb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jti3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfobb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jti3v")
+}],
 "loop": 0,
 "name": &"active",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w2mlq")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -31,9 +73,12 @@ display_name = "Bell"
 shape = SubResource("RectangleShape2D_y8dc8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977039646]
+scale = Vector2(0.15624999, 0.15625)
 sprite_frames = SubResource("SpriteFrames_41faa")
 animation = &"active"
 autoplay = "idle"
+frame = 11
+frame_progress = 1.0
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=135541480]
 

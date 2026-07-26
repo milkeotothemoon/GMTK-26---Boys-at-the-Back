@@ -1,18 +1,26 @@
 [gd_scene format=3 uid="uid://d371nmtxybpr7"]
 
 [ext_resource type="Script" uid="uid://daav7lgw8bw46" path="res://scripts/items/physics_item.gd" id="1_473gv"]
+[ext_resource type="Texture2D" uid="uid://c486n2qy3e7ng" path="res://assets/sprites/items/egg/EGG_cracked.png" id="2_umuf3"]
+[ext_resource type="Texture2D" uid="uid://cnargdetc755m" path="res://assets/sprites/items/egg/EGG_normal.png" id="3_lwu71"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lpssy"]
 radius = 25.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_473gv"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_umuf3")
+}],
 "loop": 0,
 "name": &"break",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lwu71")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -31,6 +39,8 @@ display_name = "Egg"
 shape = SubResource("CircleShape2D_lpssy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1429094944]
+position = Vector2(0, -2)
+scale = Vector2(0.19791666, 0.19270834)
 sprite_frames = SubResource("SpriteFrames_473gv")
 animation = &"break"
 autoplay = "idle"

@@ -1,5 +1,13 @@
 extends Control
 
+## Highest level index that actually exists as a playable scene.
+## Levels 1-3 are still empty stubs, so the demo ends after Level 0.
+## Bump this when Level 1 is real.
+const DEMO_LAST_LEVEL := 0
+
+const OUTRO_SCENE := "res://scenes/main/Outro.tscn"
+const LEVEL_SELECT_SCENE := "res://scenes/main/LevelSelection.tscn"
+
 @onready var result_panel: Panel = $ResultPanel
 @onready var score_label: Label = $ResultPanel/ScoreLabel
 @onready var result_label: Label = $ResultPanel/ResultLabel
@@ -16,6 +24,7 @@ var star_filled: Texture2D = preload("res://assets/sprites/ui/star_filled.png")
 var star_empty: Texture2D = preload("res://assets/sprites/ui/star_empty.png")
 
 var _star_count: int = 0
+var _leaving: bool = false
 
 const FACE_HAPPY := preload("res://assets/sprites/ui/goblin_happy.png")
 const FACE_SAD := preload("res://assets/sprites/ui/goblin_sad.png")
@@ -25,6 +34,9 @@ func _ready() -> void:
 	visible = false
 	primary_button.pressed.connect(_on_primary_pressed)
 	secondary_button.pressed.connect(_on_secondary_pressed)
+
+func _is_demo_end() -> bool:
+	return GameState.current_level_index >= DEMO_LAST_LEVEL
 
 func show_result(star_count: int) -> void:
 	_star_count = star_count
@@ -41,19 +53,40 @@ func show_result(star_count: int) -> void:
 
 	score_label.text = "%.0f pts" % AudioManager.decibel_total
 	result_label.text = "You Failed" if star_count == 0 else "You Did It!"
-	primary_button.text = "Retry" if star_count == 0 else "Continue"
-	secondary_button.text = "Go Back" if star_count == 0 else "Retry"
+
+	if star_count == 0:
+		primary_button.text = "Retry"
+		secondary_button.text = "Go Back"
+	elif _is_demo_end():
+		primary_button.text = "Finish Demo"
+		secondary_button.text = "Retry"
+	else:
+		primary_button.text = "Continue"
+		secondary_button.text = "Retry"
 
 	visible = true
 
 func _on_primary_pressed() -> void:
+	if _leaving:
+		return
 	if _star_count == 0:
+		_leaving = true
 		get_tree().reload_current_scene()
+	elif _is_demo_end():
+		await _go_to(OUTRO_SCENE)
 	else:
-		get_tree().change_scene_to_file("res://scenes/main/LevelSelection.tscn")
+		await _go_to(LEVEL_SELECT_SCENE)
 
 func _on_secondary_pressed() -> void:
+	if _leaving:
+		return
 	if _star_count == 0:
-		get_tree().change_scene_to_file("res://scenes/main/LevelSelection.tscn")
+		await _go_to(LEVEL_SELECT_SCENE)
 	else:
+		_leaving = true
 		get_tree().reload_current_scene()
+
+func _go_to(path: String) -> void:
+	_leaving = true
+	await ScreenTransition.close()
+	get_tree().change_scene_to_file(path)

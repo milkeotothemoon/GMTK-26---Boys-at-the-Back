@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dyvjtic38cebg"]
 
 [ext_resource type="Script" uid="uid://bcu0bik8uh2ga" path="res://scripts/items/behaviors/balloon.gd" id="1_wki06"]
-[ext_resource type="Texture2D" uid="uid://bsrxc0tv2hjt2" path="res://assets/sprites/items/balloon/balloon_pop.png" id="2_6ts4o"]
-[ext_resource type="Texture2D" uid="uid://dngt2n6m60e0b" path="res://assets/sprites/items/balloon/balloon_static.png" id="2_b4fyu"]
+[ext_resource type="Texture2D" uid="uid://dxmq4ld12rga7" path="res://assets/sprites/items/balloon/BALLOON_popped.png" id="2_6ts4o"]
+[ext_resource type="Texture2D" uid="uid://ctw0jfcw82up5" path="res://assets/sprites/items/balloon/BALLOON_normal.png" id="3_q04m4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75xeh"]
 radius = 25.0
@@ -19,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_b4fyu")
+"texture": ExtResource("3_q04m4")
 }],
 "loop": 0,
 "name": &"idle",

@@ -1,11 +1,34 @@
 [gd_scene format=3 uid="uid://b3huixd4fh3xy"]
 
 [ext_resource type="Script" uid="uid://bwmog8fuktmhk" path="res://scripts/items/util_item.gd" id="1_1367s"]
+[ext_resource type="Texture2D" uid="uid://c1gh78vff7r7c" path="res://assets/sprites/items/fan/FAN_B.png" id="2_6sh5m"]
+[ext_resource type="Texture2D" uid="uid://eqwtgixrkr8" path="res://assets/sprites/items/fan/FAN_C.png" id="3_fkoaj"]
+[ext_resource type="Texture2D" uid="uid://dnmgdrybrpmr1" path="res://assets/sprites/items/fan/FAN_A.png" id="4_0nuyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfikc"]
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0jaqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6sh5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fkoaj")
+}],
+"loop": 1,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0nuyg")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1367s"]
 size = Vector2(50, 50)
@@ -28,7 +51,12 @@ can_flip = true
 shape = SubResource("RectangleShape2D_pfikc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=555126865]
+position = Vector2(21, 2.5000026)
+rotation = 1.5707964
+scale = Vector2(0.22395834, 0.23982018)
 sprite_frames = SubResource("SpriteFrames_0jaqn")
+animation = &"active"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=2089832585]
 

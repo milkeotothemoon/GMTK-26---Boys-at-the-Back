@@ -1,18 +1,26 @@
 [gd_scene format=3 uid="uid://ctf2su6d3fe80"]
 
 [ext_resource type="Script" uid="uid://d6p401siba6u" path="res://scripts/items/behaviors/chicken.gd" id="1_3txgw"]
+[ext_resource type="Texture2D" uid="uid://dlug5esog7km2" path="res://assets/sprites/items/chicken/CHICKEN_2.png" id="2_jbelh"]
+[ext_resource type="Texture2D" uid="uid://do8a2vxiurbjm" path="res://assets/sprites/items/chicken/CHICKEN_1.png" id="3_qtk75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlye7"]
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_faswq"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jbelh")
+}],
 "loop": 0,
 "name": &"active",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qtk75")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -34,6 +42,7 @@ display_name = "Chicken"
 shape = SubResource("RectangleShape2D_mlye7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1944366314]
+scale = Vector2(0.119791664, 0.13020833)
 sprite_frames = SubResource("SpriteFrames_faswq")
 animation = &"active"
 autoplay = "idle"

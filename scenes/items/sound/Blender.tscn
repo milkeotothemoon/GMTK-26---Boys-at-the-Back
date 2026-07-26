@@ -1,18 +1,30 @@
 [gd_scene format=3 uid="uid://d3ymiqhqfgq3b"]
 
 [ext_resource type="Script" uid="uid://y5rfs7h64pgo" path="res://scripts/items/behaviors/blender.gd" id="1_udofq"]
+[ext_resource type="Texture2D" uid="uid://cbwf63yrpfqk4" path="res://assets/sprites/items/blender/BLENDER_2.png" id="2_7ylgj"]
+[ext_resource type="Texture2D" uid="uid://ctrsqdxjmyj7j" path="res://assets/sprites/items/blender/BLENDER_1.png" id="2_dfbh3"]
+[ext_resource type="Texture2D" uid="uid://f5d2gy1q4eix" path="res://assets/sprites/items/blender/BLENDER_3.png" id="3_10hwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gr5b"]
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aymtw"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ylgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_10hwa")
+}],
 "loop": 1,
 "name": &"active",
 "speed": 4.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dfbh3")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -37,9 +49,11 @@ display_name = "Blender"
 shape = SubResource("RectangleShape2D_0gr5b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062309702]
+scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_aymtw")
 animation = &"active"
 autoplay = "idle"
+frame_progress = 0.91623354
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=62922107]
 

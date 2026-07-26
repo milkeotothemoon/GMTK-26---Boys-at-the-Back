@@ -1,18 +1,30 @@
 [gd_scene format=3 uid="uid://drp7na3rgll4w"]
 
 [ext_resource type="Script" uid="uid://dmbk2tjn1wgwq" path="res://scripts/items/connector_item.gd" id="1_flcbc"]
+[ext_resource type="Texture2D" uid="uid://1q51i4fv5dfr" path="res://assets/sprites/items/tripwire/TRIPWIRE_2.png" id="2_48vcg"]
+[ext_resource type="Texture2D" uid="uid://dpyfh2hamrggm" path="res://assets/sprites/items/tripwire/TRIPWIRE_3.png" id="3_y8grs"]
+[ext_resource type="Texture2D" uid="uid://c8ycrcidnh4x8" path="res://assets/sprites/items/tripwire/TRIPWIRE_1.png" id="4_vdncb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckne3"]
 size = Vector2(201, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flcbc"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_48vcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y8grs")
+}],
 "loop": 0,
 "name": &"break",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vdncb")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -33,9 +45,13 @@ cell_size = Vector2i(3, 1)
 shape = SubResource("RectangleShape2D_ckne3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1803935657]
+position = Vector2(0, -6.000001)
+scale = Vector2(0.5260417, 0.2682292)
 sprite_frames = SubResource("SpriteFrames_flcbc")
 animation = &"break"
 autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=5257806]
 

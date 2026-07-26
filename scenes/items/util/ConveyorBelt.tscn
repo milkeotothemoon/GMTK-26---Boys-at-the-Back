@@ -1,11 +1,39 @@
 [gd_scene format=3 uid="uid://d2cjxhyokckbo"]
 
 [ext_resource type="Script" uid="uid://bwmog8fuktmhk" path="res://scripts/items/util_item.gd" id="1_f4bct"]
+[ext_resource type="Texture2D" uid="uid://cwgkggs5l05xj" path="res://assets/sprites/items/conveyor/CONVEYOR BELT_2.png" id="2_2bafr"]
+[ext_resource type="Texture2D" uid="uid://c40q114tk85ho" path="res://assets/sprites/items/conveyor/CONVEYOR BELT_1.png" id="3_woljd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kc610"]
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q0t6o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2bafr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_woljd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2bafr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_woljd")
+}],
+"loop": 1,
+"name": &"active",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_woljd")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75xeh"]
 size = Vector2(50, 50)
@@ -27,7 +55,11 @@ display_name = "Conveyor Belt"
 shape = SubResource("RectangleShape2D_kc610")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=799896899]
+position = Vector2(0, -8)
+scale = Vector2(0.21354167, 0.17708334)
 sprite_frames = SubResource("SpriteFrames_q0t6o")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=1468987094]
 

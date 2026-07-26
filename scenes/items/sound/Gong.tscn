@@ -1,18 +1,26 @@
 [gd_scene format=3 uid="uid://diem7wdch32ia"]
 
 [ext_resource type="Script" uid="uid://5w033usdgsws" path="res://scripts/items/behaviors/gong.gd" id="1_3j3eh"]
+[ext_resource type="Texture2D" uid="uid://c5n218wea6efh" path="res://assets/sprites/items/gong/GONG_ringing.png" id="2_olxdb"]
+[ext_resource type="Texture2D" uid="uid://df50a6t5ggqb4" path="res://assets/sprites/items/gong/GONG_static.png" id="3_xt385"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6swph"]
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xcvr"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_olxdb")
+}],
 "loop": 0,
 "name": &"active",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xt385")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -34,8 +42,9 @@ display_name = "Gong"
 shape = SubResource("RectangleShape2D_6swph")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1842243052]
+scale = Vector2(0.16145833, 0.16145834)
 sprite_frames = SubResource("SpriteFrames_7xcvr")
-animation = &"active"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=1406013779]
