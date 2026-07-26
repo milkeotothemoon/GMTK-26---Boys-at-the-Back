@@ -30,8 +30,4 @@ sprite_frames = SubResource("SpriteFrames_1490n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1960677827]
 shape = SubResource("RectangleShape2D_bn11s")
 
-[node name="CodeLabel" type="Label" parent="." unique_id=986890483]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

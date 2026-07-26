@@ -39,4 +39,5 @@ func _replay() -> void:
 	if total <= 0.0:
 		return
 	_has_replayed = true
+	_play_visual("active")
 	AudioManager.report_sound(item_id + "_replay", total)

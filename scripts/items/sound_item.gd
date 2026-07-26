@@ -25,6 +25,7 @@ func activate(_source: Node = null) -> void:
 func _fire() -> void:
 	var amount := _compute_decibels()
 	AudioManager.report_sound(item_id, amount)
+	_play_visual("active")
 	fired.emit(self, amount)
 	_play_audio()
 	if consumed_on_fire:

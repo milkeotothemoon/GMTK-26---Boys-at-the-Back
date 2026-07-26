@@ -1,29 +1,32 @@
 [gd_scene format=3 uid="uid://b3huixd4fh3xy"]
 
-[ext_resource type="Script" uid="uid://bwmog8fuktmhk" path="res://scripts/items/util_item.gd" id="1_kncku9"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0jaqn"]
+[ext_resource type="Script" uid="uid://cv4ho67wlio7d" path="res://scripts/items/behaviors/fan.gd" id="1_1367s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfikc"]
 size = Vector2(50, 50)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_0jaqn"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1367s"]
 size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qqce"]
+size = Vector2(160, 160)
 
 [node name="Fan" type="RigidBody2D" unique_id=299501691]
 gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
-script = ExtResource("1_kncku9")
+script = ExtResource("1_1367s")
 effect_kind = "blow"
 item_id = "fan"
 display_name = "Fan"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=555126865]
-sprite_frames = SubResource("SpriteFrames_0jaqn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1190559329]
 shape = SubResource("RectangleShape2D_pfikc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=555126865]
+sprite_frames = SubResource("SpriteFrames_0jaqn")
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=2089832585]
 
@@ -33,5 +36,12 @@ shape = SubResource("RectangleShape2D_1367s")
 [node name="CodeLabel" type="Label" parent="." unique_id=1923643509]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="EffectArea" type="Area2D" parent="." unique_id=660704301]
+collision_layer = 0
+collision_mask = 2
+
+[node name="EffectShape" type="CollisionShape2D" parent="EffectArea" unique_id=163186856]
+shape = SubResource("RectangleShape2D_2qqce")
 
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]
