@@ -48,7 +48,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ChickenSlot" type="Area2D" parent="." unique_id=746638961]
-position = Vector2(80, 20)
+position = Vector2(93, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("4_chickenslot")
 item_label = "Chicken"
@@ -66,9 +66,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="BlenderSlot" type="Area2D" parent="." unique_id=1407858912]
-position = Vector2(140, 20)
+position = Vector2(169, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("6_blenderslot")
 item_label = "Blender"
@@ -86,9 +87,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="GongSlot" type="Area2D" parent="." unique_id=1783663871]
-position = Vector2(200, 20)
+position = Vector2(243, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("3_gongslot")
 item_label = "Gong"
@@ -106,9 +108,10 @@ mouse_filter = 2
 texture = ExtResource("7_otrw3")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="EngineSlot" type="Area2D" parent="." unique_id=766071034]
-position = Vector2(260, 20)
+position = Vector2(317, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("5_engineslot")
 item_label = "Engine"
@@ -126,9 +129,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="BellSlot" type="Area2D" parent="." unique_id=1402310230]
-position = Vector2(320, 20)
+position = Vector2(391, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("12_bellslot")
 item_label = "Bell"
@@ -146,9 +150,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="AirhornSlot" type="Area2D" parent="." unique_id=305973019]
-position = Vector2(380, 20)
+position = Vector2(465, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("13_airhornslot")
 item_label = "Airhorn"
@@ -166,9 +171,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="MegaphoneSlot" type="Area2D" parent="." unique_id=763185001]
-position = Vector2(440, 20)
+position = Vector2(539, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("7_microphoneslot")
 item_label = "Megaphone"
@@ -186,9 +192,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="CassetteTapeSlot" type="Area2D" parent="." unique_id=1710316631]
-position = Vector2(500, 20)
+position = Vector2(613, 20)
 script = ExtResource("1_slot")
 item_scene = ExtResource("8_casettetapeslot")
 item_label = "Cassette Tape"
@@ -206,9 +213,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="MarbleSlot" type="Area2D" parent="." unique_id=77714530]
-position = Vector2(20, 80)
+position = Vector2(20, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("14_marbleslot")
 item_label = "Marble"
@@ -226,9 +234,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="EggSlot" type="Area2D" parent="." unique_id=125035956]
-position = Vector2(80, 80)
+position = Vector2(93, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("15_eggslot")
 item_label = "Egg"
@@ -246,9 +255,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="PlankSlot" type="Area2D" parent="." unique_id=271102762]
-position = Vector2(140, 80)
+position = Vector2(169, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("16_plankslot")
 item_label = "Plank"
@@ -266,9 +276,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="BeamSlot" type="Area2D" parent="." unique_id=1518276658]
-position = Vector2(200, 80)
+position = Vector2(243, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("17_beamslot")
 item_label = "Beam"
@@ -286,9 +297,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="StringSlot" type="Area2D" parent="." unique_id=1152007948]
-position = Vector2(260, 80)
+position = Vector2(317, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("18_stringslot")
 item_label = "String"
@@ -306,9 +318,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="ConveyorBeltSlot" type="Area2D" parent="." unique_id=781582942]
-position = Vector2(320, 80)
+position = Vector2(391, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("9_conveyorbeltslot")
 item_label = "Conveyor Belt"
@@ -326,9 +339,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="FanSlot" type="Area2D" parent="." unique_id=809936773]
-position = Vector2(380, 80)
+position = Vector2(465, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("10_fanslot")
 item_label = "Fan"
@@ -346,9 +360,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="PistonSlot" type="Area2D" parent="." unique_id=378960894]
-position = Vector2(440, 80)
+position = Vector2(539, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("11_pistonslot")
 item_label = "Piston"
@@ -366,9 +381,10 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="LauncherSlot" type="Area2D" parent="." unique_id=169709335]
-position = Vector2(500, 80)
+position = Vector2(613, 88)
 script = ExtResource("1_slot")
 item_scene = ExtResource("19_launcherslot")
 item_label = "Launcher"
@@ -386,6 +402,7 @@ mouse_filter = 2
 texture = ExtResource("3_ik7uu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [connection signal="input_event" from="BalloonSlot" to="BalloonSlot" method="_on_input_event"]
 [connection signal="input_event" from="ChickenSlot" to="ChickenSlot" method="_on_input_event"]
