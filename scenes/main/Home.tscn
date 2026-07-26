@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cmqdp4oquobw"]
 
 [ext_resource type="Script" uid="uid://cjrjx03gbaf8" path="res://scripts/main/home.gd" id="1_cy2mo"]
+[ext_resource type="Texture2D" uid="uid://cjndy728n84cn" path="res://assets/sprites/ui/title screen/bg.png" id="2_2y60t"]
 [ext_resource type="Texture2D" uid="uid://cv22trp2kgm5h" path="res://assets/sprites/ui/title screen/start.png" id="2_atou1"]
 [ext_resource type="Texture2D" uid="uid://bc8nti5lrox0b" path="res://assets/sprites/ui/title screen/credits.png" id="3_hrow3"]
 [ext_resource type="Texture2D" uid="uid://cqnhfm8ip2ufg" path="res://assets/sprites/ui/title screen/logo.png" id="4_1mx8i"]
 [ext_resource type="AudioStream" uid="uid://bil02j7x6edge" path="res://assets/sound/click-sound-effects-copyright-free-4_iV058Ec4.mp3" id="5_h7yt6"]
+[ext_resource type="Texture2D" uid="uid://c6kq871y60rqa" path="res://assets/sprites/ui/title screen/GMTK Game Jam 2026 Small Logo.png" id="7_cquvg"]
 
 [node name="Home" type="Control" unique_id=1769644235]
 layout_mode = 3
@@ -31,6 +33,7 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+texture = ExtResource("2_2y60t")
 expand_mode = 3
 stretch_mode = 3
 
@@ -107,6 +110,16 @@ stretch_mode = 5
 
 [node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=354504104]
 stream = ExtResource("5_h7yt6")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=846288096]
+layout_mode = 0
+offset_left = -915.0
+offset_top = 378.0
+offset_right = -760.0
+offset_bottom = 500.0
+texture = ExtResource("7_cquvg")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
