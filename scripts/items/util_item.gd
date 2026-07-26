@@ -6,17 +6,22 @@ class_name UtilItem
 @export var direction: Vector2 = Vector2.RIGHT
 @export var one_shot: bool = false
 @export var power_radius: float = 2.5
+@export var max_active_seconds: float = 3.0
 
 signal effect_applied
 
 var _powered: bool = false
 var _used: bool = false
+var _active_time: float = 0.0
 
 func _run_collision_layer() -> int:
 	return 1 << 3  # utils
 
 func power_on() -> void:
+	if _powered:
+		return
 	_powered = true
+	_play_visual("active")
 
 func has_engine_nearby() -> bool:
 	for n in get_parent().get_children():
@@ -29,10 +34,14 @@ func activate(_source: Node = null) -> void:
 	if has_engine_nearby():
 		power_on()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if GameState.current_phase != GameState.Phase.RUN or not _powered:
 		return
 	if one_shot and _used:
+		return
+	_active_time += delta
+	if _active_time > max_active_seconds:
+		_play_visual("idle")
 		return
 	var area := get_node_or_null("EffectArea") as Area2D
 	if area == null:

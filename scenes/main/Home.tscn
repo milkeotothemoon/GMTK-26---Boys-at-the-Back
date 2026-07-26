@@ -52,7 +52,6 @@ alignment = 1
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(160, 150)
 layout_mode = 2
-theme = ExtResource("2_atou1")
 theme_override_font_sizes/font_size = 80
 text = "PLAY"
 
@@ -75,7 +74,6 @@ stretch_mode = 5
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(160, 150)
 layout_mode = 2
-theme = ExtResource("2_atou1")
 theme_override_font_sizes/font_size = 80
 text = "CREDITS"
 

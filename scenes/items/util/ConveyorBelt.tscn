@@ -10,6 +10,9 @@ size = Vector2(50, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75xeh"]
 size = Vector2(50, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4bct"]
+size = Vector2(50, 20)
+
 [node name="ConveyorBelt" type="RigidBody2D" unique_id=629198255]
 gravity_scale = 0.0
 freeze = true
@@ -34,5 +37,13 @@ shape = SubResource("RectangleShape2D_75xeh")
 [node name="CodeLabel" type="Label" parent="." unique_id=2102405260]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="EffectArea" type="Area2D" parent="." unique_id=857534598]
+position = Vector2(0, -35)
+collision_layer = 0
+collision_mask = 2
+
+[node name="EffectShape" type="CollisionShape2D" parent="EffectArea" unique_id=894599688]
+shape = SubResource("RectangleShape2D_f4bct")
 
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

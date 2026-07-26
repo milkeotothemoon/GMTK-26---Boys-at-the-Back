@@ -18,8 +18,7 @@ func _ready() -> void:
 	add_to_group("items")
 	_enter_build_mode()
 	GameState.phase_changed.connect(_on_phase_changed)
-
-# ---------- phase handling ----------
+	_play_visual("idle")
 
 func _on_phase_changed(p: int) -> void:
 	if p == GameState.Phase.RUN:
@@ -45,8 +44,6 @@ func _run_collision_layer() -> int:
 
 func _run_collision_mask() -> int:
 	return 0xFFFFFFFF
-
-# ---------- occupancy ----------
 
 func occupied_cells() -> Array[Vector2i]:
 	var out: Array[Vector2i] = []
@@ -74,8 +71,6 @@ func _can_place_at(origin: Vector2i) -> bool:
 			if c in want:
 				return false
 	return true
-
-# ---------- dragging ----------
 
 func start_drag() -> void:
 	_dragging = true
@@ -151,6 +146,13 @@ func pick_up() -> void:
 		for n in get_parent().get_children():
 			if n is ModifierItem and n.attached_to == self:
 				n.attached_to = null
+
+func _play_visual(anim: String) -> void:
+	var s := get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
+	if s == null or s.sprite_frames == null:
+		return
+	if s.sprite_frames.has_animation(anim):
+		s.play(anim)
 
 func _resolve_attachments() -> void:
 	pass

@@ -6,6 +6,17 @@
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_faswq"]
+animations = [{
+"frames": [],
+"loop": 0,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3txgw"]
 size = Vector2(50, 50)
@@ -24,15 +35,13 @@ shape = SubResource("RectangleShape2D_mlye7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1944366314]
 sprite_frames = SubResource("SpriteFrames_faswq")
+animation = &"active"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=2093324555]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=325902893]
 shape = SubResource("RectangleShape2D_3txgw")
-
-[node name="CodeLabel" type="Label" parent="." unique_id=1129256395]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1292296430]
 

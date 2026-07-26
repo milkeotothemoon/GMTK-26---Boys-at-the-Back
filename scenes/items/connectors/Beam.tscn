@@ -6,6 +6,12 @@
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jcicx"]
+animations = [{
+"frames": [],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu7en"]
 size = Vector2(50, 50)
@@ -21,14 +27,12 @@ shape = SubResource("RectangleShape2D_uwtls")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1724587885]
 sprite_frames = SubResource("SpriteFrames_jcicx")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=308474208]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=2008708871]
 shape = SubResource("RectangleShape2D_qu7en")
-
-[node name="CodeLabel" type="Label" parent="." unique_id=1355132275]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

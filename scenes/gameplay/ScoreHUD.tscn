@@ -22,8 +22,8 @@ script = ExtResource("1_s550n")
 layout_mode = 0
 offset_left = -2.0
 offset_top = 3.0
-offset_right = 1928.0
-offset_bottom = 1081.0
+offset_right = 1918.0
+offset_bottom = 1083.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oswwn")
 
 [node name="ResultFace" type="TextureRect" parent="ResultPanel" unique_id=1477799656]

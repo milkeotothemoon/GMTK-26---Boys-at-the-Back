@@ -26,8 +26,4 @@ sprite_frames = SubResource("SpriteFrames_gnajo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1160901830]
 shape = SubResource("CircleShape2D_eimsr")
 
-[node name="CodeLabel" type="Label" parent="." unique_id=1865817259]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

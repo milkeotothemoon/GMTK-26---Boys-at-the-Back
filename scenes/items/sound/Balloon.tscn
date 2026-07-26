@@ -1,11 +1,30 @@
 [gd_scene format=3 uid="uid://dyvjtic38cebg"]
 
 [ext_resource type="Script" uid="uid://bcu0bik8uh2ga" path="res://scripts/items/behaviors/balloon.gd" id="1_wki06"]
+[ext_resource type="Texture2D" uid="uid://bsrxc0tv2hjt2" path="res://assets/sprites/items/balloon/balloon_pop.png" id="2_6ts4o"]
+[ext_resource type="Texture2D" uid="uid://dngt2n6m60e0b" path="res://assets/sprites/items/balloon/balloon_static.png" id="2_b4fyu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75xeh"]
 radius = 25.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_75xeh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6ts4o")
+}],
+"loop": 0,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b4fyu")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wki06"]
 radius = 25.0
@@ -23,16 +42,15 @@ display_name = "Balloon"
 shape = SubResource("CircleShape2D_75xeh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=411121538]
+scale = Vector2(0.137, 0.14)
 sprite_frames = SubResource("SpriteFrames_75xeh")
+animation = &"active"
+autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=2089992583]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1551624554]
 shape = SubResource("CircleShape2D_wki06")
-
-[node name="CodeLabel" type="Label" parent="." unique_id=1894901829]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=48072953]
 

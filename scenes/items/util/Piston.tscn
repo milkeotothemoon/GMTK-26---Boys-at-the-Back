@@ -10,6 +10,9 @@ size = Vector2(50, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1w4al"]
 size = Vector2(50, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v5ec"]
+size = Vector2(60, 50)
+
 [node name="Piston" type="RigidBody2D" unique_id=1974417866]
 gravity_scale = 0.0
 freeze = true
@@ -32,5 +35,13 @@ shape = SubResource("RectangleShape2D_1w4al")
 [node name="CodeLabel" type="Label" parent="." unique_id=217824492]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="EffectArea" type="Area2D" parent="." unique_id=1013291541]
+position = Vector2(60, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="EffectShape" type="CollisionShape2D" parent="EffectArea" unique_id=816764399]
+shape = SubResource("RectangleShape2D_7v5ec")
 
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]
