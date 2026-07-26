@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ct7pmsdcku03e"]
 
-[ext_resource type="Texture2D" uid="uid://cef26xd1577m8" path="res://icon.svg" id="1_ann17"]
 [ext_resource type="Script" uid="uid://5tmimws0yo2d" path="res://scripts/gameplay/sleeper_portrait.gd" id="1_vklpa"]
+[ext_resource type="Texture2D" uid="uid://dwk4bb6slrr7c" path="res://scenes/levels/sleeping.png" id="2_vklpa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rovga"]
 animations = [{
@@ -22,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ann17")
+"texture": ExtResource("2_vklpa")
 }],
 "loop": 1,
 "name": &"sleeping",
@@ -37,7 +37,8 @@ height = 318.0
 script = ExtResource("1_vklpa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=36084823]
-scale = Vector2(1.78125, 2.53125)
+position = Vector2(2, 27.75)
+scale = Vector2(0.13891602, 0.14819336)
 sprite_frames = SubResource("SpriteFrames_rovga")
 animation = &"sleeping"
 autoplay = "sleeping"
