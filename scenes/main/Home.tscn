@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjrjx03gbaf8" path="res://scripts/main/home.gd" id="1_cy2mo"]
 [ext_resource type="Texture2D" uid="uid://cv22trp2kgm5h" path="res://assets/sprites/ui/title screen/start.png" id="2_atou1"]
 [ext_resource type="Texture2D" uid="uid://bc8nti5lrox0b" path="res://assets/sprites/ui/title screen/credits.png" id="3_hrow3"]
+[ext_resource type="Texture2D" uid="uid://cqnhfm8ip2ufg" path="res://assets/sprites/ui/title screen/logo.png" id="4_1mx8i"]
 
 [node name="Home" type="Control" unique_id=1769644235]
 layout_mode = 3
@@ -32,6 +33,16 @@ size_flags_horizontal = 4
 expand_mode = 3
 stretch_mode = 3
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=413245197]
+layout_mode = 0
+offset_left = -1240.0
+offset_top = -628.0
+offset_right = 330.0
+offset_bottom = 246.0
+texture = ExtResource("4_1mx8i")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=267979232]
 layout_mode = 1
 anchors_preset = 8
@@ -39,12 +50,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -746.0
-offset_top = 11.0
-offset_right = -289.0
-offset_bottom = 420.0
+offset_left = -611.0
+offset_top = 107.0
+offset_right = -154.0
+offset_bottom = 516.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.6799847, 0.6799847)
 theme_override_constants/separation = 60
 alignment = 1
 
