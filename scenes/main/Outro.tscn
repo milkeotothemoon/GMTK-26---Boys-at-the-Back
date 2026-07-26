@@ -3,13 +3,21 @@
 [ext_resource type="Script" uid="uid://df6w1ppvvjemb" path="res://scripts/main/outro.gd" id="1_d3cvb"]
 [ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="2_theme"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_d3cvb"]
-font_size = 168
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_52hen"]
 font_size = 57
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52hen"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.99607843, 0.9529412, 0.92941177, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="Outro" type="Node2D" unique_id=2127493661]
 script = ExtResource("1_d3cvb")
@@ -17,34 +25,22 @@ script = ExtResource("1_d3cvb")
 [node name="Background" type="ColorRect" parent="." unique_id=1305057360]
 offset_right = 1920.0
 offset_bottom = 1080.0
-
-[node name="Message" type="Label" parent="." unique_id=877838776]
-custom_minimum_size = Vector2(1, 1)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = 29.5
-offset_right = 1920.0
-offset_bottom = 542.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_theme")
-text = "THANK YOU FOR PLAYING THE GAME!"
-label_settings = SubResource("LabelSettings_d3cvb")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+color = Color(0.98039216, 0.8666667, 0.654902, 1)
 
 [node name="Sub" type="Label" parent="." unique_id=550747159]
 custom_minimum_size = Vector2(1, 1)
-offset_left = 81.0
-offset_top = 576.0
-offset_right = 1839.0
-offset_bottom = 826.0
+offset_left = 71.0
+offset_top = 56.0
+offset_right = 1829.0
+offset_bottom = 953.0
 theme = ExtResource("2_theme")
-text = "thx text goes here"
+text = "Thank you for playing Goblin Alarm!
+
+We hope you had fun building the loudest and most ridiculous noise machine you could. Although our game was incomplete, we're really thankful you spent time playing it! This is our first game jam, and this project meant alot to us.
+
+This game was made with love (and a lot of debugging) for GMTK Game Jam 2026. Your support means a lot to us!
+
+Sincerely, Boys at the Back"
 label_settings = SubResource("LabelSettings_52hen")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -56,7 +52,9 @@ offset_top = 984.0
 offset_right = 327.0
 offset_bottom = 1062.0
 theme = ExtResource("2_theme")
+theme_override_colors/font_color = Color(0.4, 0.13725491, 0.05882353, 1)
 theme_override_font_sizes/font_size = 41
-text = "go back boy"
+theme_override_styles/normal = SubResource("StyleBoxFlat_52hen")
+text = "Go back!"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

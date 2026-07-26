@@ -4,6 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://f64pfvkqfwpl" path="res://assets/sprites/backgrounds/credits_BG.png" id="2_acxcm"]
 [ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="3_acxcm"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acxcm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="Credits" type="Node2D" unique_id=926278047]
 script = ExtResource("1_4lkuw")
 
@@ -14,12 +26,13 @@ offset_bottom = 40.0
 texture = ExtResource("2_acxcm")
 
 [node name="BackButton" type="Button" parent="." unique_id=1084523543]
-offset_left = 146.0
-offset_top = 866.0
-offset_right = 555.0
-offset_bottom = 989.0
+offset_left = -4.0
+offset_top = 934.0
+offset_right = 405.0
+offset_bottom = 1057.0
 theme = ExtResource("3_acxcm")
 theme_override_font_sizes/font_size = 61
-text = "Go Back Ahh"
+theme_override_styles/normal = SubResource("StyleBoxFlat_acxcm")
+text = "Go Back!"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
