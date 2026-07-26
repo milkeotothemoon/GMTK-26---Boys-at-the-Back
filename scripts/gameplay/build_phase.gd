@@ -7,6 +7,7 @@ signal build_locked
 @onready var transition: CanvasLayer = $PhaseTransition
 @onready var click_player = $ClickPlayer
 @onready var item_count_label: Label = $ItemCount
+@onready var alarm_hand: Node2D = $AlarmHand
 var _digit_textures: Array[Texture2D] = []
 var _build_started: bool = false
 var _placed_items: Node = null

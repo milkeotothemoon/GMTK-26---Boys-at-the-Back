@@ -22,6 +22,7 @@ LevelData="*uid://cclt1yjd7lgie"
 AudioManager="*uid://bxh6aokp1gwc4"
 GridUtils="*uid://c7mkfqnwqwwnf"
 ScreenTransition="*uid://b2cuumejm15fl"
+MusicManager="*uid://bnqqeello781n"
 
 [display]
 

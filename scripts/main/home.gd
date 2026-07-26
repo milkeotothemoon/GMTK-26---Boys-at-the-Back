@@ -4,6 +4,7 @@ extends Control
 func _ready() -> void:
 	ScreenTransition.open()
 	_connect_buttons(self)
+	MusicManager.play_music()
 
 func _on_play_button_pressed() -> void:
 	await ScreenTransition.close()
