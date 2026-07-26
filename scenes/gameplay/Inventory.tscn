@@ -24,11 +24,15 @@
 [ext_resource type="PackedScene" uid="uid://cnfpautgarjxy" path="res://scenes/items/connectors/Plank.tscn" id="16_plankslot"]
 [ext_resource type="Texture2D" uid="uid://ctw0jfcw82up5" path="res://assets/sprites/items/balloon/BALLOON_normal.png" id="17_5benx"]
 [ext_resource type="PackedScene" uid="uid://g85bpv0m1bn" path="res://scenes/items/connectors/Beam.tscn" id="17_beamslot"]
+[ext_resource type="Texture2D" uid="uid://0vi2j25ea3t3" path="res://assets/sprites/items/megaphone/megaphone.png" id="17_la634"]
 [ext_resource type="PackedScene" uid="uid://drp7na3rgll4w" path="res://scenes/items/connectors/String.tscn" id="18_stringslot"]
 [ext_resource type="PackedScene" uid="uid://brk2keitvb4sr" path="res://scenes/items/util/Launcher.tscn" id="19_launcherslot"]
+[ext_resource type="Texture2D" uid="uid://dgldmek6c7v7i" path="res://assets/sprites/items/cassette/cassette idle.png" id="19_pmhgi"]
 [ext_resource type="Texture2D" uid="uid://d3fyd43hvtkb3" path="res://assets/sprites/items/marble/MARBLE.png" id="20_b4gp1"]
 [ext_resource type="Texture2D" uid="uid://cnargdetc755m" path="res://assets/sprites/items/egg/EGG_normal.png" id="22_mjndp"]
+[ext_resource type="Texture2D" uid="uid://dwbsoknxwigbi" path="res://assets/sprites/items/plank/plank.png" id="25_1m3qs"]
 [ext_resource type="Texture2D" uid="uid://c8ycrcidnh4x8" path="res://assets/sprites/items/tripwire/TRIPWIRE_1.png" id="26_nma7n"]
+[ext_resource type="Texture2D" uid="uid://b0knd7dwnvwlr" path="res://assets/sprites/items/beam/beam.png" id="27_yjkp6"]
 [ext_resource type="Texture2D" uid="uid://c40q114tk85ho" path="res://assets/sprites/items/conveyor/CONVEYOR BELT_1.png" id="28_l5faf"]
 [ext_resource type="Texture2D" uid="uid://btan5iqwubdvj" path="res://assets/sprites/items/fan/FAN_1.png" id="30_5fbfe"]
 [ext_resource type="Texture2D" uid="uid://bqcujdpd6njlk" path="res://assets/sprites/items/piston/PISTON_1.png" id="32_raswk"]
@@ -201,6 +205,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
+texture = ExtResource("17_la634")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -221,7 +226,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("17_5benx")
+texture = ExtResource("19_pmhgi")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -284,6 +289,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
+texture = ExtResource("25_1m3qs")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -304,6 +310,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
+texture = ExtResource("27_yjkp6")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true

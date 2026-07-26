@@ -1,24 +1,17 @@
 [gd_scene format=3 uid="uid://dg0wm4bp3e7vi"]
 
 [ext_resource type="Script" uid="uid://cem7nc7xpq4ek" path="res://scripts/items/modifier_item.gd" id="1_n2tg0"]
+[ext_resource type="Texture2D" uid="uid://bogafpl6cukgb" path="res://assets/sprites/items/megaphone/megaphone active.png" id="2_5rsne"]
+[ext_resource type="Texture2D" uid="uid://0vi2j25ea3t3" path="res://assets/sprites/items/megaphone/megaphone.png" id="3_v5qyp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elyy"]
 size = Vector2(50, 50)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n2tg0"]
-load_path = "res://.godot/imported/megaphone.png-831d7d0cfbb7481b43a920183240d50d.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vxg24"]
-load_path = "res://.godot/imported/megaphone active.png-80e3d8fdc253608775dc494115e5f08f.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3whau"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_n2tg0")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_vxg24")
+"texture": ExtResource("2_5rsne")
 }],
 "loop": 0,
 "name": &"active",
@@ -26,7 +19,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_n2tg0")
+"texture": ExtResource("3_v5qyp")
 }],
 "loop": 0,
 "name": &"idle",
@@ -53,8 +46,6 @@ scale = Vector2(0.13541664, 0.13020831)
 sprite_frames = SubResource("SpriteFrames_3whau")
 animation = &"active"
 autoplay = "idle"
-frame = 1
-frame_progress = 1.0
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=872654024]
 

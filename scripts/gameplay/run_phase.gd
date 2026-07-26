@@ -2,9 +2,10 @@ extends Node2D
 
 signal run_completed
 
-const SETTLE_SPEED := 12.0
-const SETTLE_HOLD := 1.0
-const HARD_TIMEOUT := 30.0
+@export var hard_timeout: float = 15.0
+@export var settle_hold: float = 1.0
+@export var settle_speed: float = 12.0
+@export var min_run_seconds: float = 1.5
 
 var _running: bool = false
 var _placed_items: Node = null
@@ -34,12 +35,26 @@ func _physics_process(delta: float) -> void:
 	if not _running:
 		return
 	_elapsed += delta
-	if _elapsed >= HARD_TIMEOUT:
+	if _elapsed >= hard_timeout:
+		_finish_run()
+		return
+	if _elapsed < min_run_seconds:
+		return
+	if _everything_settled():
+		_settle_timer += delta
+		if _settle_timer >= settle_hold:
+			_finish_run()
+	else:
+		_settle_timer = 0.0
+	if not _running:
+		return
+	_elapsed += delta
+	if _elapsed >= hard_timeout:
 		_finish_run()
 		return
 	if _everything_settled():
 		_settle_timer += delta
-		if _settle_timer >= SETTLE_HOLD:
+		if _settle_timer >= settle_hold:
 			_finish_run()
 	else:
 		_settle_timer = 0.0
@@ -50,7 +65,7 @@ func _everything_settled() -> bool:
 			var rb := n as RigidBody2D
 			if rb.global_position.y > 1400:
 				continue
-			if not rb.freeze and rb.linear_velocity.length() > SETTLE_SPEED:
+			if not rb.freeze and rb.linear_velocity.length() > settle_speed:
 				return false
 		if n is SoundItem and (n as SoundItem).is_busy():
 			return false
