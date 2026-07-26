@@ -1,6 +1,7 @@
 extends Node2D
 
 const MAX_LEVEL_INDEX := 3
+const DEMO_LAST_LEVEL := 0
 
 @onready var panel: Panel = $LevelPanel
 @onready var panel_art: TextureRect = $LevelPanel/Image
@@ -30,13 +31,11 @@ func _ready() -> void:
 	ScreenTransition.open()
 
 func _is_locked(index: int) -> bool:
-	if index <= 0:
-		return false
-	var prev := index - 1
-	return not GameState.star_results.has(prev) or GameState.star_results[prev] <= 0
+	return index > DEMO_LAST_LEVEL
 
 func _on_house_pressed(index: int) -> void:
 	_selected = index
+	@warning_ignore("unused_variable")
 	var cfg: LevelConfig = load("res://resources/level_configs/level%d_config.tres" % index)
 	panel_art.texture = PANEL_IMAGES[index]
 	panel.visible = true

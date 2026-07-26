@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
 func _ready() -> void:
-	if $AnimatedSprite2D.sprite_frames and $AnimatedSprite2D.sprite_frames.has_animation("default"):
-		$AnimatedSprite2D.play("idle")
+	var s: AnimatedSprite2D = $AnimatedSprite2D
+	if s.sprite_frames and s.sprite_frames.has_animation("idle"):
+		s.play("idle")

@@ -1,10 +1,6 @@
 extends Control
 
-## Highest level index that actually exists as a playable scene.
-## Levels 1-3 are still empty stubs, so the demo ends after Level 0.
-## Bump this when Level 1 is real.
 const DEMO_LAST_LEVEL := 0
-
 const OUTRO_SCENE := "res://scenes/main/Outro.tscn"
 const LEVEL_SELECT_SCENE := "res://scenes/main/LevelSelection.tscn"
 
@@ -72,19 +68,22 @@ func _on_primary_pressed() -> void:
 	if _star_count == 0:
 		_leaving = true
 		get_tree().reload_current_scene()
-	elif _is_demo_end():
-		await _go_to(OUTRO_SCENE)
 	else:
-		await _go_to(LEVEL_SELECT_SCENE)
+		await _go_to_outro()
 
 func _on_secondary_pressed() -> void:
 	if _leaving:
 		return
 	if _star_count == 0:
-		await _go_to(LEVEL_SELECT_SCENE)
+		await _go_to_outro()
 	else:
 		_leaving = true
 		get_tree().reload_current_scene()
+
+func _go_to_outro() -> void:
+	_leaving = true
+	await ScreenTransition.close()
+	get_tree().change_scene_to_file(OUTRO_SCENE)
 
 func _go_to(path: String) -> void:
 	_leaving = true

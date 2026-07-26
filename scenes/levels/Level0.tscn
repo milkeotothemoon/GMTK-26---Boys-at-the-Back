@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://x1dbwykvcp7q" path="res://assets/sprites/ui/main game/score bar.png" id="11_hsw41"]
 [ext_resource type="PackedScene" uid="uid://bh30pp2dlxxy1" path="res://scenes/gameplay/TutorialPanel.tscn" id="11_oswwn"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_6se2n"]
+font_size = 50
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75xeh"]
 bg_color = Color(0.28627452, 0.08627451, 0, 1)
 corner_radius_top_left = 200
@@ -79,6 +82,18 @@ layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
+[node name="ItemCount" type="Label" parent="." unique_id=535760643]
+custom_minimum_size = Vector2(1, 1)
+offset_left = 388.0
+offset_top = 566.0
+offset_right = 587.0
+offset_bottom = 642.0
+theme = ExtResource("5_ue060")
+text = "0 / 15"
+label_settings = SubResource("LabelSettings_6se2n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="UpperRightCorner" type="Panel" parent="." unique_id=2058796264]
 offset_left = 1636.0
 offset_top = -94.0
@@ -131,6 +146,7 @@ offset_bottom = 686.0
 texture = ExtResource("11_hsw41")
 
 [node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
+visible = false
 
 [node name="PhaseTransition" parent="." unique_id=585754170 instance=ExtResource("9_e2o36")]
 
