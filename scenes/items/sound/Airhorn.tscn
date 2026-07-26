@@ -45,7 +45,7 @@ shape = SubResource("RectangleShape2D_kdo02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=6077634]
 sprite_frames = SubResource("SpriteFrames_j6oda")
-animation = &"active"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=761547991]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ddw4s6x8ce4et" path="res://scripts/main/level_selection.gd" id="1_080wy"]
 [ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="2_0e7p1"]
 [ext_resource type="Texture2D" uid="uid://cfeepkyb5jra7" path="res://assets/sprites/ui/level select/level select bg.jpg" id="2_5l5gi"]
+[ext_resource type="AudioStream" uid="uid://bil02j7x6edge" path="res://assets/sound/click-sound-effects-copyright-free-4_iV058Ec4.mp3" id="4_n7y1x"]
 
 [node name="LevelSelection" type="Node2D" unique_id=70987566]
 script = ExtResource("1_080wy")
@@ -129,6 +130,9 @@ grow_vertical = 0
 theme = ExtResource("2_0e7p1")
 theme_override_font_sizes/font_size = 60
 text = "Go Back"
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=569925471]
+stream = ExtResource("4_n7y1x")
 
 [connection signal="pressed" from="LevelPanel/CloseButton" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="LevelPanel/PlayButton" to="." method="_on_play_pressed"]
