@@ -6,21 +6,34 @@
 [ext_resource type="Texture2D" uid="uid://dngt2n6m60e0b" path="res://assets/sprites/items/balloon/balloon_static.png" id="3_ik7uu"]
 [ext_resource type="PackedScene" uid="uid://ctf2su6d3fe80" path="res://scenes/items/sound/Chicken.tscn" id="4_chickenslot"]
 [ext_resource type="PackedScene" uid="uid://dxtu3i6gck2ey" path="res://scenes/items/sound/Engine.tscn" id="5_engineslot"]
+[ext_resource type="Texture2D" uid="uid://do8a2vxiurbjm" path="res://assets/sprites/items/chicken/CHICKEN_1.png" id="5_la634"]
 [ext_resource type="PackedScene" uid="uid://d3ymiqhqfgq3b" path="res://scenes/items/sound/Blender.tscn" id="6_blenderslot"]
 [ext_resource type="PackedScene" uid="uid://dg0wm4bp3e7vi" path="res://scenes/items/modifiers/Megaphone.tscn" id="7_microphoneslot"]
 [ext_resource type="Texture2D" uid="uid://df50a6t5ggqb4" path="res://assets/sprites/items/gong/gong_static.png" id="7_otrw3"]
+[ext_resource type="Texture2D" uid="uid://ctrsqdxjmyj7j" path="res://assets/sprites/items/blender/BLENDER_1.png" id="7_pmhgi"]
 [ext_resource type="PackedScene" uid="uid://dgpp5lqbbanyq" path="res://scenes/items/modifiers/CassetteTape.tscn" id="8_casettetapeslot"]
 [ext_resource type="PackedScene" uid="uid://d2cjxhyokckbo" path="res://scenes/items/util/ConveyorBelt.tscn" id="9_conveyorbeltslot"]
 [ext_resource type="PackedScene" uid="uid://b3huixd4fh3xy" path="res://scenes/items/util/Fan.tscn" id="10_fanslot"]
+[ext_resource type="Texture2D" uid="uid://tcx2ef80aiwe" path="res://assets/sprites/items/engine/ENGINE_1.png" id="11_kggnv"]
 [ext_resource type="PackedScene" uid="uid://c5dnhcimwuo1b" path="res://scenes/items/util/Piston.tscn" id="11_pistonslot"]
 [ext_resource type="PackedScene" uid="uid://bi25ucghyanyy" path="res://scenes/items/sound/Bell.tscn" id="12_bellslot"]
+[ext_resource type="Texture2D" uid="uid://c4qrj7qa3qdl6" path="res://assets/sprites/items/bell/BELL_1.png" id="13_1m3qs"]
 [ext_resource type="PackedScene" uid="uid://cml4uev46xnl1" path="res://scenes/items/sound/Airhorn.tscn" id="13_airhornslot"]
 [ext_resource type="PackedScene" uid="uid://3xjgb6mdefet" path="res://scenes/items/physics/Marble.tscn" id="14_marbleslot"]
 [ext_resource type="PackedScene" uid="uid://d371nmtxybpr7" path="res://scenes/items/physics/Egg.tscn" id="15_eggslot"]
+[ext_resource type="Texture2D" uid="uid://36hqmc34fb56" path="res://assets/sprites/items/airhorn/AIRHORN_1.png" id="15_yjkp6"]
 [ext_resource type="PackedScene" uid="uid://cnfpautgarjxy" path="res://scenes/items/connectors/Plank.tscn" id="16_plankslot"]
+[ext_resource type="Texture2D" uid="uid://ctw0jfcw82up5" path="res://assets/sprites/items/balloon/BALLOON_normal.png" id="17_5benx"]
 [ext_resource type="PackedScene" uid="uid://g85bpv0m1bn" path="res://scenes/items/connectors/Beam.tscn" id="17_beamslot"]
 [ext_resource type="PackedScene" uid="uid://drp7na3rgll4w" path="res://scenes/items/connectors/String.tscn" id="18_stringslot"]
 [ext_resource type="PackedScene" uid="uid://brk2keitvb4sr" path="res://scenes/items/util/Launcher.tscn" id="19_launcherslot"]
+[ext_resource type="Texture2D" uid="uid://d3fyd43hvtkb3" path="res://assets/sprites/items/marble/MARBLE.png" id="20_b4gp1"]
+[ext_resource type="Texture2D" uid="uid://cnargdetc755m" path="res://assets/sprites/items/egg/EGG_normal.png" id="22_mjndp"]
+[ext_resource type="Texture2D" uid="uid://c8ycrcidnh4x8" path="res://assets/sprites/items/tripwire/TRIPWIRE_1.png" id="26_nma7n"]
+[ext_resource type="Texture2D" uid="uid://c40q114tk85ho" path="res://assets/sprites/items/conveyor/CONVEYOR BELT_1.png" id="28_l5faf"]
+[ext_resource type="Texture2D" uid="uid://btan5iqwubdvj" path="res://assets/sprites/items/fan/FAN_1.png" id="30_5fbfe"]
+[ext_resource type="Texture2D" uid="uid://bqcujdpd6njlk" path="res://assets/sprites/items/piston/PISTON_1.png" id="32_raswk"]
+[ext_resource type="Texture2D" uid="uid://ir4abwvnw4rc" path="res://assets/sprites/items/launcher/LAUNCHER_1.png" id="34_deceu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slot"]
 size = Vector2(50, 50)
@@ -63,7 +76,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("5_la634")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -84,7 +97,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("7_pmhgi")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -126,7 +139,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("11_kggnv")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -147,7 +160,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("13_1m3qs")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -168,7 +181,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("15_yjkp6")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -189,7 +202,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("17_5benx")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -210,7 +223,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("17_5benx")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -231,7 +244,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("20_b4gp1")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -252,7 +265,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("22_mjndp")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -315,7 +328,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("26_nma7n")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -336,7 +349,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("28_l5faf")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -357,7 +370,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("30_5fbfe")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -378,7 +391,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("32_raswk")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -399,7 +412,7 @@ offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-texture = ExtResource("3_ik7uu")
+texture = ExtResource("34_deceu")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
