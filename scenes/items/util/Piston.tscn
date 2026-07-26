@@ -20,6 +20,8 @@ freeze_mode = 1
 script = ExtResource("1_quvp8z")
 item_id = "piston"
 display_name = "Piston"
+can_rotate = true
+can_flip = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=409223932]
 shape = SubResource("RectangleShape2D_whsy6")
@@ -37,11 +39,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="EffectArea" type="Area2D" parent="." unique_id=1013291541]
-position = Vector2(60, 0)
 collision_layer = 0
 collision_mask = 2
 
 [node name="EffectShape" type="CollisionShape2D" parent="EffectArea" unique_id=816764399]
+position = Vector2(60, 0)
 shape = SubResource("RectangleShape2D_7v5ec")
 
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

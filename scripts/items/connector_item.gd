@@ -24,4 +24,6 @@ func _on_hit(body: Node) -> void:
 
 func _snap() -> void:
 	_snapped = true
+	_play_visual("break")
+	await get_tree().create_timer(0.3).timeout
 	queue_free()

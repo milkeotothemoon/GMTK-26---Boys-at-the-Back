@@ -131,7 +131,6 @@ offset_bottom = 686.0
 texture = ExtResource("11_hsw41")
 
 [node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
-visible = false
 
 [node name="PhaseTransition" parent="." unique_id=585754170 instance=ExtResource("9_e2o36")]
 

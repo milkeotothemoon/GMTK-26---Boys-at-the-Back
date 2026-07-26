@@ -29,5 +29,6 @@ func _on_body_entered(body: Node) -> void:
 func _break() -> void:
 	_broken = true
 	set_deferred("freeze", true)
-	await get_tree().create_timer(0.1).timeout
+	_play_visual("break")
+	await get_tree().create_timer(0.3).timeout
 	queue_free()

@@ -14,5 +14,6 @@ func _lay_egg() -> void:
 	get_parent().add_child(egg)
 	egg.global_position = global_position + fire_direction.normalized() * 40.0
 	egg.is_placed = true
+	egg.gravity_scale = 0.0
 	egg.call_deferred("_enter_run_mode")
 	egg.call_deferred("apply_central_impulse", fire_direction.normalized() * egg_speed)

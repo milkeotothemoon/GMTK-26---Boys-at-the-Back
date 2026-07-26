@@ -34,6 +34,12 @@ func activate(_source: Node = null) -> void:
 	if has_engine_nearby():
 		power_on()
 
+func _effective_direction() -> Vector2:
+	var d := direction
+	if flipped:
+		d.x = -d.x
+	return d.rotated(rotation)
+
 func _physics_process(delta: float) -> void:
 	if GameState.current_phase != GameState.Phase.RUN or not _powered:
 		return
@@ -57,11 +63,11 @@ func _physics_process(delta: float) -> void:
 func _apply_to(body: RigidBody2D) -> void:
 	match effect_kind:
 		"push":
-			body.apply_central_impulse(direction.normalized() * effect_strength)
+			body.apply_central_impulse(_effective_direction().normalized() * effect_strength)
 		"blow":
-			body.apply_central_force(direction.normalized() * effect_strength)
+			body.apply_central_force(_effective_direction().normalized() * effect_strength)
 		"lift":
 			body.apply_central_force(Vector2.UP * effect_strength)
 		"launch":
-			var d := Vector2(direction.normalized().x, -1).normalized()
+			var d := Vector2(_effective_direction().normalized().x, -1).normalized()
 			body.apply_central_impulse(d * effect_strength)

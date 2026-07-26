@@ -39,11 +39,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="EffectArea" type="Area2D" parent="." unique_id=857534598]
-position = Vector2(0, -35)
 collision_layer = 0
 collision_mask = 2
 
 [node name="EffectShape" type="CollisionShape2D" parent="EffectArea" unique_id=894599688]
+position = Vector2(0, -35)
 shape = SubResource("RectangleShape2D_f4bct")
 
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

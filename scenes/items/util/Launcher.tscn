@@ -19,6 +19,8 @@ effect_kind = "launch"
 one_shot = true
 item_id = "launcher"
 display_name = "Launcher"
+can_rotate = true
+can_flip = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125376983]
 shape = SubResource("RectangleShape2D_1hihk")
@@ -36,11 +38,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="EffectArea" type="Area2D" parent="." unique_id=1873753939]
-position = Vector2(0, -35)
 collision_layer = 0
 collision_mask = 2
 
 [node name="EffectShape" type="CollisionShape2D" parent="EffectArea" unique_id=2090066501]
+position = Vector2(0, -35)
 shape = SubResource("RectangleShape2D_75xeh")
 
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3huixd4fh3xy"]
 
-[ext_resource type="Script" uid="uid://cv4ho67wlio7d" path="res://scripts/items/behaviors/fan.gd" id="1_1367s"]
+[ext_resource type="Script" uid="uid://bwmog8fuktmhk" path="res://scripts/items/util_item.gd" id="1_1367s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfikc"]
 size = Vector2(50, 50)
@@ -11,7 +11,7 @@ size = Vector2(50, 50)
 size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qqce"]
-size = Vector2(160, 160)
+size = Vector2(140, 50)
 
 [node name="Fan" type="RigidBody2D" unique_id=299501691]
 gravity_scale = 0.0
@@ -21,6 +21,8 @@ script = ExtResource("1_1367s")
 effect_kind = "blow"
 item_id = "fan"
 display_name = "Fan"
+can_rotate = true
+can_flip = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1190559329]
 shape = SubResource("RectangleShape2D_pfikc")
@@ -42,6 +44,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="EffectShape" type="CollisionShape2D" parent="EffectArea" unique_id=163186856]
+position = Vector2(95, 0)
 shape = SubResource("RectangleShape2D_2qqce")
 
 [connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]

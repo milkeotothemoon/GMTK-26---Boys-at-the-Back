@@ -26,6 +26,7 @@ script = ExtResource("1_flcbc")
 snaps_on_hit = true
 item_id = "string"
 display_name = "String"
+can_rotate = true
 cell_size = Vector2i(3, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=740350985]

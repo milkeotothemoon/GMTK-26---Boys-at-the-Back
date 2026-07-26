@@ -3,16 +3,16 @@ class_name BaseItem
 
 @export var item_id: String
 @export var display_name: String = ""
-
-## Does this item fall and roll during the run phase?
 @export var is_dynamic: bool = false
-
-## How many grid cells this item occupies (width x height).
+@export var can_rotate: bool = false
+@export var can_flip: bool = false
 @export var cell_size: Vector2i = Vector2i(1, 1)
 
 var grid_position: Vector2i
 var is_placed: bool = false
 var _dragging: bool = false
+var rot_step: int = 0 
+var flipped: bool = false
 
 func _ready() -> void:
 	add_to_group("items")
@@ -46,11 +46,7 @@ func _run_collision_mask() -> int:
 	return 0xFFFFFFFF
 
 func occupied_cells() -> Array[Vector2i]:
-	var out: Array[Vector2i] = []
-	for x in range(cell_size.x):
-		for y in range(cell_size.y):
-			out.append(grid_position + Vector2i(x, y))
-	return out
+	return _cells_for(grid_position)
 
 func _cells_for(origin: Vector2i) -> Array[Vector2i]:
 	var out: Array[Vector2i] = []
@@ -78,6 +74,15 @@ func start_drag() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not _dragging:
 		return
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_R:
+			rotate_step()
+			get_viewport().set_input_as_handled()
+			return
+		if event.keycode == KEY_F:
+			flip_item()
+			get_viewport().set_input_as_handled()
+			return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		_try_drop()
 		get_viewport().set_input_as_handled()
@@ -105,7 +110,8 @@ func _process(_delta: float) -> void:
 
 func _origin_world(cell: Vector2i) -> Vector2:
 	var top_left := GridUtils.grid_to_world(cell)
-	var span := Vector2(cell_size.x, cell_size.y) * GridUtils.CELL_SIZE
+	var cs := effective_cell_size()
+	var span := Vector2(cs.x, cs.y) * GridUtils.CELL_SIZE
 	return top_left + span / 2.0
 
 func _try_drop() -> void:
@@ -140,12 +146,13 @@ func place(cell: Vector2i) -> void:
 
 func pick_up() -> void:
 	is_placed = false
-	if self is ModifierItem:
-		(self as ModifierItem).attached_to = null
-	if self is SoundItem:
-		for n in get_parent().get_children():
-			if n is ModifierItem and n.attached_to == self:
-				n.attached_to = null
+	if get("attached_to") != null:
+		set("attached_to", null)
+	for n in get_parent().get_children():
+		if n == self:
+			continue
+		if n.get("attached_to") == self:
+			n.set("attached_to", null)
 
 func _play_visual(anim: String) -> void:
 	var s := get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
@@ -153,6 +160,25 @@ func _play_visual(anim: String) -> void:
 		return
 	if s.sprite_frames.has_animation(anim):
 		s.play(anim)
+
+func rotate_step() -> void:
+	if not can_rotate:
+		return
+	rot_step = (rot_step + 1) % 4
+	rotation = rot_step * (PI / 2.0)
+
+func flip_item() -> void:
+	if not can_flip:
+		return
+	flipped = not flipped
+	var s := get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
+	if s:
+		s.flip_h = flipped
+
+func effective_cell_size() -> Vector2i:
+	if rot_step % 2 == 1:
+		return Vector2i(cell_size.y, cell_size.x)
+	return cell_size
 
 func _resolve_attachments() -> void:
 	pass
