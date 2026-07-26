@@ -15,3 +15,12 @@ func set_phase(p: Phase) -> void:
 	current_phase = p
 	is_build_locked = p != Phase.BUILD
 	phase_changed.emit(p)
+
+func reset_run() -> void:
+	star_results.clear()
+	current_level_index = 0
+	has_played_tutorial = false
+	current_phase = Phase.BUILD
+	is_build_locked = false
+	AudioManager.reset()
+	LevelData.active_config = null

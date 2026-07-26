@@ -13,6 +13,8 @@ var is_placed: bool = false
 var _dragging: bool = false
 var rot_step: int = 0 
 var flipped: bool = false
+var _hover_cell: Vector2i = Vector2i(-1, -1)
+var _hover_valid: bool = false
 
 func _ready() -> void:
 	add_to_group("items")
@@ -50,10 +52,22 @@ func occupied_cells() -> Array[Vector2i]:
 
 func _cells_for(origin: Vector2i) -> Array[Vector2i]:
 	var out: Array[Vector2i] = []
-	for x in range(cell_size.x):
-		for y in range(cell_size.y):
+	var cs := effective_cell_size()
+	for x in range(cs.x):
+		for y in range(cs.y):
 			out.append(origin + Vector2i(x, y))
 	return out
+
+func _footprint_on_grid(origin: Vector2i) -> bool:
+	for c in _cells_for(origin):
+		if not GridUtils.is_valid_cell(c):
+			return false
+	return true
+
+func _anchor_offset() -> Vector2i:
+	var cs := effective_cell_size()
+	@warning_ignore("integer_division")
+	return Vector2i(cs.x / 2, cs.y / 2)
 
 func _can_place_at(origin: Vector2i) -> bool:
 	var want := _cells_for(origin)
@@ -92,16 +106,17 @@ func _process(_delta: float) -> void:
 		return
 	var parent := get_parent() as Node2D
 	var local_mouse := parent.to_local(get_global_mouse_position())
-	var cell: Vector2i = GridUtils.world_to_grid(local_mouse)
+	var origin: Vector2i = GridUtils.world_to_grid(local_mouse) - _anchor_offset()
 	var view := get_tree().get_first_node_in_group("build_space_view")
-	if GridUtils.is_valid_cell(cell):
+
+	_hover_cell = origin
+	_hover_valid = _footprint_on_grid(origin)
+
+	if _hover_valid:
 		modulate = Color.WHITE
-		global_position = parent.to_global(_origin_world(cell))
+		global_position = parent.to_global(_origin_world(origin))
 		if view:
-			if _can_place_at(cell):
-				view.highlight_cells(_cells_for(cell), false)
-			else:
-				view.highlight_cells(_cells_for(cell), true)
+			view.highlight_cells(_cells_for(origin), not _can_place_at(origin))
 	else:
 		global_position = get_global_mouse_position()
 		modulate = Color(1.0, 0.4, 0.4, 0.6)
@@ -115,17 +130,12 @@ func _origin_world(cell: Vector2i) -> Vector2:
 	return top_left + span / 2.0
 
 func _try_drop() -> void:
-	var parent := get_parent() as Node2D
-	var cell: Vector2i = GridUtils.world_to_grid(parent.to_local(global_position))
-	
-	if not GridUtils.is_valid_cell(cell):
+	if not _hover_valid:
 		_discard()
 		return
-	
-	if not _can_place_at(cell):
+	if not _can_place_at(_hover_cell):
 		return
-	
-	place(cell)
+	place(_hover_cell)
 	_dragging = false
 	var view := get_tree().get_first_node_in_group("build_space_view")
 	if view:

@@ -6,7 +6,7 @@
 script = ExtResource("1_r4n7j")
 level_name = "Rude Awakening"
 description = "Drop a marble, ring a gong. Use planks and beams to steer it where you want. Keep it simple — you only need one good bounce."
-item_cap = 6
+item_cap = 15
 allowed_item_ids = Array[String](["marble", "plank", "beam", "gong", "balloon", "bell"])
 star1_threshold_db = 20.0
 star2_threshold_db = 32.0
