@@ -64,6 +64,14 @@ position = Vector2(462, 806)
 [node name="Timer" type="Timer" parent="." unique_id=846573383]
 one_shot = true
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=126047011]
+offset_left = 337.00003
+offset_top = 846.99994
+offset_right = 392.38153
+offset_bottom = 864.8335
+scale = Vector2(5.591133, 1.082718)
+color = Color(0.69803923, 0.07450981, 0.18431373, 1)
+
 [node name="TimerDisplay" type="HBoxContainer" parent="." unique_id=787711431]
 offset_left = 869.0
 offset_top = 20.0
@@ -153,14 +161,6 @@ visible = false
 [node name="TutorialPanel" parent="." unique_id=1529139202 instance=ExtResource("11_oswwn")]
 
 [node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=139107663]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=126047011]
-offset_left = 337.00003
-offset_top = 846.99994
-offset_right = 392.38153
-offset_bottom = 864.8335
-scale = Vector2(5.591133, 1.082718)
-color = Color(0.69803923, 0.07450981, 0.18431373, 1)
 
 [connection signal="build_locked" from="." to="RunPhaseController" method="start_run"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
