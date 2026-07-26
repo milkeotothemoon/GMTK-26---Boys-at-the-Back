@@ -38,7 +38,7 @@ func _effective_direction() -> Vector2:
 	var d := direction
 	if flipped:
 		d.x = -d.x
-	return d.rotated(rotation)
+	return d.rotated(rot_step * (PI / 2.0))
 
 func _physics_process(delta: float) -> void:
 	if GameState.current_phase != GameState.Phase.RUN or not _powered:

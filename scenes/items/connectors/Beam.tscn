@@ -1,18 +1,16 @@
 [gd_scene format=3 uid="uid://g85bpv0m1bn"]
 
 [ext_resource type="Script" uid="uid://dmbk2tjn1wgwq" path="res://scripts/items/connector_item.gd" id="1_jcicx"]
+[ext_resource type="Texture2D" uid="uid://b0knd7dwnvwlr" path="res://assets/sprites/items/beam/beam.png" id="2_qu7en"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtls"]
 size = Vector2(201, 50)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcicx"]
-load_path = "res://.godot/imported/beam.png-56eda599d282fc6382777a327b04aa99.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jcicx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_jcicx")
+"texture": ExtResource("2_qu7en")
 }],
 "loop": 0,
 "name": &"idle",

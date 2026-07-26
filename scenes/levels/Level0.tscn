@@ -128,16 +128,16 @@ position = Vector2(268, 93)
 [node name="RunPhaseController" parent="." unique_id=832782929 instance=ExtResource("5_in5bs")]
 
 [node name="ScoreBar" type="Control" parent="." unique_id=1446182729]
-self_modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1360.0
 offset_top = 214.0
-offset_right = 1420.0
+offset_right = 1414.0
 offset_bottom = 884.0
 script = ExtResource("8_bbvxl")
 
 [node name="ScoreBar Art" type="TextureRect" parent="ScoreBar" unique_id=1576190100]
+show_behind_parent = true
 layout_mode = 0
 offset_left = -17.0
 offset_top = -18.0
@@ -151,6 +151,7 @@ visible = false
 [node name="PhaseTransition" parent="." unique_id=585754170 instance=ExtResource("9_e2o36")]
 
 [node name="TutorialPanel" parent="." unique_id=1529139202 instance=ExtResource("11_oswwn")]
+visible = false
 
 [node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=139107663]
 

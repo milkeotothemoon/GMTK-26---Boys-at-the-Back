@@ -1,18 +1,16 @@
 [gd_scene format=3 uid="uid://cnfpautgarjxy"]
 
 [ext_resource type="Script" uid="uid://daav7lgw8bw46" path="res://scripts/items/physics_item.gd" id="1_8wywm"]
+[ext_resource type="Texture2D" uid="uid://dwbsoknxwigbi" path="res://assets/sprites/items/plank/plank.png" id="2_mt7bx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wywm"]
 size = Vector2(201, 50)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8wywm"]
-load_path = "res://.godot/imported/plank.png-698d7e44bcab10b64975557ce9b1ac43.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8wywm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_8wywm")
+"texture": ExtResource("2_mt7bx")
 }],
 "loop": 0,
 "name": &"idle",

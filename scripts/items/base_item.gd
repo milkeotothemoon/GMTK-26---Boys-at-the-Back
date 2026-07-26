@@ -175,15 +175,30 @@ func rotate_step() -> void:
 	if not can_rotate:
 		return
 	rot_step = (rot_step + 1) % 4
-	rotation = rot_step * (PI / 2.0)
+	_apply_orientation()
 
 func flip_item() -> void:
 	if not can_flip:
 		return
 	flipped = not flipped
+	_apply_orientation()
+
+func _apply_orientation() -> void:
+	var angle := rot_step * (PI / 2.0)
+
 	var s := get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
 	if s:
 		s.flip_h = flipped
+		s.rotation = angle
+
+	var shape := get_node_or_null("CollisionShape2D") as CollisionShape2D
+	if shape:
+		shape.rotation = angle
+
+	# Without this you can't click a rotated beam to pick it back up.
+	var click := get_node_or_null("ClickArea/CollisionShape2D") as CollisionShape2D
+	if click:
+		click.rotation = angle
 
 func effective_cell_size() -> Vector2i:
 	if rot_step % 2 == 1:
