@@ -1,18 +1,26 @@
 [gd_scene format=3 uid="uid://cml4uev46xnl1"]
 
 [ext_resource type="Script" uid="uid://c6ogbav64gbim" path="res://scripts/items/behaviors/airhorn.gd" id="1_j6oda"]
+[ext_resource type="Texture2D" uid="uid://bnqoudy0omweb" path="res://assets/sprites/items/airhorn/AIRHORN_2.png" id="2_tbmfd"]
+[ext_resource type="Texture2D" uid="uid://36hqmc34fb56" path="res://assets/sprites/items/airhorn/AIRHORN_1.png" id="3_klne5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdo02"]
 size = Vector2(50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j6oda"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tbmfd")
+}],
 "loop": 0,
 "name": &"active",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_klne5")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
