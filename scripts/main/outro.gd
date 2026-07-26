@@ -4,7 +4,7 @@ const HOME_SCENE := "res://scenes/main/Home.tscn"
 const FADE_IN := 1.2
 const HOLD_SECONDS := 3.0
 
-@onready var message: Label = $Message
+@onready var message: Label = $Sub
 @onready var sub: Label = $Sub
 @onready var back_button: Button = $BackButton
 
