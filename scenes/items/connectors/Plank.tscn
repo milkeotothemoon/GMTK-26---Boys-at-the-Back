@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://daav7lgw8bw46" path="res://scripts/items/physics_item.gd" id="1_8wywm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wywm"]
-size = Vector2(50, 50)
+size = Vector2(201, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8wywm"]
 animations = [{
@@ -14,7 +14,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt7bx"]
-size = Vector2(50, 50)
+size = Vector2(201, 50)
 
 [node name="Plank" type="RigidBody2D" unique_id=1396017137]
 script = ExtResource("1_8wywm")

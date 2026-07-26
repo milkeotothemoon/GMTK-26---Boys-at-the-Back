@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dmbk2tjn1wgwq" path="res://scripts/items/connector_item.gd" id="1_jcicx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtls"]
-size = Vector2(50, 50)
+size = Vector2(201, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jcicx"]
 animations = [{
@@ -14,7 +14,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qu7en"]
-size = Vector2(50, 50)
+size = Vector2(201, 50)
 
 [node name="Beam" type="RigidBody2D" unique_id=459472603]
 script = ExtResource("1_jcicx")
