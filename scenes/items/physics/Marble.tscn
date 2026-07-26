@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3fyd43hvtkb3" path="res://assets/sprites/items/marble/MARBLE.png" id="2_eimsr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sltwn"]
-radius = 25.0
+radius = 22.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gnajo"]
 animations = [{
@@ -18,7 +18,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eimsr"]
-radius = 25.0
+radius = 22.0
 
 [node name="Marble" type="RigidBody2D" unique_id=1943857950]
 script = ExtResource("1_gnajo")
@@ -29,8 +29,8 @@ display_name = "Marble"
 shape = SubResource("CircleShape2D_sltwn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1699340344]
-position = Vector2(0, -0.99999994)
-scale = Vector2(0.18229169, 0.1875)
+position = Vector2(0, -5.9604645e-08)
+scale = Vector2(0.15104167, 0.15624999)
 sprite_frames = SubResource("SpriteFrames_gnajo")
 animation = &"idle"
 autoplay = "idle"

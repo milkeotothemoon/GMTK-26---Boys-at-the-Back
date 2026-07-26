@@ -40,16 +40,6 @@ func _draw() -> void:
 	var fill_h := h * pct
 	draw_rect(Rect2(Vector2(0, h - fill_h), Vector2(bar_width, fill_h)), _fill_color(), true)
 
-	for t in [_t1, _t2, _t3]:
-		if t <= 0.0:
-			continue
-		var y := h - h * clampf(t / _max, 0.0, 1.0)
-		draw_line(Vector2(-6, y), Vector2(bar_width + 6, y), Color.WHITE, 3)
-
-	if draw_outline:
-		draw_rect(Rect2(Vector2.ZERO, Vector2(bar_width, h)), Color.BLACK, false, 2)
-
-## Fill colour tracks the star tier you've currently earned.
 func _fill_color() -> Color:
 	if _t3 > 0.0 and _current >= _t3:
 		return Color(0.45, 0.9, 0.4)

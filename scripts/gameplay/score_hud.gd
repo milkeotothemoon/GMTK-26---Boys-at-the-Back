@@ -54,7 +54,7 @@ func show_result(star_count: int) -> void:
 		primary_button.text = "Retry"
 		secondary_button.text = "Go Back"
 	elif _is_demo_end():
-		primary_button.text = "Finish Demo"
+		primary_button.text = "Continue"
 		secondary_button.text = "Retry"
 	else:
 		primary_button.text = "Continue"

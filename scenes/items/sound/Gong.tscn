@@ -42,7 +42,8 @@ display_name = "Gong"
 shape = SubResource("RectangleShape2D_6swph")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1842243052]
-scale = Vector2(0.16145833, 0.16145834)
+position = Vector2(-5.9604645e-08, 1.0000005)
+scale = Vector2(0.16145834, 0.15625003)
 sprite_frames = SubResource("SpriteFrames_7xcvr")
 animation = &"idle"
 autoplay = "idle"
