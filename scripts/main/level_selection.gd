@@ -5,6 +5,7 @@ const MAX_LEVEL_INDEX := 3
 @onready var panel: Panel = $LevelPanel
 @onready var panel_art: TextureRect = $LevelPanel/Image
 @onready var play_button: Button = $LevelPanel/PlayButton
+@onready var click_player = $ClickPlayer
 
 var _selected: int = -1
 
@@ -16,6 +17,7 @@ const PANEL_IMAGES = [
 ]
 
 func _ready() -> void:
+	_connect_buttons(self)
 	panel.visible = false
 	for i in range(MAX_LEVEL_INDEX + 1):
 		var btn := get_node_or_null("Houses/House%d" % i)
@@ -57,3 +59,12 @@ func _on_play_pressed() -> void:
 func _on_back_pressed() -> void:
 	await ScreenTransition.close()
 	get_tree().change_scene_to_file("res://scenes/main/Home.tscn")
+	
+func _connect_buttons(node):
+	for child in node.get_children():
+		if child is Button:
+			child.pressed.connect(_play_click)
+		_connect_buttons(child)
+
+func _play_click():
+	click_player.play()

@@ -136,5 +136,7 @@ texture = ExtResource("11_hsw41")
 
 [node name="TutorialPanel" parent="." unique_id=1529139202 instance=ExtResource("11_oswwn")]
 
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=139107663]
+
 [connection signal="build_locked" from="." to="RunPhaseController" method="start_run"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

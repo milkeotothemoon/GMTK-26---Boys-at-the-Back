@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cv22trp2kgm5h" path="res://assets/sprites/ui/title screen/start.png" id="2_atou1"]
 [ext_resource type="Texture2D" uid="uid://bc8nti5lrox0b" path="res://assets/sprites/ui/title screen/credits.png" id="3_hrow3"]
 [ext_resource type="Texture2D" uid="uid://cqnhfm8ip2ufg" path="res://assets/sprites/ui/title screen/logo.png" id="4_1mx8i"]
+[ext_resource type="AudioStream" uid="uid://bil02j7x6edge" path="res://assets/sound/click-sound-effects-copyright-free-4_iV058Ec4.mp3" id="5_h7yt6"]
 
 [node name="Home" type="Control" unique_id=1769644235]
 layout_mode = 3
@@ -103,6 +104,9 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 texture = ExtResource("3_hrow3")
 stretch_mode = 5
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="." unique_id=354504104]
+stream = ExtResource("5_h7yt6")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

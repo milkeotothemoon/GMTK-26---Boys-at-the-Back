@@ -5,10 +5,12 @@ signal build_locked
 @onready var timer: Timer = $Timer
 @onready var level_label: Label = $UpperRightCorner/LevelLabel
 @onready var transition: CanvasLayer = $PhaseTransition
+@onready var click_player = $ClickPlayer
 var _digit_textures: Array[Texture2D] = []
 var _build_started: bool = false
 
 func _ready() -> void:
+	_connect_buttons(self)
 	level_label.text = "%d" % GameState.current_level_index
 	for i in range(10):
 		_digit_textures.append(load("res://assets/fonts/digits/digit_%d.png" % i))
@@ -53,3 +55,12 @@ func _on_timer_timeout() -> void:
 	await transition.play_build_to_run()
 	$TimerDisplay.visible = false
 	build_locked.emit()
+
+func _connect_buttons(node):
+	for child in node.get_children():
+		if child is Button:
+			child.pressed.connect(_play_click)
+		_connect_buttons(child)
+
+func _play_click():
+	click_player.play()
