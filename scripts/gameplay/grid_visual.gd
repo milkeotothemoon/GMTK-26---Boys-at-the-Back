@@ -13,12 +13,18 @@ func _ready() -> void:
 
 	_base_style = StyleBoxFlat.new()
 	_base_style.bg_color = Color(0, 0, 0, 0)
-	_base_style.border_width_left = 2
-	_base_style.border_width_top = 2
-	_base_style.border_width_right = 2
-	_base_style.border_width_bottom = 2
-	_base_style.border_color = Color.BLACK
+	_base_style.border_width_left = 1
+	_base_style.border_width_top = 1
+	_base_style.border_width_right = 1
+	_base_style.border_width_bottom = 1
 
+	_base_style.border_color = Color(0.45, 0.35, 0.25, 0.25)
+
+	_base_style.corner_radius_top_left = 3
+	_base_style.corner_radius_top_right = 3
+	_base_style.corner_radius_bottom_left = 3
+	_base_style.corner_radius_bottom_right = 3
+	
 	_hover_style = _base_style.duplicate()
 	_hover_style.bg_color = Color(0.5, 0.5, 0.5, 0.5)
 	

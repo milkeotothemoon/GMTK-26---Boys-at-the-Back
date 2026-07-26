@@ -3,11 +3,17 @@ extends Node2D
 const MAX_LEVEL_INDEX := 3
 
 @onready var panel: Panel = $LevelPanel
-@onready var title_label: Label = $LevelPanel/TitleLabel
-@onready var desc_label: Label = $LevelPanel/DescriptionLabel
+@onready var panel_art: TextureRect = $LevelPanel/Image
 @onready var play_button: Button = $LevelPanel/PlayButton
 
 var _selected: int = -1
+
+const PANEL_IMAGES = [
+	preload("res://assets/sprites/ui/level select/00 TRANSPARENT.png"),
+	preload("res://assets/sprites/ui/level select/01 TRANSPARENT.png"),
+	preload("res://assets/sprites/ui/level select/02 TRANSPARENT.png"),
+	preload("res://assets/sprites/ui/level select/03 TRANSPARENT.png"),
+]
 
 func _ready() -> void:
 	panel.visible = false
@@ -30,12 +36,8 @@ func _is_locked(index: int) -> bool:
 func _on_house_pressed(index: int) -> void:
 	_selected = index
 	var cfg: LevelConfig = load("res://resources/level_configs/level%d_config.tres" % index)
-	if cfg:
-		title_label.text = cfg.level_name if cfg.level_name != "" else "Level %d" % index
-		desc_label.text = cfg.description
-	else:
-		title_label.text = "Level %d" % index
-		desc_label.text = ""
+	panel_art.texture = PANEL_IMAGES[index]
+	panel.visible = true
 	panel.visible = true
 
 func _on_close_pressed() -> void:

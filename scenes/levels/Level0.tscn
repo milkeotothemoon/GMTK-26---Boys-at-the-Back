@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b8apmf7n38mm1" path="res://scripts/gameplay/build_phase.gd" id="1_qcr8a"]
 [ext_resource type="PackedScene" uid="uid://dj4pr3ftuubh4" path="res://scenes/gameplay/BuildSpace.tscn" id="1_xh834"]
+[ext_resource type="Texture2D" uid="uid://cetsi45dtebp6" path="res://assets/sprites/ui/main game/main game bg.png" id="2_c2uwi"]
 [ext_resource type="PackedScene" uid="uid://cy7pfol0uoa7d" path="res://scenes/gameplay/Inventory.tscn" id="2_inventory"]
+[ext_resource type="Texture2D" uid="uid://bipqxgn5uwtp4" path="res://assets/sprites/ui/main game/inventory.png" id="3_6se2n"]
 [ext_resource type="PackedScene" uid="uid://cj7fvg2qu47rt" path="res://scenes/goblin/Goblin.tscn" id="3_player"]
 [ext_resource type="PackedScene" uid="uid://ct7pmsdcku03e" path="res://scenes/gameplay/SleeperPortrait.tscn" id="5_ax2ff"]
 [ext_resource type="PackedScene" uid="uid://roujawpulhr7" path="res://scenes/gameplay/RunPhaseController.tscn" id="5_in5bs"]
@@ -10,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://b1alhoqjw6dc2" path="res://scenes/gameplay/ScoreHUD.tscn" id="6_in5bs"]
 [ext_resource type="Script" uid="uid://dk2shgpboe86c" path="res://scripts/gameplay/score_bar.gd" id="8_bbvxl"]
 [ext_resource type="PackedScene" uid="uid://lp2s54nhiltq" path="res://scenes/gameplay/PhaseTransition.tscn" id="9_e2o36"]
+[ext_resource type="Texture2D" uid="uid://x1dbwykvcp7q" path="res://assets/sprites/ui/main game/score bar.png" id="11_hsw41"]
 [ext_resource type="PackedScene" uid="uid://bh30pp2dlxxy1" path="res://scenes/gameplay/TutorialPanel.tscn" id="11_oswwn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75xeh"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.28627452, 0.08627451, 0, 1)
 corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
@@ -21,10 +24,10 @@ corner_radius_bottom_left = 200
 corner_detail = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_75xeh"]
-font_size = 244
+font_size = 170
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax2ff"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.2879312, 0.08685004, 6.016344e-08, 1)
 corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
@@ -34,11 +37,23 @@ corner_detail = 20
 [node name="Level0" type="Node2D" unique_id=250843063]
 script = ExtResource("1_qcr8a")
 
+[node name="Background" type="TextureRect" parent="." unique_id=1382300849]
+offset_right = 1925.0
+offset_bottom = 1079.0
+texture = ExtResource("2_c2uwi")
+
+[node name="Inventory Art" type="TextureRect" parent="." unique_id=473500698]
+offset_left = 633.0
+offset_top = 909.0
+offset_right = 1335.0
+offset_bottom = 1071.0
+texture = ExtResource("3_6se2n")
+
 [node name="Inventory" parent="." unique_id=653123002 instance=ExtResource("2_inventory")]
-position = Vector2(708, 934)
+position = Vector2(665, 933)
 
 [node name="BuildSpace" parent="." unique_id=1416657170 instance=ExtResource("1_xh834")]
-position = Vector2(635, 214)
+position = Vector2(639, 191)
 
 [node name="Goblin" parent="." unique_id=1845645343 instance=ExtResource("3_player")]
 position = Vector2(461, 816)
@@ -48,9 +63,9 @@ one_shot = true
 
 [node name="TimerDisplay" type="HBoxContainer" parent="." unique_id=787711431]
 offset_left = 869.0
-offset_top = 40.0
+offset_top = 20.0
 offset_right = 1073.0
-offset_bottom = 205.0
+offset_bottom = 185.0
 
 [node name="DigitSec1" type="TextureRect" parent="TimerDisplay" unique_id=225946883]
 custom_minimum_size = Vector2(100, 100)
@@ -65,20 +80,21 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="UpperRightCorner" type="Panel" parent="." unique_id=2058796264]
-offset_left = 1593.0
+offset_left = 1636.0
 offset_top = -94.0
 offset_right = 1993.0
-offset_bottom = 306.0
+offset_bottom = 268.0
 size_flags_stretch_ratio = 0.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_75xeh")
 
 [node name="LevelLabel" type="Label" parent="UpperRightCorner" unique_id=1346164908]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 33.0
-offset_right = 306.0
-offset_bottom = 402.0
+offset_left = 39.0
+offset_top = 11.0
+offset_right = 266.0
+offset_bottom = 380.0
 theme = ExtResource("5_ue060")
+theme_override_font_sizes/font_size = 18
 text = "#"
 label_settings = SubResource("LabelSettings_75xeh")
 horizontal_alignment = 1
@@ -97,6 +113,7 @@ position = Vector2(268, 93)
 [node name="RunPhaseController" parent="." unique_id=832782929 instance=ExtResource("5_in5bs")]
 
 [node name="ScoreBar" type="Control" parent="." unique_id=1446182729]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1360.0
@@ -105,7 +122,16 @@ offset_right = 1420.0
 offset_bottom = 884.0
 script = ExtResource("8_bbvxl")
 
+[node name="ScoreBar Art" type="TextureRect" parent="ScoreBar" unique_id=1576190100]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -18.0
+offset_right = 71.0
+offset_bottom = 686.0
+texture = ExtResource("11_hsw41")
+
 [node name="ScoreHUD" parent="." unique_id=926461996 instance=ExtResource("6_in5bs")]
+visible = false
 
 [node name="PhaseTransition" parent="." unique_id=585754170 instance=ExtResource("9_e2o36")]
 

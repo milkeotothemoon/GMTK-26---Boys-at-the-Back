@@ -2,14 +2,18 @@
 
 [ext_resource type="Script" uid="uid://ddw4s6x8ce4et" path="res://scripts/main/level_selection.gd" id="1_080wy"]
 [ext_resource type="Theme" uid="uid://b8b3u6igehsbs" path="res://resources/theme/main_theme.tres" id="2_0e7p1"]
+[ext_resource type="Texture2D" uid="uid://cfeepkyb5jra7" path="res://assets/sprites/ui/level select/level select bg.jpg" id="2_5l5gi"]
 
 [node name="LevelSelection" type="Node2D" unique_id=70987566]
 script = ExtResource("1_080wy")
 
 [node name="Background" type="TextureRect" parent="." unique_id=138806955]
 custom_minimum_size = Vector2(1920, 1080)
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -41.0
+offset_top = -2.0
+offset_right = 1919.0
+offset_bottom = 1078.0
+texture = ExtResource("2_5l5gi")
 
 [node name="Houses" type="Control" parent="." unique_id=1408428511]
 layout_mode = 3
@@ -58,6 +62,7 @@ theme_override_font_sizes/font_size = 100
 text = "3"
 
 [node name="LevelPanel" type="Panel" parent="." unique_id=1827637892]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -70,55 +75,44 @@ offset_bottom = 993.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="TitleLabel" type="Label" parent="LevelPanel" unique_id=1576086753]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -153.0
-offset_right = 153.0
-offset_bottom = 143.0
-grow_horizontal = 2
-
-[node name="DescriptionLabel" type="Label" parent="LevelPanel" unique_id=1466687134]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -213.0
-offset_top = -159.0
-offset_right = 213.0
-offset_bottom = 159.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Image" type="TextureRect" parent="LevelPanel" unique_id=112451804]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -90.0
+offset_right = 668.0
+offset_bottom = 942.0
+stretch_mode = 5
 
 [node name="CloseButton" type="Button" parent="LevelPanel" unique_id=762977545]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -127.0
+offset_left = -108.0
+offset_top = -41.0
 offset_right = -2.0
-offset_bottom = 125.0
+offset_bottom = 65.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 84
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
 text = "X"
 
 [node name="PlayButton" type="Button" parent="LevelPanel" unique_id=1031055948]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -175.0
-offset_right = 250.0
-offset_bottom = -50.0
+offset_left = -190.0
+offset_top = -187.0
+offset_right = 167.0
+offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_0e7p1")
 theme_override_font_sizes/font_size = 50
 text = "Play"

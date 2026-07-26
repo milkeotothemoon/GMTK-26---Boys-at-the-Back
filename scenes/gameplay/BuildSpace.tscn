@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dj4pr3ftuubh4"]
 
-[ext_resource type="Texture2D" uid="uid://cef26xd1577m8" path="res://icon.svg" id="2_2bb0f"]
+[ext_resource type="Texture2D" uid="uid://bjb6ylckhy4vy" path="res://assets/sprites/ui/main game/alarm.png" id="2_2bb0f"]
 [ext_resource type="Script" uid="uid://dxhj6lpsr2ttj" path="res://scripts/gameplay/grid_visual.gd" id="2_ky76c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75xeh"]
@@ -14,12 +14,13 @@ size = Vector2(20, 670)
 
 [node name="BuildSpace" type="Node2D" unique_id=1416657170]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1273156104]
-offset_right = 670.0
-offset_bottom = 670.0
-texture = ExtResource("2_2bb0f")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1277572077]
+offset_right = 669.0
+offset_bottom = 669.0
+color = Color(1, 0.90588236, 0.78431374, 1)
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=817833220]
+self_modulate = Color(1, 1, 1, 0.60784316)
 offset_right = 700.0
 offset_bottom = 700.0
 script = ExtResource("2_ky76c")
@@ -41,3 +42,12 @@ shape = SubResource("RectangleShape2D_xrvpr")
 [node name="WallRight" type="CollisionShape2D" parent="WorldBounds" unique_id=753894704]
 position = Vector2(680, 335)
 shape = SubResource("RectangleShape2D_ky76c")
+
+[node name="Alarm" type="TextureRect" parent="." unique_id=122156394]
+offset_left = -35.0
+offset_top = -171.0
+offset_right = 707.0
+offset_bottom = 724.0
+texture = ExtResource("2_2bb0f")
+expand_mode = 1
+stretch_mode = 4
