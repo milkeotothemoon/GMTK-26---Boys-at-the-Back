@@ -5,14 +5,29 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5elyy"]
 size = Vector2(50, 50)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n2tg0"]
+load_path = "res://.godot/imported/megaphone.png-831d7d0cfbb7481b43a920183240d50d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vxg24"]
+load_path = "res://.godot/imported/megaphone active.png-80e3d8fdc253608775dc494115e5f08f.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_3whau"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_n2tg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_vxg24")
+}],
 "loop": 0,
 "name": &"active",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_n2tg0")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -33,9 +48,13 @@ display_name = "Megaphone"
 shape = SubResource("RectangleShape2D_5elyy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1825861006]
+position = Vector2(0, -1)
+scale = Vector2(0.13541664, 0.13020831)
 sprite_frames = SubResource("SpriteFrames_3whau")
 animation = &"active"
 autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=872654024]
 

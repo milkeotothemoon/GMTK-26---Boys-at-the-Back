@@ -5,9 +5,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wywm"]
 size = Vector2(201, 50)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8wywm"]
+load_path = "res://.godot/imported/plank.png-698d7e44bcab10b64975557ce9b1ac43.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8wywm"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_8wywm")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -28,6 +34,8 @@ cell_size = Vector2i(3, 1)
 shape = SubResource("RectangleShape2D_8wywm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1830084189]
+position = Vector2(1.5000038, -139.5)
+scale = Vector2(0.5911458, 0.8723959)
 sprite_frames = SubResource("SpriteFrames_8wywm")
 animation = &"idle"
 autoplay = "idle"

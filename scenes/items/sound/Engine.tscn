@@ -5,9 +5,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ano03"]
 size = Vector2(50, 50)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ctoc1"]
+load_path = "res://.godot/imported/ENGINE_2.png-c65a57ba457bd09f38eb0d45ee6dc735.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e5auu"]
+load_path = "res://.godot/imported/ENGINE_3.png-35c708b4d8391286fec0d277ea71c6d4.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ovcaw"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ctoc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_e5auu")
+}],
 "loop": 2,
 "name": &"active",
 "speed": 5.0
@@ -34,9 +46,12 @@ display_name = "Engine"
 shape = SubResource("RectangleShape2D_ano03")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=588257077]
+position = Vector2(0.9999981, 1)
+scale = Vector2(0.4309896, 0.42317712)
 sprite_frames = SubResource("SpriteFrames_ovcaw")
 animation = &"active"
 autoplay = "idle"
+frame_progress = 0.9708535
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=1390564045]
 

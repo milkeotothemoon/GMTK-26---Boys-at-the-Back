@@ -5,9 +5,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtls"]
 size = Vector2(201, 50)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jcicx"]
+load_path = "res://.godot/imported/beam.png-56eda599d282fc6382777a327b04aa99.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_jcicx"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_jcicx")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -27,6 +33,8 @@ cell_size = Vector2i(3, 1)
 shape = SubResource("RectangleShape2D_uwtls")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1724587885]
+position = Vector2(-1.1444092e-05, -163.5)
+scale = Vector2(0.5208333, 0.9817709)
 sprite_frames = SubResource("SpriteFrames_jcicx")
 animation = &"idle"
 autoplay = "idle"

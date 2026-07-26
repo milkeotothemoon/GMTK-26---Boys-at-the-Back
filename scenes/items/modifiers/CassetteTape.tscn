@@ -5,14 +5,29 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7a8l0"]
 size = Vector2(50, 50)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bn11s"]
+load_path = "res://.godot/imported/cassette.png-482938e2203a041f7ba607dbc395a516.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4c5kt"]
+load_path = "res://.godot/imported/cassette idle.png-277e11b1f457cf2fc473d9ce7cadc3a9.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1490n"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_bn11s")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_4c5kt")
+}],
 "loop": 0,
 "name": &"active",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_bn11s")
+}],
 "loop": 0,
 "name": &"idle",
 "speed": 5.0
@@ -34,9 +49,13 @@ display_name = "Cassette Tape"
 shape = SubResource("RectangleShape2D_7a8l0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1955952460]
+position = Vector2(0.5, -0.4999981)
+scale = Vector2(0.12760416, 0.13281251)
 sprite_frames = SubResource("SpriteFrames_1490n")
 animation = &"active"
 autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="ClickArea" type="Area2D" parent="." unique_id=583695189]
 
